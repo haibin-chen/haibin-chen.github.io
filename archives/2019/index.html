@@ -351,7 +351,9 @@
                 <span>基于RNN 我们还能加些什么?（文本分类）</span>
         </a>
         <div class="abstract-content">
-            
+            整理了近两年顶会上看过的文本分类文章，以下概括主要思路。① 基于RNN的改进，设计新的门控（或引入其他信息如情感词aspect）对记忆信息和隐层信息进行控制，如下图Leap-LSTM(IJCAI 2019)
+② 基于RNN的改进，对隐层单元的unit进行拆解。如下图，不同unit更新频率不同。(Ordered Neurons ICLR 2019)
+③ stack-dilated类，即设计不同的空洞尺度进行堆叠，在序列上：dilated-RNN，在纵向提取高层信息：dilated-CNN。如下图：RNN with Hierarchical Multiscale Dense Connecti...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -362,68 +364,7 @@
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "论文分享">论文分享</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/10/13/2019-10-13论文/" >
-            
-                <span>2019-10-13论文</span>
-        </a>
-        <div class="abstract-content">
-            https://webcache.googleusercontent.com/search?q=cache:tfVHKND6I4QJ:https://www.ijcai.org/proceedings/2019/0702.pdf+&amp;cd=2&amp;hl=zh-CN&amp;ct=clnk&amp;gl=us只能看缓存了
-
-几个关键点 pointer mechanism handle variable size vocabularyadversarial learning with a domaindiscriminator (adversary), resulting in t...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/10/13</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "论文分享">论文分享</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/10/07/Capsnet在文本分类中的应用/" >
-            
-                <span>Capsnet在文本分类中的应用</span>
-        </a>
-        <div class="abstract-content">
-            Capsnet在文本分类中的应用 &amp;&amp; Aspect-based文本分类调研（未完）Joint Slot Filling and Intent Detection via Capsule Neural Networks（2019ACL）总结：使用堆叠的capnet构建从词、slot、intent的多级架构
-Transfer Capsule Network for Aspect Level Sentiment Classification（2019ACL）总结：aspect-based一般都从document文本迁移，这里就是和document文本共享n-gram信息提取、...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/10/07</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "论文分享">论文分享</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "专题整理">专题整理</a>
     
 </div>
             
@@ -611,23 +552,9 @@ Transfer Capsule Network for Aspect Level Sentiment Classification（2019ACL）�
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 5
+        Total : 3
         </div>
         <!-- search  -->
         
@@ -648,16 +575,6 @@ Transfer Capsule Network for Aspect Level Sentiment Classification（2019ACL）�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/13</span><a class="archive-post-title" href= "/2019/10/13/2019-10-13论文/" >2019-10-13论文</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/07</span><a class="archive-post-title" href= "/2019/10/07/Capsnet在文本分类中的应用/" >Capsnet在文本分类中的应用</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">10/05</span><a class="archive-post-title" href= "/2019/10/05/why-blog/" >why blog?</a>
         </li>
     
@@ -674,6 +591,8 @@ Transfer Capsule Network for Aspect Level Sentiment Classification（2019ACL）�
         <span class="sidebar-tag-name" data-tags="论文分享"><span class="iconfont-archer">&#xe606;</span>论文分享</span>
     
         <span class="sidebar-tag-name" data-tags="随想"><span class="iconfont-archer">&#xe606;</span>随想</span>
+    
+        <span class="sidebar-tag-name" data-tags="专题整理"><span class="iconfont-archer">&#xe606;</span>专题整理</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

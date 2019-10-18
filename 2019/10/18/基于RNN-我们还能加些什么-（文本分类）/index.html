@@ -266,13 +266,13 @@ height:50vh;
                 
                     <div class= post-intro-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "论文分享">论文分享</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "专题整理">专题整理</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">0</span>Reading time: <span class="post-count reading-time">1 min</span></span>
+                        <span>Word count: <span class="post-count word-count">313</span>Reading time: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -401,7 +401,14 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        
+        <h2 id="整理了近两年顶会上看过的文本分类文章，以下概括主要思路。"><a href="#整理了近两年顶会上看过的文本分类文章，以下概括主要思路。" class="headerlink" title="整理了近两年顶会上看过的文本分类文章，以下概括主要思路。"></a>整理了近两年顶会上看过的文本分类文章，以下概括主要思路。</h2><h3 id="①-基于RNN的改进，设计新的门控（或引入其他信息如情感词aspect）对记忆信息和隐层信息进行控制，如下图Leap-LSTM-IJCAI-2019"><a href="#①-基于RNN的改进，设计新的门控（或引入其他信息如情感词aspect）对记忆信息和隐层信息进行控制，如下图Leap-LSTM-IJCAI-2019" class="headerlink" title="① 基于RNN的改进，设计新的门控（或引入其他信息如情感词aspect）对记忆信息和隐层信息进行控制，如下图Leap-LSTM(IJCAI 2019)"></a>① 基于RNN的改进，设计新的门控（或引入其他信息如情感词aspect）对记忆信息和隐层信息进行控制，如下图Leap-LSTM(IJCAI 2019)</h3><p><img src="/2019/10/18/基于RNN-我们还能加些什么-（文本分类）/1.png" alt></p>
+<h3 id="②-基于RNN的改进，对隐层单元的unit进行拆解。如下图，不同unit更新频率不同。-Ordered-Neurons-ICLR-2019"><a href="#②-基于RNN的改进，对隐层单元的unit进行拆解。如下图，不同unit更新频率不同。-Ordered-Neurons-ICLR-2019" class="headerlink" title="② 基于RNN的改进，对隐层单元的unit进行拆解。如下图，不同unit更新频率不同。(Ordered Neurons ICLR 2019)"></a>② 基于RNN的改进，对隐层单元的unit进行拆解。如下图，不同unit更新频率不同。(Ordered Neurons ICLR 2019)</h3><p><img src="/2019/10/18/基于RNN-我们还能加些什么-（文本分类）/2.png" alt></p>
+<h3 id="③-stack-dilated类，即设计不同的空洞尺度进行堆叠，在序列上：dilated-RNN，在纵向提取高层信息：dilated-CNN。如下图：RNN-with-Hierarchical-Multiscale-Dense-Connections-IJCAI-2019"><a href="#③-stack-dilated类，即设计不同的空洞尺度进行堆叠，在序列上：dilated-RNN，在纵向提取高层信息：dilated-CNN。如下图：RNN-with-Hierarchical-Multiscale-Dense-Connections-IJCAI-2019" class="headerlink" title="③ stack-dilated类，即设计不同的空洞尺度进行堆叠，在序列上：dilated-RNN，在纵向提取高层信息：dilated-CNN。如下图：RNN with Hierarchical Multiscale Dense Connections(IJCAI 2019)"></a>③ stack-dilated类，即设计不同的空洞尺度进行堆叠，在序列上：dilated-RNN，在纵向提取高层信息：dilated-CNN。如下图：RNN with Hierarchical Multiscale Dense Connections(IJCAI 2019)</h3><p><img src="/2019/10/18/基于RNN-我们还能加些什么-（文本分类）/3.png" alt></p>
+<h3 id="④-dense-block类，在block内的dense连接，rnn接受的输入大小各不同，经典：clockwork-rnn-ICML-2014"><a href="#④-dense-block类，在block内的dense连接，rnn接受的输入大小各不同，经典：clockwork-rnn-ICML-2014" class="headerlink" title="④ dense-block类，在block内的dense连接，rnn接受的输入大小各不同，经典：clockwork-rnn (ICML 2014)"></a>④ dense-block类，在block内的dense连接，rnn接受的输入大小各不同，经典：clockwork-rnn (ICML 2014)</h3><p><img src="/2019/10/18/基于RNN-我们还能加些什么-（文本分类）/4.png" alt></p>
+<h3 id="⑤-和dilated结构的fast-slow设计，相对于上面dilated是底层信息的融合，这里更倾向于高层信息更新频率的不同，如下图：Fast-Slow-RNN-NIPS-2017"><a href="#⑤-和dilated结构的fast-slow设计，相对于上面dilated是底层信息的融合，这里更倾向于高层信息更新频率的不同，如下图：Fast-Slow-RNN-NIPS-2017" class="headerlink" title="⑤ 和dilated结构的fast-slow设计，相对于上面dilated是底层信息的融合，这里更倾向于高层信息更新频率的不同，如下图：Fast-Slow RNN(NIPS 2017)"></a>⑤ 和dilated结构的fast-slow设计，相对于上面dilated是底层信息的融合，这里更倾向于高层信息更新频率的不同，如下图：Fast-Slow RNN(NIPS 2017)</h3><p><img src="/2019/10/18/基于RNN-我们还能加些什么-（文本分类）/5.png" alt></p>
+<h3 id="⑥-local-attention，如下图：Modeling-Local-Dependence-in-Natural-Language-with-Multi-Channel-RNN-AAAI-2019-multi-channel的local-attention进行信息融合。"><a href="#⑥-local-attention，如下图：Modeling-Local-Dependence-in-Natural-Language-with-Multi-Channel-RNN-AAAI-2019-multi-channel的local-attention进行信息融合。" class="headerlink" title="⑥ local attention，如下图：Modeling Local Dependence in Natural Language with Multi-Channel RNN(AAAI 2019), multi-channel的local attention进行信息融合。"></a>⑥ local attention，如下图：Modeling Local Dependence in Natural Language with Multi-Channel RNN(AAAI 2019), multi-channel的local attention进行信息融合。</h3><p><img src="/2019/10/18/基于RNN-我们还能加些什么-（文本分类）/6.png" alt></p>
+<h3 id="⑦-加深模型深度、short-cut连接，如下图Deep-Pyramid-CNN-2017-ACL"><a href="#⑦-加深模型深度、short-cut连接，如下图Deep-Pyramid-CNN-2017-ACL" class="headerlink" title="⑦ 加深模型深度、short-cut连接，如下图Deep Pyramid CNN(2017 ACL)"></a>⑦ 加深模型深度、short-cut连接，如下图Deep Pyramid CNN(2017 ACL)</h3><p><img src="/2019/10/18/基于RNN-我们还能加些什么-（文本分类）/7.png" alt></p>
+<h3 id="⑧-其他：脱离RNN范式：图卷积网络、胶囊网络、transformer"><a href="#⑧-其他：脱离RNN范式：图卷积网络、胶囊网络、transformer" class="headerlink" title="⑧ 其他：脱离RNN范式：图卷积网络、胶囊网络、transformer"></a>⑧ 其他：脱离RNN范式：图卷积网络、胶囊网络、transformer</h3><h3 id="To-do-整理其他浏览过的NLP通用分类问题的其他思路，不仅限于情感分类。"><a href="#To-do-整理其他浏览过的NLP通用分类问题的其他思路，不仅限于情感分类。" class="headerlink" title="To do: 整理其他浏览过的NLP通用分类问题的其他思路，不仅限于情感分类。"></a>To do: 整理其他浏览过的NLP通用分类问题的其他思路，不仅限于情感分类。</h3>
     </article>
     <!-- license  -->
     
@@ -413,8 +420,8 @@ height:50vh;
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2019/10/13/2019-10-13论文/" title= "2019-10-13论文">
-                    <div class="prevTitle">2019-10-13论文</div>
+                <a href= "/2019/10/05/why-blog/" title= "why blog?">
+                    <div class="prevTitle">why blog?</div>
                 </a>
             
         </li>
@@ -549,7 +556,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#整理了近两年顶会上看过的文本分类文章，以下概括主要思路。"><span class="toc-number">1.</span> <span class="toc-text">整理了近两年顶会上看过的文本分类文章，以下概括主要思路。</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#①-基于RNN的改进，设计新的门控（或引入其他信息如情感词aspect）对记忆信息和隐层信息进行控制，如下图Leap-LSTM-IJCAI-2019"><span class="toc-number">1.1.</span> <span class="toc-text">① 基于RNN的改进，设计新的门控（或引入其他信息如情感词aspect）对记忆信息和隐层信息进行控制，如下图Leap-LSTM(IJCAI 2019)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#②-基于RNN的改进，对隐层单元的unit进行拆解。如下图，不同unit更新频率不同。-Ordered-Neurons-ICLR-2019"><span class="toc-number">1.2.</span> <span class="toc-text">② 基于RNN的改进，对隐层单元的unit进行拆解。如下图，不同unit更新频率不同。(Ordered Neurons ICLR 2019)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#③-stack-dilated类，即设计不同的空洞尺度进行堆叠，在序列上：dilated-RNN，在纵向提取高层信息：dilated-CNN。如下图：RNN-with-Hierarchical-Multiscale-Dense-Connections-IJCAI-2019"><span class="toc-number">1.3.</span> <span class="toc-text">③ stack-dilated类，即设计不同的空洞尺度进行堆叠，在序列上：dilated-RNN，在纵向提取高层信息：dilated-CNN。如下图：RNN with Hierarchical Multiscale Dense Connections(IJCAI 2019)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#④-dense-block类，在block内的dense连接，rnn接受的输入大小各不同，经典：clockwork-rnn-ICML-2014"><span class="toc-number">1.4.</span> <span class="toc-text">④ dense-block类，在block内的dense连接，rnn接受的输入大小各不同，经典：clockwork-rnn (ICML 2014)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#⑤-和dilated结构的fast-slow设计，相对于上面dilated是底层信息的融合，这里更倾向于高层信息更新频率的不同，如下图：Fast-Slow-RNN-NIPS-2017"><span class="toc-number">1.5.</span> <span class="toc-text">⑤ 和dilated结构的fast-slow设计，相对于上面dilated是底层信息的融合，这里更倾向于高层信息更新频率的不同，如下图：Fast-Slow RNN(NIPS 2017)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#⑥-local-attention，如下图：Modeling-Local-Dependence-in-Natural-Language-with-Multi-Channel-RNN-AAAI-2019-multi-channel的local-attention进行信息融合。"><span class="toc-number">1.6.</span> <span class="toc-text">⑥ local attention，如下图：Modeling Local Dependence in Natural Language with Multi-Channel RNN(AAAI 2019), multi-channel的local attention进行信息融合。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#⑦-加深模型深度、short-cut连接，如下图Deep-Pyramid-CNN-2017-ACL"><span class="toc-number">1.7.</span> <span class="toc-text">⑦ 加深模型深度、short-cut连接，如下图Deep Pyramid CNN(2017 ACL)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#⑧-其他：脱离RNN范式：图卷积网络、胶囊网络、transformer"><span class="toc-number">1.8.</span> <span class="toc-text">⑧ 其他：脱离RNN范式：图卷积网络、胶囊网络、transformer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#To-do-整理其他浏览过的NLP通用分类问题的其他思路，不仅限于情感分类。"><span class="toc-number">1.9.</span> <span class="toc-text">To do: 整理其他浏览过的NLP通用分类问题的其他思路，不仅限于情感分类。</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -587,23 +594,9 @@ top:50vh;
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 5
+        Total : 3
         </div>
         <!-- search  -->
         
@@ -624,16 +617,6 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/13</span><a class="archive-post-title" href= "/2019/10/13/2019-10-13论文/" >2019-10-13论文</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/07</span><a class="archive-post-title" href= "/2019/10/07/Capsnet在文本分类中的应用/" >Capsnet在文本分类中的应用</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">10/05</span><a class="archive-post-title" href= "/2019/10/05/why-blog/" >why blog?</a>
         </li>
     
@@ -650,6 +633,8 @@ top:50vh;
         <span class="sidebar-tag-name" data-tags="论文分享"><span class="iconfont-archer">&#xe606;</span>论文分享</span>
     
         <span class="sidebar-tag-name" data-tags="随想"><span class="iconfont-archer">&#xe606;</span>随想</span>
+    
+        <span class="sidebar-tag-name" data-tags="专题整理"><span class="iconfont-archer">&#xe606;</span>专题整理</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
