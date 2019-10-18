@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>2019-10-04论文分享 · Haibin&#39;s Studio</title>
+    <title>Capsnet在文本分类中的应用 · Haibin&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/" >Haibin&#39;s Studio</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">2019-10-04论文分享</a>
+                <a href="#" class="post-name">Capsnet在文本分类中的应用</a>
             </div>
     </div>
     
@@ -241,13 +241,13 @@ height:50vh;
     <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(//source.unsplash.com/1600x900/?nature,water)"></div>
+    <div class="site-intro-img" style="background-image: url(//source.unsplash.com/1024x768/?nature)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            2019-10-04论文分享
+            Capsnet在文本分类中的应用
             <!-- 404 -->
             
         </h1>
@@ -272,12 +272,12 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">381</span>Reading time: <span class="post-count reading-time">1 min</span></span>
+                        <span>Word count: <span class="post-count word-count">212</span>Reading time: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/10/05</span>
+                    <span class="post-intro-time">2019/10/07</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -401,16 +401,10 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h2 id="论文三篇"><a href="#论文三篇" class="headerlink" title="论文三篇"></a>论文三篇</h2><p>在高铁上看了的！</p>
-<h3 id="A-Novel-Aspect-Guided-Deep-Transition-Model-for-Aspect-Based-Sentiment-Analysis-2019-EMNLP"><a href="#A-Novel-Aspect-Guided-Deep-Transition-Model-for-Aspect-Based-Sentiment-Analysis-2019-EMNLP" class="headerlink" title="A Novel Aspect-Guided Deep Transition Model for Aspect Based Sentiment Analysis (2019 EMNLP)"></a>A Novel Aspect-Guided Deep Transition Model for Aspect Based Sentiment Analysis (2019 EMNLP)</h3><h4 id="一句话总结："><a href="#一句话总结：" class="headerlink" title="一句话总结："></a>一句话总结：</h4><p>根据aspect指导句子特征表示，增加重构aspect任务作为辅助学习。<br><img src="/2019/10/05/2019-10-04论文分享/1.png" alt></p>
-<h4 id="关键点："><a href="#关键点：" class="headerlink" title="关键点："></a>关键点：</h4><p>（1）门控机制：A-GRU，增加aspect门来控制输入x，隐层相对于GRU增加两个线性转换<br><img src="/2019/10/05/2019-10-04论文分享/2.png" alt><br>T-GRU：为什么这里加深了深度？<br><img src="/2019/10/05/2019-10-04论文分享/3.png" alt><br><img src="/2019/10/05/2019-10-04论文分享/4.png" alt><br>(2) aspect-reconstruction<br>Aspect-category predefined label: C1 is multi-label<br><img src="/2019/10/05/2019-10-04论文分享/5.png" alt><br>Aspect-term: C2 is all the words in sentence<br><img src="/2019/10/05/2019-10-04论文分享/6.png" alt></p>
-<h4 id="结果："><a href="#结果：" class="headerlink" title="结果："></a>结果：</h4><p>HDS为一句多个aspect<br><img src="/2019/10/05/2019-10-04论文分享/7.png" alt></p>
-<h3 id="COALA-A-Neural-Coverage-Based-Approach-for-Long-Answer-Selection-with-Small-Data（2019-AAAI）"><a href="#COALA-A-Neural-Coverage-Based-Approach-for-Long-Answer-Selection-with-Small-Data（2019-AAAI）" class="headerlink" title="COALA: A Neural Coverage-Based Approach for Long Answer Selection with Small Data（2019 AAAI）"></a>COALA: A Neural Coverage-Based Approach for Long Answer Selection with Small Data（2019 AAAI）</h3><h4 id="一句话总结：-1"><a href="#一句话总结：-1" class="headerlink" title="一句话总结："></a>一句话总结：</h4><p>QA问题从传统的LSTM+attention改为Q和A的n-gram匹配问题，在长文本和低语料数据集有更好的效果。<br><img src="/2019/10/05/2019-10-04论文分享/8.png" alt></p>
-<h4 id="关键点：-1"><a href="#关键点：-1" class="headerlink" title="关键点："></a>关键点：</h4><p>Syntax-based cnn：dependency tree-&gt;dense embedding concat into word embedding (learnable)<br>Interations: dot product<br>Matching: max pooling based on column<br>Aggregation: power mean (p is learnable)<br><img src="/2019/10/05/2019-10-04论文分享/9.png" alt></p>
-<h4 id="结果：-1"><a href="#结果：-1" class="headerlink" title="结果："></a>结果：</h4><p><img src="/2019/10/05/2019-10-04论文分享/10.png" alt><br>长句表现好<br><img src="/2019/10/05/2019-10-04论文分享/11.png" alt><br>少量样本表现好</p>
-<h3 id="MeanSum-A-Neural-Model-for-Unsupervised-Multi-Document-Abstractive-Summarization-2019-ICML"><a href="#MeanSum-A-Neural-Model-for-Unsupervised-Multi-Document-Abstractive-Summarization-2019-ICML" class="headerlink" title="MeanSum : A Neural Model for Unsupervised Multi-Document Abstractive Summarization (2019 ICML)"></a>MeanSum : A Neural Model for Unsupervised Multi-Document Abstractive Summarization (2019 ICML)</h3><h4 id="一句话总结：-2"><a href="#一句话总结：-2" class="headerlink" title="一句话总结："></a>一句话总结：</h4><p>无监督摘要生成。使用共享参数的LSTM编解码器构建重构损失和相似度损失。<br><img src="/2019/10/05/2019-10-04论文分享/12.png" alt></p>
-<h4 id="关键点：-2"><a href="#关键点：-2" class="headerlink" title="关键点："></a>关键点：</h4><p>LSTM：预训练语言模型作为参数<br>共享参数（domain constraint）<br>Teacher-forcing 重构原文（使用正确的词作为上一个输出）<br><img src="/2019/10/05/2019-10-04论文分享/13.png" alt><br>LSTM输出h，c 平均后重构文本摘要<br>文本摘要编码后对每一个h做cos相似度损失<br><img src="/2019/10/05/2019-10-04论文分享/14.png" alt></p>
-<h4 id="其他："><a href="#其他：" class="headerlink" title="其他："></a>其他：</h4><p>提出无监督文本摘要的其他评判标准<br>Sentiment score    word overlap(ROUGE n-gram)    Negative Log-Likelihood(language model)<br><img src="/2019/10/05/2019-10-04论文分享/15.png" alt><br>重复词多、情感分高、比较general</p>
+        <h2 id="Capsnet在文本分类中的应用-amp-amp-Aspect-based文本分类调研（未完）"><a href="#Capsnet在文本分类中的应用-amp-amp-Aspect-based文本分类调研（未完）" class="headerlink" title="Capsnet在文本分类中的应用 &amp;&amp; Aspect-based文本分类调研（未完）"></a>Capsnet在文本分类中的应用 &amp;&amp; Aspect-based文本分类调研（未完）</h2><h3 id="Joint-Slot-Filling-and-Intent-Detection-via-Capsule-Neural-Networks（2019ACL）"><a href="#Joint-Slot-Filling-and-Intent-Detection-via-Capsule-Neural-Networks（2019ACL）" class="headerlink" title="Joint Slot Filling and Intent Detection via Capsule Neural Networks（2019ACL）"></a>Joint Slot Filling and Intent Detection via Capsule Neural Networks（2019ACL）</h3><p><img src="/2019/10/07/Capsnet在文本分类中的应用/1.png" alt><br>总结：使用堆叠的capnet构建从词、slot、intent的多级架构</p>
+<h3 id="Transfer-Capsule-Network-for-Aspect-Level-Sentiment-Classification（2019ACL）"><a href="#Transfer-Capsule-Network-for-Aspect-Level-Sentiment-Classification（2019ACL）" class="headerlink" title="Transfer Capsule Network for Aspect Level Sentiment Classification（2019ACL）"></a>Transfer Capsule Network for Aspect Level Sentiment Classification（2019ACL）</h3><p>总结：aspect-based一般都从document文本迁移，这里就是和document文本共享n-gram信息提取、胶囊转换函数、生成semantic胶囊共享权重</p>
+<h3 id="Aspect-based文本分类调研"><a href="#Aspect-based文本分类调研" class="headerlink" title="Aspect-based文本分类调研"></a>Aspect-based文本分类调研</h3><h4 id="Progressive-Self-Supervised-Attention-Learning-for-Aspect-Level-Sentiment-Analysis（2019ACL）"><a href="#Progressive-Self-Supervised-Attention-Learning-for-Aspect-Level-Sentiment-Analysis（2019ACL）" class="headerlink" title="Progressive Self-Supervised Attention Learning for Aspect-Level Sentiment Analysis（2019ACL）"></a>Progressive Self-Supervised Attention Learning for Aspect-Level Sentiment Analysis（2019ACL）</h4><p>总结：这个指出了一个很有意思的现象，attention关注的词可能只有高频且过拟合于标签，比如small这个词不一定完全对应negative标签，这里提出了一种新的训练方法，每个epoch把attention权值最高的词mask掉，提高泛化性能。</p>
+<h4 id="Multi-grained-Attention-Network-for-Aspect-Level-Sentiment-Classification（2018EMNLP"><a href="#Multi-grained-Attention-Network-for-Aspect-Level-Sentiment-Classification（2018EMNLP" class="headerlink" title="Multi-grained Attention Network for Aspect-Level Sentiment Classification（2018EMNLP)"></a>Multi-grained Attention Network for Aspect-Level Sentiment Classification（2018EMNLP)</h4><p>总结：</p>
 
     </article>
     <!-- license  -->
@@ -418,6 +412,11 @@ height:50vh;
     <!-- paginator  -->
     <ul class="post-paginator">
         <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2019/10/13/2019-10-13论文/" title= "2019-10-13论文">
+                    <div class="nextTitle">2019-10-13论文</div>
+                </a>
             
         </li>
         <li class="previous">
@@ -536,7 +535,7 @@ height:50vh;
     <div class="busuanzi-container">
     
      
-    <span id="busuanzi_container_site_pv">小站访客: <span id="busuanzi_value_site_pv"></span> :)</span>
+    <span id="busuanzi_container_site_pv">小站访客: <span id="busuanzi_value_site_pv"></span> : )</span>
     
     </div>
     
@@ -559,7 +558,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#论文三篇"><span class="toc-number">1.</span> <span class="toc-text">论文三篇</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#A-Novel-Aspect-Guided-Deep-Transition-Model-for-Aspect-Based-Sentiment-Analysis-2019-EMNLP"><span class="toc-number">1.1.</span> <span class="toc-text">A Novel Aspect-Guided Deep Transition Model for Aspect Based Sentiment Analysis (2019 EMNLP)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一句话总结："><span class="toc-number">1.1.1.</span> <span class="toc-text">一句话总结：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#关键点："><span class="toc-number">1.1.2.</span> <span class="toc-text">关键点：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#结果："><span class="toc-number">1.1.3.</span> <span class="toc-text">结果：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#COALA-A-Neural-Coverage-Based-Approach-for-Long-Answer-Selection-with-Small-Data（2019-AAAI）"><span class="toc-number">1.2.</span> <span class="toc-text">COALA: A Neural Coverage-Based Approach for Long Answer Selection with Small Data（2019 AAAI）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一句话总结：-1"><span class="toc-number">1.2.1.</span> <span class="toc-text">一句话总结：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#关键点：-1"><span class="toc-number">1.2.2.</span> <span class="toc-text">关键点：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#结果：-1"><span class="toc-number">1.2.3.</span> <span class="toc-text">结果：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MeanSum-A-Neural-Model-for-Unsupervised-Multi-Document-Abstractive-Summarization-2019-ICML"><span class="toc-number">1.3.</span> <span class="toc-text">MeanSum : A Neural Model for Unsupervised Multi-Document Abstractive Summarization (2019 ICML)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一句话总结：-2"><span class="toc-number">1.3.1.</span> <span class="toc-text">一句话总结：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#关键点：-2"><span class="toc-number">1.3.2.</span> <span class="toc-text">关键点：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#其他："><span class="toc-number">1.3.3.</span> <span class="toc-text">其他：</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Capsnet在文本分类中的应用-amp-amp-Aspect-based文本分类调研（未完）"><span class="toc-number">1.</span> <span class="toc-text">Capsnet在文本分类中的应用 &amp;&amp; Aspect-based文本分类调研（未完）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Joint-Slot-Filling-and-Intent-Detection-via-Capsule-Neural-Networks（2019ACL）"><span class="toc-number">1.1.</span> <span class="toc-text">Joint Slot Filling and Intent Detection via Capsule Neural Networks（2019ACL）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Transfer-Capsule-Network-for-Aspect-Level-Sentiment-Classification（2019ACL）"><span class="toc-number">1.2.</span> <span class="toc-text">Transfer Capsule Network for Aspect Level Sentiment Classification（2019ACL）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Aspect-based文本分类调研"><span class="toc-number">1.3.</span> <span class="toc-text">Aspect-based文本分类调研</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Progressive-Self-Supervised-Attention-Learning-for-Aspect-Level-Sentiment-Analysis（2019ACL）"><span class="toc-number">1.3.1.</span> <span class="toc-text">Progressive Self-Supervised Attention Learning for Aspect-Level Sentiment Analysis（2019ACL）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Multi-grained-Attention-Network-for-Aspect-Level-Sentiment-Classification（2018EMNLP"><span class="toc-number">1.3.2.</span> <span class="toc-text">Multi-grained Attention Network for Aspect-Level Sentiment Classification（2018EMNLP)</span></a></li></ol></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -590,9 +589,30 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 2
+        Total : 5
         </div>
         <!-- search  -->
         
@@ -608,12 +628,27 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/05</span><a class="archive-post-title" href= "/2019/10/05/2019-10-04论文分享/" >2019-10-04论文分享</a>
+            <span class="archive-post-date">10/18</span><a class="archive-post-title" href= "/2019/10/18/基于RNN-我们还能加些什么-（文本分类）/" >基于RNN 我们还能加些什么?（文本分类）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/13</span><a class="archive-post-title" href= "/2019/10/13/2019-10-13论文/" >2019-10-13论文</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/07</span><a class="archive-post-title" href= "/2019/10/07/Capsnet在文本分类中的应用/" >Capsnet在文本分类中的应用</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">10/05</span><a class="archive-post-title" href= "/2019/10/05/why-blog/" >why blog?</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/04</span><a class="archive-post-title" href= "/2019/10/04/2019-10-04论文分享/" >2019-10-04论文分享</a>
         </li>
     
     </div>
