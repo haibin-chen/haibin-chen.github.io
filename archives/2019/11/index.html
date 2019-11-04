@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Capsnet在文本分类中的应用 · Haibin&#39;s Studio</title>
+    <title>Haibin&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -338,54 +338,42 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main post-page">
-    <article class="article-entry">
-        <h2 id="Capsnet在文本分类中的应用-amp-amp-Aspect-based文本分类调研（未完）"><a href="#Capsnet在文本分类中的应用-amp-amp-Aspect-based文本分类调研（未完）" class="headerlink" title="Capsnet在文本分类中的应用 &amp;&amp; Aspect-based文本分类调研（未完）"></a>Capsnet在文本分类中的应用 &amp;&amp; Aspect-based文本分类调研（未完）</h2><h3 id="Joint-Slot-Filling-and-Intent-Detection-via-Capsule-Neural-Networks（2019ACL）"><a href="#Joint-Slot-Filling-and-Intent-Detection-via-Capsule-Neural-Networks（2019ACL）" class="headerlink" title="Joint Slot Filling and Intent Detection via Capsule Neural Networks（2019ACL）"></a>Joint Slot Filling and Intent Detection via Capsule Neural Networks（2019ACL）</h3><p><img src="/not_to_post_now/Capsnet在文本分类中的应用.htm/1.png" alt><br>总结：使用堆叠的capnet构建从词、slot、intent的多级架构</p>
-<h3 id="Transfer-Capsule-Network-for-Aspect-Level-Sentiment-Classification（2019ACL）"><a href="#Transfer-Capsule-Network-for-Aspect-Level-Sentiment-Classification（2019ACL）" class="headerlink" title="Transfer Capsule Network for Aspect Level Sentiment Classification（2019ACL）"></a>Transfer Capsule Network for Aspect Level Sentiment Classification（2019ACL）</h3><p>总结：aspect-based一般都从document文本迁移，这里就是和document文本共享n-gram信息提取、胶囊转换函数、生成semantic胶囊共享权重</p>
-<h3 id="Aspect-based文本分类调研"><a href="#Aspect-based文本分类调研" class="headerlink" title="Aspect-based文本分类调研"></a>Aspect-based文本分类调研</h3><h4 id="Progressive-Self-Supervised-Attention-Learning-for-Aspect-Level-Sentiment-Analysis（2019ACL）"><a href="#Progressive-Self-Supervised-Attention-Learning-for-Aspect-Level-Sentiment-Analysis（2019ACL）" class="headerlink" title="Progressive Self-Supervised Attention Learning for Aspect-Level Sentiment Analysis（2019ACL）"></a>Progressive Self-Supervised Attention Learning for Aspect-Level Sentiment Analysis（2019ACL）</h4><p>总结：这个指出了一个很有意思的现象，attention关注的词可能只有高频且过拟合于标签，比如small这个词不一定完全对应negative标签，这里提出了一种新的训练方法，每个epoch把attention权值最高的词mask掉，提高泛化性能。</p>
-<h4 id="Multi-grained-Attention-Network-for-Aspect-Level-Sentiment-Classification（2018EMNLP"><a href="#Multi-grained-Attention-Network-for-Aspect-Level-Sentiment-Classification（2018EMNLP" class="headerlink" title="Multi-grained Attention Network for Aspect-Level Sentiment Classification（2018EMNLP)"></a>Multi-grained Attention Network for Aspect-Level Sentiment Classification（2018EMNLP)</h4><p>总结：</p>
-
+            <main class="main index-page">
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2019/11/04/如何快速部署tensorflow到docker中-以bert-as-service为例/" >
+            
+                <span>如何快速部署tensorflow到docker中(以bert-as-service为例)</span>
+        </a>
+        <div class="abstract-content">
+            部署流程注：若使用tensorflow serving则可使用官方提供的方法部署
+本地测试部署以bert-as-service为例，先把模型相关的.pb等文件放在bert-as-service文件夹中。  
+docker安装可参照使用 Docker 部署 TensorFlow 环境，gpu版本记得安装GPUtil和nvidia-docker。  
+模型部署快速创建容器：docker run -it –gpus all -v /bert-as-service:/notebooks -p 5555:5555 -p 5556:5556 -p 5557:5557 tensorflow/tenso...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/04</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "代码二三事">代码二三事</a>
+    
+</div>
+            
+        </div>
     </article>
-    <!-- license  -->
     
     <!-- paginator  -->
-    <ul class="post-paginator">
-        <li class="next">
-            
-        </li>
-        <li class="previous">
-            
-        </li>
-    </ul>
-    <!-- 评论插件 -->
-    <!-- 来必力City版安装代码 -->
-
-    <div id="lv-container" data-id="city" data-uid= MTAyMC80Njk1Ni8yMzQ1Nw>
-        <script type="text/javascript">
-            (function (d, s) {
-                var j, e = d.getElementsByTagName(s)[0];
-                if (typeof LivereTower === 'function') { return; }
-                j = d.createElement(s);
-                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-                j.async = true;
-
-                e.parentNode.insertBefore(j, e);
-            })(document, 'script');
-        </script>
-        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-    </div>
-
-<!-- City版安装代码已完成 -->
     
-    
-    <!-- partial('_partial/comment/changyan') -->
-    <!--PC版-->
-
-
-    
-    
-
-    <!-- 评论 -->
 </main>
             <!-- profile -->
             

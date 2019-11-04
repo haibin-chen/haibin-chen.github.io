@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Capsnet在文本分类中的应用 · Haibin&#39;s Studio</title>
+    <title>如何快速部署tensorflow到docker中(以bert-as-service为例) · Haibin&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >Haibin&#39;s Studio</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">如何快速部署tensorflow到docker中(以bert-as-service为例)</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>Haibin's Studio</a>
 </header>
@@ -220,24 +231,74 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(//source.unsplash.com/1024x768/?nature)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            如何快速部署tensorflow到docker中(以bert-as-service为例)
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "代码二三事">代码二三事</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count word-count">165</span>Reading time: <span class="post-count reading-time">1 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/11/04</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -340,10 +401,17 @@
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h2 id="Capsnet在文本分类中的应用-amp-amp-Aspect-based文本分类调研（未完）"><a href="#Capsnet在文本分类中的应用-amp-amp-Aspect-based文本分类调研（未完）" class="headerlink" title="Capsnet在文本分类中的应用 &amp;&amp; Aspect-based文本分类调研（未完）"></a>Capsnet在文本分类中的应用 &amp;&amp; Aspect-based文本分类调研（未完）</h2><h3 id="Joint-Slot-Filling-and-Intent-Detection-via-Capsule-Neural-Networks（2019ACL）"><a href="#Joint-Slot-Filling-and-Intent-Detection-via-Capsule-Neural-Networks（2019ACL）" class="headerlink" title="Joint Slot Filling and Intent Detection via Capsule Neural Networks（2019ACL）"></a>Joint Slot Filling and Intent Detection via Capsule Neural Networks（2019ACL）</h3><p><img src="/not_to_post_now/Capsnet在文本分类中的应用.htm/1.png" alt><br>总结：使用堆叠的capnet构建从词、slot、intent的多级架构</p>
-<h3 id="Transfer-Capsule-Network-for-Aspect-Level-Sentiment-Classification（2019ACL）"><a href="#Transfer-Capsule-Network-for-Aspect-Level-Sentiment-Classification（2019ACL）" class="headerlink" title="Transfer Capsule Network for Aspect Level Sentiment Classification（2019ACL）"></a>Transfer Capsule Network for Aspect Level Sentiment Classification（2019ACL）</h3><p>总结：aspect-based一般都从document文本迁移，这里就是和document文本共享n-gram信息提取、胶囊转换函数、生成semantic胶囊共享权重</p>
-<h3 id="Aspect-based文本分类调研"><a href="#Aspect-based文本分类调研" class="headerlink" title="Aspect-based文本分类调研"></a>Aspect-based文本分类调研</h3><h4 id="Progressive-Self-Supervised-Attention-Learning-for-Aspect-Level-Sentiment-Analysis（2019ACL）"><a href="#Progressive-Self-Supervised-Attention-Learning-for-Aspect-Level-Sentiment-Analysis（2019ACL）" class="headerlink" title="Progressive Self-Supervised Attention Learning for Aspect-Level Sentiment Analysis（2019ACL）"></a>Progressive Self-Supervised Attention Learning for Aspect-Level Sentiment Analysis（2019ACL）</h4><p>总结：这个指出了一个很有意思的现象，attention关注的词可能只有高频且过拟合于标签，比如small这个词不一定完全对应negative标签，这里提出了一种新的训练方法，每个epoch把attention权值最高的词mask掉，提高泛化性能。</p>
-<h4 id="Multi-grained-Attention-Network-for-Aspect-Level-Sentiment-Classification（2018EMNLP"><a href="#Multi-grained-Attention-Network-for-Aspect-Level-Sentiment-Classification（2018EMNLP" class="headerlink" title="Multi-grained Attention Network for Aspect-Level Sentiment Classification（2018EMNLP)"></a>Multi-grained Attention Network for Aspect-Level Sentiment Classification（2018EMNLP)</h4><p>总结：</p>
+        <h2 id="部署流程"><a href="#部署流程" class="headerlink" title="部署流程"></a>部署流程</h2><p>注：若使用tensorflow serving则可使用官方提供的方法部署</p>
+<h3 id="本地测试部署"><a href="#本地测试部署" class="headerlink" title="本地测试部署"></a>本地测试部署</h3><p>以<a href="https://github.com/hanxiao/bert-as-service" target="_blank" rel="noopener">bert-as-service</a>为例，先把模型相关的.pb等文件放在bert-as-service文件夹中。  </p>
+<h3 id="docker安装"><a href="#docker安装" class="headerlink" title="docker安装"></a>docker安装</h3><p>可参照<a href="https://tf.wiki/zh/appendix/docker.html" target="_blank" rel="noopener">使用 Docker 部署 TensorFlow 环境</a>，gpu版本记得安装GPUtil和nvidia-docker。  </p>
+<h3 id="模型部署"><a href="#模型部署" class="headerlink" title="模型部署"></a>模型部署</h3><p>快速创建容器：<br>docker run -it –gpus all -v /bert-as-service:/notebooks -p 5555:5555 -p 5556:5556 -p 5557:5557 tensorflow/tensorflow:1.12.0-gpu-py3 bash<br>几个关键参数</p>
+<ol>
+<li>-v 本地挂载目录，冒号后为docker中的目录</li>
+<li>-p 端口映射，提供服务  </li>
+<li>-gpus 使用的gpu服务</li>
+<li>-it 终端进行交互  </li>
+</ol>
+<p>To do: dockerfile的编写</p>
 
     </article>
     <!-- license  -->
@@ -354,6 +422,11 @@
             
         </li>
         <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2019/10/22/tensorflow模型部署指南/" title= "tensorflow模型部署指南">
+                    <div class="prevTitle">tensorflow模型部署指南</div>
+                </a>
             
         </li>
     </ul>
@@ -471,6 +544,24 @@
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#部署流程"><span class="toc-number">1.</span> <span class="toc-text">部署流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#本地测试部署"><span class="toc-number">1.1.</span> <span class="toc-text">本地测试部署</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker安装"><span class="toc-number">1.2.</span> <span class="toc-text">docker安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模型部署"><span class="toc-number">1.3.</span> <span class="toc-text">模型部署</span></a></li></ol></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -640,6 +731,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
