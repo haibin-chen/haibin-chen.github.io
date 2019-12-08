@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Haibin&#39;s Studio</title>
+    <title>automata_note · Haibin&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >Haibin&#39;s Studio</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">automata_note</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>Haibin's Studio</a>
 </header>
@@ -220,24 +231,74 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(//source.unsplash.com/1024x768/?nature)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            automata_note
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "一些笔记">一些笔记</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count word-count">1.2k</span>Reading time: <span class="post-count reading-time">4 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/12/08</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,39 +399,101 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/10/04/2019-10-04论文分享/" >
-            
-                <span>2019-10-04论文分享</span>
-        </a>
-        <div class="abstract-content">
-            在高铁上看完的~
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/10/04</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "论文分享">论文分享</a>
-    
-</div>
-            
-        </div>
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="Automata课程笔记"><a href="#Automata课程笔记" class="headerlink" title="Automata课程笔记"></a>Automata课程笔记</h1><h2 id="class-1-自动机"><a href="#class-1-自动机" class="headerlink" title="class 1  自动机"></a>class 1  自动机</h2><ol>
+<li>自动机：识别正规文法所定义的语言和正规式所表示的集合 （课件中的language）  </li>
+<li>5元组 (Q,Σ,δ,q0,F) 有限状态集、输入集合、状态转移映射、开始状态、结束状态  </li>
+</ol>
+<h2 id="class-2-DFA"><a href="#class-2-DFA" class="headerlink" title="class 2 DFA"></a>class 2 DFA</h2><ol>
+<li>构造自动机识别字符串：按字符串顺序自左向右逐个推导每个字符可能分支  </li>
+<li>page 11：语言封闭性：L的补集也是正则语言（构造相反自动机）、已有正则语言字符串的数量组合也是正则语言，即正则表达式中使用的*号  </li>
+<li>闭包的正则运算规律  </li>
+</ol>
+<h2 id="class-3-NFA"><a href="#class-3-NFA" class="headerlink" title="class 3 NFA"></a>class 3 NFA</h2><ol>
+<li>NFA相对于DFA的变化：状态转移映射、初始状态为集合，且因为NFA的转换函数f为K*全集到K的子集的一种映射，所以NFA中可以有epsilon空转移</li>
+<li>NFA确定化：列表求解即可，从初始集合开始，输入定义的状态转移边获得新集合，对于每一个集合执行以上操作，直至不再出现新集合。</li>
+</ol>
+<h2 id="class4-闭包与正则表达式"><a href="#class4-闭包与正则表达式" class="headerlink" title="class4 闭包与正则表达式"></a>class4 闭包与正则表达式</h2><ol>
+<li>闭包原理：并集、拼接、星号操作</li>
+<li>正则表达式（表达正则语言的工具）常用符号 优先级：* &gt; | &gt; .</li>
+</ol>
+<h2 id="class-5-DFA限制"><a href="#class-5-DFA限制" class="headerlink" title="class 5 DFA限制"></a>class 5 DFA限制</h2><ol>
+<li>DFA限制：状态数量固定</li>
+<li>Pumping lemma: 协助理解：文法类型<br>chomsky文法类型：<br>3型文法：正规文法：任一产生式α→β的形式都为A→aB或A→a<br>2型文法（上下文无关文法）：对任一产生式α→β，都有α∈VN ， β∈(VN∪VT)*<br>例 文法G[S]：    S→AB    A→BS|0    B→SA|1<br>1型文法：1型文法产生式的一般形式是αAβ→αBβ， α,β ∈ V* ，A∈VN , β∈V＋ ，它表示当A的上文为α且下文为β时可把A替换成B，因此称1型文法为上下文有关文法<br>0型文法(短语文法)：对任一产生式α→β，都有α∈(VN∪VT)<em>且至少含有一个非终结符， β∈(VN∪VT)</em>  </li>
+<li>正规语言可通过自动机的定义方式归约到正则形式 长度必然小于等于原匹配串 应用 判断是否可写成自动机形式</li>
+<li>证明不是正规文法：把正则表达式写成确定形式, 构造u,v, 分别求出u,v,w, 保证 |z| &gt;= N和 |uv| &lt;= N，(N为非初始终止态的状态数量), 使v落入有限/方便求值的范围，选择一个i 和 k 推出构造的字符串∉L。从简单的字符串来看，构造正则表达式无法识别的特定数量的字符串形式。  </li>
+</ol>
+<h2 id="class-7-PDA"><a href="#class-7-PDA" class="headerlink" title="class 7 PDA"></a>class 7 PDA</h2><ol>
+<li>状态转移除了输入外可指定栈操作，放宽了有限自动机从左至右逐个推导的形式，使用栈来记录已有状态，和上下文无关语法是等价的</li>
+<li>小的 技巧：特殊字符和epsilon结合可知栈是否为空的信息；</li>
+</ol>
+<h2 id="class-8-CFG"><a href="#class-8-CFG" class="headerlink" title="class 8 CFG"></a>class 8 CFG</h2><ol>
+<li>开始状态S，中间状态大写字母，小写字母或特殊符号为常量</li>
+</ol>
+<h2 id="class-9-PDA和CFG等价性"><a href="#class-9-PDA和CFG等价性" class="headerlink" title="class 9 PDA和CFG等价性"></a>class 9 PDA和CFG等价性</h2><ol>
+<li>high-level feature： 从CFG可构造PDA，循环结构可用来替换规则中最右边的值；只能处理当前字符串的值；自动机接受状态：栈和字符串全空</li>
+<li>等价性：<br>CFG到PDA：用栈模拟最左派生，对于文法中的生成式可用一个状态表示，栈进行状态替换；对于终结符，若读入字符串和栈顶匹配，则进行弹出（抵消）。最终使用空栈接收。<br>从PDA到CFG：定义三元组形式，使用栈接收规则构造生成式</li>
+</ol>
+<h2 id="class-10-CFG性质"><a href="#class-10-CFG性质" class="headerlink" title="class 10 CFG性质"></a>class 10 CFG性质</h2><ol>
+<li>模糊性</li>
+<li>propertities: ①v x不能同时为空 ② vwx长度小于等于n，在某一段子字符串中③v x同时泵仍在L中</li>
+<li>证明不是CFG：相比于 Pumping for RL，这里要穷举这个语法的vwx 可能的模式（多了一点）    </li>
+</ol>
+<h2 id="class-11-图灵机"><a href="#class-11-图灵机" class="headerlink" title="class 11 图灵机"></a>class 11 图灵机</h2><ol>
+<li>无限空间；纸带读写及移动；纸带上的内容为n计算前的输入和计算后的输出；</li>
+</ol>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol>
+<li>各类自动机的主要区别是它们能够使用的信息存储空间的差异：有限状态自动机只能用状态来存储信息；下推自动机除了可以用状态以外，还可以用下推存储器(栈)；线性带限自动机可以利用状态和输入/输出带本身。因为输入/输出带没有“先进后出”的限制，因此，其功能大于栈；而图灵机的存储空间没有任何限制。  </li>
+<li>自动机和文法的本质对应：NFA,DFA == 正规文法Regex；PDA == 上下文无关语法CFG；<br>应用：编译原理  </li>
+</ol>
+
     </article>
+    <!-- license  -->
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2019/11/04/如何快速部署tensorflow到docker中-以bert-as-service为例/" title= "如何快速部署tensorflow到docker中(以bert-as-service为例)">
+                    <div class="prevTitle">如何快速部署tensorflow到docker中(以bert-as-service为例)</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+    <div id="lv-container" data-id="city" data-uid= MTAyMC80Njk1Ni8yMzQ1Nw>
+        <script type="text/javascript">
+            (function (d, s) {
+                var j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') { return; }
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -456,6 +579,24 @@
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Automata课程笔记"><span class="toc-number">1.</span> <span class="toc-text">Automata课程笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#class-1-自动机"><span class="toc-number">1.1.</span> <span class="toc-text">class 1  自动机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#class-2-DFA"><span class="toc-number">1.2.</span> <span class="toc-text">class 2 DFA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#class-3-NFA"><span class="toc-number">1.3.</span> <span class="toc-text">class 3 NFA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#class4-闭包与正则表达式"><span class="toc-number">1.4.</span> <span class="toc-text">class4 闭包与正则表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#class-5-DFA限制"><span class="toc-number">1.5.</span> <span class="toc-text">class 5 DFA限制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#class-7-PDA"><span class="toc-number">1.6.</span> <span class="toc-text">class 7 PDA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#class-8-CFG"><span class="toc-number">1.7.</span> <span class="toc-text">class 8 CFG</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#class-9-PDA和CFG等价性"><span class="toc-number">1.8.</span> <span class="toc-text">class 9 PDA和CFG等价性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#class-10-CFG性质"><span class="toc-number">1.9.</span> <span class="toc-text">class 10 CFG性质</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#class-11-图灵机"><span class="toc-number">1.10.</span> <span class="toc-text">class 11 图灵机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">1.11.</span> <span class="toc-text">总结</span></a></li></ol></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -639,6 +780,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
