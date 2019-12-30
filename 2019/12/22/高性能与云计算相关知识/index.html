@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>why blog? · Haibin&#39;s Studio</title>
+    <title>高性能与云计算相关知识 · Haibin&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/" >Haibin&#39;s Studio</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">why blog?</a>
+                <a href="#" class="post-name">高性能与云计算相关知识</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            why blog?
+            高性能与云计算相关知识
             <!-- 404 -->
             
         </h1>
@@ -266,18 +266,18 @@ height:50vh;
                 
                     <div class= post-intro-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "随想">随想</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "CS课程笔记">CS课程笔记</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">195</span>Reading time: <span class="post-count reading-time">1 min</span></span>
+                        <span>Word count: <span class="post-count word-count">3.6k</span>Reading time: <span class="post-count reading-time">13 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/10/05</span>
+                    <span class="post-intro-time">2019/12/22</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -401,14 +401,73 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h2 id="随想"><a href="#随想" class="headerlink" title="随想"></a>随想</h2><p>　　以后这里就是我的<a href="http://haibinchen.top" target="_blank" rel="noopener">小站</a>啦。</p>
-<p>　　说起建站的初衷…意识到接下来几年的研究生生活会单调一些，就想着记录一下自己每个阶段的所思所想，过几年写在简历上还能给自己壮壮胆不是（逃</p>
-<p>　　内容呢，肯定是以技术博客为主的，当然也会写写随想 读书笔记啥的</p>
-<p>　　其实我是个挺爱和人bb和人分享的人，也喜欢写写知乎专栏啥的。朋友圈是不怎么发了，也不知道从何写起，认识的人多了，又想着得照顾各位的感受和各位的看法，可能是太要面子了吧hhh</p>
-<p>　　欢迎随时来评论撩我呀！</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Welcome to my website!</span><br></pre></td></tr></table></figure>
+        <h1 id="高性能与云计算"><a href="#高性能与云计算" class="headerlink" title="高性能与云计算"></a>高性能与云计算</h1><h2 id="PPT核心内容"><a href="#PPT核心内容" class="headerlink" title="PPT核心内容"></a>PPT核心内容</h2><h3 id="并行计算机体系结构"><a href="#并行计算机体系结构" class="headerlink" title="并行计算机体系结构"></a>并行计算机体系结构</h3><ol>
+<li>时延：软件、通道、选路、竞争；对剖宽度:将网络分成两个相等部分所必须移去的最少边数；对剖带宽:每秒钟内， 在最小的对剖平面上通过所有连线的最大信息位(或字节)数。等于对剖宽度与链路带宽之积  </li>
+<li>静态互连网络：点到点的链接不变 如线性阵列 与动态互连网：交换开关构成 如总线<br>对剖带宽表、直径表  </li>
+<li>对剖带宽愈大，表示网络的带宽就愈大;网络直径愈大，表示通信的时间延迟就愈大。网络的造价随节点度和链路数增大而上升。固定网络规模，对剖宽度越大，或网络直径越小，则互联网 络质量越高  </li>
+<li>MIMD结构：共享存储MIMD / Multiprocessor；分布式存储  </li>
+<li>多处理机：UMA模型是均匀存储访问模型的简称，物理存储器均匀共享；多计算机：NUMA(NCC-NUMA)模型是非均匀存储访 问模型的简称，物理上分布在所有处理器；COMA模型是高速缓存存储访问模型，全部高速缓存 组成了全局地址空间；CC-NUMA模型是高速缓存一致性非均匀存储访问模型；NORMA模型是非远程存储访问</li>
+</ol>
+<h3 id="并行计算机系统及性能评测"><a href="#并行计算机系统及性能评测" class="headerlink" title="并行计算机系统及性能评测"></a>并行计算机系统及性能评测</h3><ol>
+<li>对称多处理机SMP：单地址空间、高速缓存及一致性、对称性<br>CC: Cache Coherent-NUMA: Non-Uniform Memory Access  </li>
+<li>大规模并行处理机MPP：多个微处理器、分布存储器  </li>
+<li>集群(机群)是一组独立的计算机(节点)的集合体  </li>
+<li>性能评测基本概念：机器规模n 工作负载W 加速 Sn=T1b顺序/Tn并行 效率 En = S n/n<br>性能speedup = workp/timep / work1/time1  </li>
+<li>Amdahl 定律:计算负载不变 S = ws+wp / ws+wp/p = f+1-f / f+(1-f)/p = p / 1+f(p-1)<br>Gustafson定律:时间固定 S = ws+pwp / ws+pWp/p = ws+pwp / ws+wp or S = f+p(1-f)<br>Sun &amp; Ni定律:存储受限 S = fw+(1-f)G(p)w / fw+(1-f)G(p)W/p<br>G(p)=1时就是Amdahl加速定律, G(p)=p 变为 f + p(1-f )，就是Gustafson加速定律,G(p)&gt;p时，相应于计算机负载比存储要求增加 得快，此时 Sun Ni 加速均比 Amdahl 加速和 Gustafson 加速为高  </li>
+</ol>
+<h3 id="并行算法设计-1"><a href="#并行算法设计-1" class="headerlink" title="并行算法设计(1)"></a>并行算法设计(1)</h3><ol>
+<li>PRAM (Parallel Random Access Machine):有一个集中的共享存储器和一个指令控制器， 通过共享存储(SM)的Read/Write交换数据 ，隐式同步计算 ,单一地址空间,不适合MIMD并行机，忽略了SM的 竞争、通讯延迟等因素  </li>
+<li>存取模式：CRCW:并发读并发写，冲突解决模式: 相同/公共并发读写(Common CRCW):仅允许<br>写入相同数据；优先并发读写(Priority CRCW):仅允许优先级 最高的处理器写入；任意并发读写(Arbitrary CRCW):允许任意处 理器自由写入  </li>
+<li>块同步模型(Bulk Synchronous Parallel )BSP：异步MIMD-DM(分布式存储)模型，支持 消息传递系统，块内异步并行，块间显式同步。3个组成部分：节点、通信网络、同步障。强调了计算任务和通信任务的分开，即桥模型；显示同步效率低。  </li>
+<li>LogP模型分布存储的、点 到点通讯的多处理机模型，异步，隐藏并行机网络结构，难以算法描述设计  </li>
+</ol>
+<h3 id="并行算法设计-2"><a href="#并行算法设计-2" class="headerlink" title="并行算法设计(2)"></a>并行算法设计(2)</h3><ol>
+<li>平衡树：树叶结点为输入，中间结点为处理结点，由叶向根或由根向叶逐层并行处理<br>前缀和：数组B记录由叶到根正向遍历树中各结点的信息-求和，数组C记录由根到叶反向遍历树中各结点的信息-播送前缀和  </li>
+<li>倍增技术：当递归调用时，所要处理数据之间的距离逐步加倍，经过k步后即可完成距离为2k的所有数据的计算。</li>
+<li>分治策略</li>
+<li>划分原理：划分成p个独立的规模几乎相等的子问题  </li>
+<li>流水线技术  </li>
+<li>并行算法的一般设计过程：划分（域分解、功能分解）、通信、组合、映射<h3 id="并行程序设计基础"><a href="#并行程序设计基础" class="headerlink" title="并行程序设计基础"></a>并行程序设计基础</h3></li>
+<li>矩阵乘法计算方法</li>
+<li>并行编程风范:<br>(1) 相并行：一组超级步，步内各自计算，步间通信、同步<br>(2) 分治并行<br>(3) 流水线并行 一组进程<br>(4) 主-从并行 主进程:串行、协调任务 子进程:计算子任务<br>(5) 工作池并行  </li>
+<li>SIMD:所有进程在同一时间执行相同的指令;MIMD:各个进程在同一时间可以执行不同的 指令;(SPMD(Single Program Multiple Data ):各个进 程是同构的，多个进程对不同的数据执行相同的代码;MPMD(Multiple Program Multiple Data ):各个 进程是异构的， 多个进程执行不同的代码)  </li>
+<li>并行程序设计模型: 隐式并行、显示并行、数据并行、共享存储  </li>
+</ol>
+<h3 id="共享存储编程"><a href="#共享存储编程" class="headerlink" title="共享存储编程"></a>共享存储编程</h3><ol>
+<li>共享存储编程模型：所有线程可以存取相同的、 全局共享的存储空间，数据也可私有  </li>
+<li>线程与进程：多个进程的内部数据和状态都是完全独立的， 而多线程是共享一块内存空间和一组系统资源, 有可能互相影响；线程本身的数据通常只有寄存器数据，以及一 个程序执行时使用的堆栈，所以线程的切换比 进程切换的负担要小  </li>
+<li>OpenMP应用编程接口API是在共享存储体系结构上的一个编程模型，三个API分量：编译制导、运行库例程、环境变量  </li>
+<li>Fork:在并行结构的开头，主线程创 建了一队的并行线程，并行域中的代码在不同 的线程对中并行执行<br>Join :在并行结构的末尾，所有线程同步或终止，只保 留主线程  </li>
+<li>可编程控制并行、支持动态编程、支持嵌套并行化  </li>
+<li>编译制导 (Directive)语句格式 #pragma omp 制导指令前缀都需要、制导指令、子句。如：#pragma omp parallel default(shared) private(beta, pi)<br>#pragma omp for 数据并行；#pragma omp sections 功能并行..<br>示例：计算pi<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">omp_set_num_threads(8);</span><br><span class="line">sun[8]</span><br><span class="line">#pragma omp parallel</span><br><span class="line">&#123;id = omp_get_thread_num()</span><br><span class="line">#pragma omp for</span><br><span class="line">for i..</span><br><span class="line">    sum[id] = </span><br><span class="line">&#125;</span><br><span class="line">for i.. pi += sum[i] * step</span><br><span class="line">```  </span><br><span class="line">master critical barrier等制导语句;并行域结构:parallel,共享工作结构;sections，for，single;组合的并行共享工作结构 parallel for，parallel section;同步结构:master，critical，barrier，atomic，flush，ordered  </span><br><span class="line">数据域：private子句表示它列出的变量对于每个线程 是局部的；shared子句表示它所列出的变量被线程组中所 有的线程共享  </span><br><span class="line"></span><br><span class="line">### 消息传递编程</span><br><span class="line">1. 模型：在一个消息传递系统中，每个处理器运行一个子程序，变量私有；传递消息包括存取系统、地址、接收方等  </span><br><span class="line">2. 点到点通信：同步异步、阻塞非阻塞</span><br><span class="line">3. 群集通信：同步、广播、规约操作</span><br><span class="line">4. MPI是一个消息传递接口标准，通信域（MPI_COMM_WORLD) MPI_Comm_rank获取通信域编号 MPI_Comm_size获取指定通信域进程个数 MPI init和finalize  </span><br><span class="line">消息发送：MPI_Send、消息接受：MPI_Recv  </span><br><span class="line">5. MPI消息缓冲由三元组&lt;起始地址，数据个数，数据类型&gt;标识，消息封装由三元组&lt;源/目标进程，消息标签， 通信域&gt;标识  </span><br><span class="line">6. 消息类型：预定义数据类型、派生数据类型（数据类型不同、地址空间不连续）  </span><br><span class="line">7. 通信域包括进程组和通信上下文等内容，用于描述通信进程间的通信关系、也分为组内和组间通信  </span><br><span class="line">8. 通信模式有4种：同步 缓冲 标准（MPI决定） 就绪  </span><br><span class="line">9. 群集通信一般实现三个功能:通信、聚集和同步；通信功能主要完成组内数据的传输；聚集（规约、扫描）功能在通信的基础上对给定的数据完成一定的操作；同步功能实现组内所有进程在执行进度上取得一致；一对一一对多多对多  散播(Scatter)和收集( Gather)  </span><br><span class="line">示例：计算pi</span><br></pre></td></tr></table></figure>
 
+</li>
+</ol>
+<p>int done = 0, n, myid, numprocs, i, rc;<br>double PI25DT = 3.141592653589793238462643;<br>double mypi, pi, h, sum, x, a;</p>
+<p>MPI_Init(&amp;argc,&amp;argv);<br>MPI_Comm_size(MPI_COMM_WORLD,&amp;numprocs);<br>MPI_Comm_rank(MPI_COMM_WORLD,&amp;myid);<br>while (!done)  {<br>    if (myid == 0) {<br>        printf(“Enter the number of intervals: (0 quits) “);<br>        scanf(“%d”,&amp;n);}<br>    MPI_Bcast(&amp;n, 1, MPI_INT, 0, MPI_COMM_WORLD);<br>    if (n == 0) break;<br>    calculate sum;<br>    mypi = h * sum;<br>    MPI_Reduce(&amp;mypi, &amp;pi, 1, MPI_DOUBLE, MPI_SUM, 0,MPI_COMM_WORLD);<br>    }<br>    MPI_Finalize();</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">10. MPI和OpenMP：都是SPMD模型、 MPI 可移植性好，对硬件和编译器无特殊要求；All-or-nothing并行化机制；没有共享，需要考虑分布式数据结构；数据的划分操作比较复杂、OpenMP需要共享存储的多处理器系统的支持；支持增量并行化；共享数据，需要考虑变量的共享与私有性；编译制导方式比较简单  </span><br><span class="line"></span><br><span class="line">### CUDA编程  </span><br><span class="line">1. 传统CPU:将芯片的大部分区域用于片上缓存;CPU core比较重，用来处理非常复杂的控制逻辑，以优化串行程序 执行。GPU:将芯片上的大部分区域用于计算逻辑;GPU Core比较轻，用于优化具有简单控制逻辑的数据并行任务，注重并行程序的吞吐量。  </span><br><span class="line">2. CUDA将GPU计算由传统图形处理领域扩展到通用计算领域。异构计算：全局串行局部并行。GPUs 使用线程(threads)代替矢量(vectors)；GPUs 具有共享内存 (Shared Memory)空间；线程块可被动态分配到SIMD组中；指定设备-分配内存-使用 &quot;SYNC&quot; 同步障保证同时载入后计算。  </span><br><span class="line">3. CUDA执行模型:流多处理器  </span><br><span class="line">(1) SP:GPU内核上运行kernel函数时，相同的指令序列会被大量称为流处理器(SP)的处理单元同步执行。每个线程运行在一个SP上，SP称为内核(CUDA Core)  </span><br><span class="line">(2) SM:同一控制单元控制下执行的一组SP称为流多处理器 (SM)。GPU可以包含多个SM，每个运行自己的kernel函数。  </span><br><span class="line">(3) CUDA采用单指令多线程(SIMT)架构来管理和执行线程.  </span><br><span class="line">SIMT vs. SIMD</span><br><span class="line">● 相同点:两者都是将相同的指令广播给多个执行单元来实现并行  </span><br><span class="line">● 不同点:  </span><br><span class="line">SIMD要求同一个向量中的所有元素要在一个统一的同步组中一起执行;  </span><br><span class="line">SIMT允许属于同一线程束的多个线程独立执行  </span><br><span class="line">SIMT包含3个SIMD不具备的关键特征: 每个线程都有自己的指令地址计数器,每个线程都有自己的寄存器状态,每个线程可以有一个独立的执行路径  </span><br><span class="line">一个线程块只能在一个SM上被调度,一个SM可以容纳多个线程块,寄存器和共享内存是SM中的稀缺资源,线程块中的不同线程可能会以不同的速度前进.  </span><br><span class="line">4. CUDA中的存储模型: 核本地内存, 共享内存, 常量内存, 不可编程的多级缓存..</span><br><span class="line"></span><br><span class="line">### Map/Reduce编程  </span><br><span class="line">1. MapReduce编程模型  </span><br><span class="line">(1) 过程：读入数据: key/value 对的记录格式数据，Map:从每个记录里提取关键信息，Shuffle:混排交换数据， Reduce:聚合、摘要、过滤等  </span><br><span class="line">(2) 并行化特征：map() 函数可以并行运行，从不同的数据数据集创建不同的中间值，reduce() 函数也可以并行运行，在不同的输出key上工作，所有值都是被分别(independently)执 行，瓶颈:只有在map阶段完全结束后才能 启动reduce阶段</span><br><span class="line">(3) 示例：word count伪码表示</span><br></pre></td></tr></table></figure>
 
+<p>map(String input_key, String input_value):<br>    for each word w in input_value:<br>        EmitIntermediate(w, “1”);</p>
+<p>reduce(String output_key, Iterator intermediate_values):<br>    int result = 0;<br>    for each v in intermediate_values:<br>        result += ParseInt(v);<br>        Emit(AsString(result));</p>
+<pre><code>(4) 总结特点：面向领域 高可靠性 简单API 不适用于所有问题  
+2. MapReduce实现机制  
+划分输入数据为分片 -&gt; 创建master和worker线程 -&gt; map分配到worker -&gt; 处理后输出并通知master -&gt; master传递存储位置到reduce -&gt; reduce排序并追加输出 -&gt; master唤醒进程  
+负载均衡: 拖尾(Stragglers)是指那些在做最后的map或reduce时用 时超长的任务: 任务调度备份机制并重新调度运行；周期性地ping worker  
+
+### 云计算平台  
+1. 云计算的三种服务模式: 软件即服务(SaaS) 平台即服务(PaaS) 基础架构即服务(IaaS)
+2. 云计算基础：虚拟化，将服务器物理资源抽象成逻辑资源。虚拟化的类型：拆分、整合、迁移  
+VMM:全虚拟化（VMware）、半虚拟化（修改操作系统内核 性能高）、硬件虚拟化  
+3. GFS将容错的任务交给文件系统完成，利用软 件的方法解决系统可靠性问题；用户访问Master节点，获取交互的 Chunk Server信息，实现控制流和数据流的分离，且IO高度并行，降低了master的负载  
+
+## 作业&amp;题型  
+1. 4.2计算三种加速比:写出f W Wo p G(n) 套公式 Amdahl定律 S = n/(1+nWo/W) Gustafson定律 S =  n/(1+Wo/W) Sun和Ni定律 S = G(n)/(G(n)/n+Wo/W)  
+2. 蝶式图 树状图通信图 计算次数 通信次数  
+3. 并行编程风范代码 相并行：分开算汇总 分治C[i] = A[i]*B[i] for i in log for j in N/2i+1 -1 C[j] = C[2*j]+c[2*j+1] 流水线并行a b c 主从 sum=aggregate_sum 工作池 sum +=   
+4. MPI API用法 如MPI_Send  
+5. 常用静态和动态网络的主要参数:节点度 直径 对剖带宽 链路数 两个表  
+6. 并行计算模型PRAM BSP logP比较  
+7. 算法 6.2(并行快排序)，6.5(点对最短路径算法)， 7.1(PSRS 排序算法)，7.8(求最大值算法)，7.9(求前缀 和算法)，7.10(求元素表序算法)，7.11(求森林根算法)， 9.5(Cannon 算法)，9.6(DNS 算法) 难</code></pre>
     </article>
     <!-- license  -->
     
@@ -416,17 +475,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href= "/2019/10/18/基于RNN-我们还能加些什么-（文本分类）/" title= "基于RNN 我们还能加些什么?（文本分类）">
-                    <div class="nextTitle">基于RNN 我们还能加些什么?（文本分类）</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2019/10/04/2019-10-04论文分享/" title= "2019-10-04论文分享">
-                    <div class="prevTitle">2019-10-04论文分享</div>
+                <a href= "/2019/12/08/automata-note/" title= "automata_note">
+                    <div class="prevTitle">automata_note</div>
                 </a>
             
         </li>
@@ -561,7 +615,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#随想"><span class="toc-number">1.</span> <span class="toc-text">随想</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#高性能与云计算"><span class="toc-number">1.</span> <span class="toc-text">高性能与云计算</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#PPT核心内容"><span class="toc-number">1.1.</span> <span class="toc-text">PPT核心内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#并行计算机体系结构"><span class="toc-number">1.1.1.</span> <span class="toc-text">并行计算机体系结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#并行计算机系统及性能评测"><span class="toc-number">1.1.2.</span> <span class="toc-text">并行计算机系统及性能评测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#并行算法设计-1"><span class="toc-number">1.1.3.</span> <span class="toc-text">并行算法设计(1)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#并行算法设计-2"><span class="toc-number">1.1.4.</span> <span class="toc-text">并行算法设计(2)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#并行程序设计基础"><span class="toc-number">1.1.5.</span> <span class="toc-text">并行程序设计基础</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#共享存储编程"><span class="toc-number">1.1.6.</span> <span class="toc-text">共享存储编程</span></a></li></ol></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
