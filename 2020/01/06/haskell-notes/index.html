@@ -266,7 +266,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">817</span>Reading time: <span class="post-count reading-time">3 min</span></span>
+                        <span>Word count: <span class="post-count word-count">825</span>Reading time: <span class="post-count reading-time">3 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -426,7 +426,8 @@ height:50vh;
 <h3 id="对于quiz和考试"><a href="#对于quiz和考试" class="headerlink" title="对于quiz和考试"></a>对于quiz和考试</h3><p>记忆经典程序 -&gt; 模仿编写；记忆语法点  </p>
 <h3 id="出bug了咋办"><a href="#出bug了咋办" class="headerlink" title="出bug了咋办"></a>出bug了咋办</h3><p>Google查！用英语查更香！积累经验！后面结合对任务背景的了解和计算机基础知识（内存 操作系统）debug</p>
 <h3 id="implement-Data-Set"><a href="#implement-Data-Set" class="headerlink" title="implement Data.Set"></a>implement Data.Set</h3><p>必須具有 Ord 的功能！  也可以是插入时做判断:   </p>
-<pre><code>insert x (Set xs)
+<pre><code>insert :: Integer -&gt; Set Integer -&gt; Set Integer
+insert x (Set xs)
 | not (x `elem` xs) = Set (x:xs)
 | otherwise         = Set xs</code></pre><p>一些idea: 构造<code>set (filter (/= x) xs)</code>  交集 <code>filter (&#39;elem&#39; xs2) xs1</code>  并集 <code>filter (&#39;repeat&#39; xs2) xs1 ++ xs2</code>  </p>
 <h3 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h3><ol>
@@ -734,9 +735,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="CS课程笔记"><span class="iconfont-archer">&#xe606;</span>CS课程笔记</span>
     
-        <span class="sidebar-tag-name" data-tags="专题整理"><span class="iconfont-archer">&#xe606;</span>专题整理</span>
-    
         <span class="sidebar-tag-name" data-tags="随想"><span class="iconfont-archer">&#xe606;</span>随想</span>
+    
+        <span class="sidebar-tag-name" data-tags="专题整理"><span class="iconfont-archer">&#xe606;</span>专题整理</span>
     
         <span class="sidebar-tag-name" data-tags="代码二三事"><span class="iconfont-archer">&#xe606;</span>代码二三事</span>
     
