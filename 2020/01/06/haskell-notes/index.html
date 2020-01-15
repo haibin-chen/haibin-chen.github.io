@@ -266,7 +266,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">847</span>Reading time: <span class="post-count reading-time">3 min</span></span>
+                        <span>Word count: <span class="post-count word-count">865</span>Reading time: <span class="post-count reading-time">3 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -425,13 +425,18 @@ height:50vh;
 </ol>
 <h3 id="对于quiz和考试"><a href="#对于quiz和考试" class="headerlink" title="对于quiz和考试"></a>对于quiz和考试</h3><p>记忆经典程序 -&gt; 模仿编写；记忆语法点  </p>
 <h3 id="出bug了咋办"><a href="#出bug了咋办" class="headerlink" title="出bug了咋办"></a>出bug了咋办</h3><p>Google查！用英语查更香！积累经验！后面结合对任务背景的了解和计算机基础知识（内存 操作系统）debug</p>
-<h3 id="implement-Data-Set"><a href="#implement-Data-Set" class="headerlink" title="implement Data.Set"></a>implement Data.Set</h3><p>必須具有 Ord 的功能！  也可以是插入时做判断:   </p>
+<h3 id="Quiz-implement-Data-Set"><a href="#Quiz-implement-Data-Set" class="headerlink" title="Quiz : implement Data.Set"></a>Quiz : implement Data.Set</h3><p>必須具有 Ord 的功能！  也可以是插入时做判断:   </p>
 <pre><code>insert :: Integer -&gt; Set Integer -&gt; Set Integer
 insert x (Set xs)
 | not (x `elem` xs) = Set (x:xs)
 | otherwise         = Set xs</code></pre><p>一些idea: 构造<code>set (filter (/= x) xs)</code>  交集 <code>filter (&#39;elem&#39; xs2) xs1</code>  并集 <code>filter (&#39;repeat&#39; xs2) xs1 ++ xs2</code>  </p>
-<h3 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h3><ol start="0">
-<li><a href="Haskell_PPT5_answer.pdf">Haskell_PPT5_answer</a></li>
+<h3 id="习题-amp-Lab"><a href="#习题-amp-Lab" class="headerlink" title="习题  &amp; Lab"></a>习题  &amp; Lab</h3><ol>
+<li><a href="Haskell_PPT5_answer.pdf">Haskell_PPT5_some_answer</a>  </li>
+<li><a href="LabSheet1.hs">LabSheet1</a>, <a href="LabSheet2.pdf">LabSheet2</a>, <a href="LabSheet3.pdf">LabSheet3</a>, <a href="LabSheet4.pdf">LabSheet4</a>  </li>
+<li><a href="Sets_cwk_sample.hs">Quiz sample answer</a>  </li>
+<li><a href="exercise.hs">I want more more more coding!</a></li>
+</ol>
+<h3 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h3><ol>
 <li><a href="http://www.kancloud.cn:8080/kancloud/learnyouahaskell/44651" target="_blank" rel="noopener">haskell趣学指南</a><br><a href="https://www.youtube.com/watch?v=XKUsGSjnITc&list=PLAYqRAte9oRIChcPR_DD4uc8mCR6d3RiJ&index=11&t=0s" target="_blank" rel="noopener">youtube视频</a>  </li>
 <li><a href="https://rwh.readthedocs.io/en/latest/index.html" target="_blank" rel="noopener">Real World Haskell 官方教程书 中文版</a>  </li>
 <li><a href="https://wiki.haskell.org/Haskell" target="_blank" rel="noopener">Haskell wiki</a>  </li>
@@ -589,7 +594,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Haskell-笔记"><span class="toc-number">1.</span> <span class="toc-text">Haskell 笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#语言特性"><span class="toc-number">1.1.</span> <span class="toc-text">语言特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本语法"><span class="toc-number">1.2.</span> <span class="toc-text">基本语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#语言特性："><span class="toc-number">1.3.</span> <span class="toc-text">语言特性：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#应用场景特性"><span class="toc-number">1.4.</span> <span class="toc-text">应用场景特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对于quiz和考试"><span class="toc-number">1.5.</span> <span class="toc-text">对于quiz和考试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#出bug了咋办"><span class="toc-number">1.6.</span> <span class="toc-text">出bug了咋办</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#implement-Data-Set"><span class="toc-number">1.7.</span> <span class="toc-text">implement Data.Set</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#相关资源"><span class="toc-number">1.8.</span> <span class="toc-text">相关资源</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Haskell-笔记"><span class="toc-number">1.</span> <span class="toc-text">Haskell 笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#语言特性"><span class="toc-number">1.1.</span> <span class="toc-text">语言特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本语法"><span class="toc-number">1.2.</span> <span class="toc-text">基本语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#语言特性："><span class="toc-number">1.3.</span> <span class="toc-text">语言特性：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#应用场景特性"><span class="toc-number">1.4.</span> <span class="toc-text">应用场景特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对于quiz和考试"><span class="toc-number">1.5.</span> <span class="toc-text">对于quiz和考试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#出bug了咋办"><span class="toc-number">1.6.</span> <span class="toc-text">出bug了咋办</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Quiz-implement-Data-Set"><span class="toc-number">1.7.</span> <span class="toc-text">Quiz : implement Data.Set</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#习题-amp-Lab"><span class="toc-number">1.8.</span> <span class="toc-text">习题  &amp; Lab</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#相关资源"><span class="toc-number">1.9.</span> <span class="toc-text">相关资源</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -732,15 +737,15 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
+        <span class="sidebar-tag-name" data-tags="论文分享"><span class="iconfont-archer">&#xe606;</span>论文分享</span>
+    
         <span class="sidebar-tag-name" data-tags="CS课程笔记"><span class="iconfont-archer">&#xe606;</span>CS课程笔记</span>
     
-        <span class="sidebar-tag-name" data-tags="论文分享"><span class="iconfont-archer">&#xe606;</span>论文分享</span>
+        <span class="sidebar-tag-name" data-tags="专题整理"><span class="iconfont-archer">&#xe606;</span>专题整理</span>
     
         <span class="sidebar-tag-name" data-tags="随想"><span class="iconfont-archer">&#xe606;</span>随想</span>
     
         <span class="sidebar-tag-name" data-tags="代码二三事"><span class="iconfont-archer">&#xe606;</span>代码二三事</span>
-    
-        <span class="sidebar-tag-name" data-tags="专题整理"><span class="iconfont-archer">&#xe606;</span>专题整理</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
