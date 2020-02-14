@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- title -->
+
+
+
+
+<!-- keywords -->
+
+
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="John Doe">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="John Doe">
+    
+    <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
+    
+    <meta name="description" content>
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Standford Corenlp工具包功能文档 · Haibin&#39;s Studio</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href="/avatar/IMG_8130.jpg">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin>
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+</head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >Haibin&#39;s Studio</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">Standford Corenlp工具包功能文档</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href=/>Haibin's Studio</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(//source.unsplash.com/1024x768/?nature)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            Standford Corenlp工具包功能文档
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count word-count">2k</span>Reading time: <span class="post-count reading-time">10 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2020/02/14</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="Standford-Corenlp工具包功能文档"><a href="#Standford-Corenlp工具包功能文档" class="headerlink" title="Standford Corenlp工具包功能文档"></a>Standford Corenlp工具包功能文档</h1><h2 id="一、安装"><a href="#一、安装" class="headerlink" title="一、安装"></a>一、安装</h2><p>（1）java包解压，项目构建可参考<a href="https://github.com/stanfordnlp/CoreNLP使用ant或maven构建，电脑需要安装java" target="_blank" rel="noopener">https://github.com/stanfordnlp/CoreNLP使用ant或maven构建，电脑需要安装java</a> 1.8以上版本。<br>（2）官方有封装好的python包stanfordcorenlp，使用pip install stanfordcorenlp安装<br>注：若需要其他语言如中文需要另外下载语言包放到文件夹中。  </p>
+<h2 id="二、快速使用"><a href="#二、快速使用" class="headerlink" title="二、快速使用"></a>二、快速使用</h2><h3 id="1-可视化网页调用，在命令行执行"><a href="#1-可视化网页调用，在命令行执行" class="headerlink" title="1. 可视化网页调用，在命令行执行"></a>1. 可视化网页调用，在命令行执行</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -Xmx4g -cp &quot;*&quot; edu.stanford.nlp.pipeline.StanfordCoreNLPServer -port 9000 -timeout 15000 (-serverProperties StanfordCoreNLP-chinese.properties)(中文语言加上)</span><br></pre></td></tr></table></figure>
+
+<p>其中 -port端口号可根据需求更改，执行后打开浏览器网页<a href="http://localhost:9000/，即可操作可视化界面。" target="_blank" rel="noopener">http://localhost:9000/，即可操作可视化界面。</a>  </p>
+<p>使用方法：在annotation输入需要解析的功能  </p>
+<h3 id="2-命令行调用-corenlp-sh"><a href="#2-命令行调用-corenlp-sh" class="headerlink" title="2. 命令行调用./corenlp.sh"></a>2. 命令行调用./corenlp.sh</h3><p>进入命令行模式。  </p>
+<p>输入测试句子，按回车即可得到分析结果。完整的格式化返回数据到附录二查看。  </p>
+<h3 id="3-代码调用"><a href="#3-代码调用" class="headerlink" title="3. 代码调用"></a>3. 代码调用</h3><p>(1) 命令行测试网络服务接口  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget --post-data &apos;The quick brown fox jumped over the lazy dog.&apos; &apos;localhost:9000/?properties=&#123;&quot;annotators&quot;:&quot;tokenize,ssplit,pos&quot;,&quot;outputFormat&quot;:&quot;json&quot;&#125;&apos; -O -</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">(2) 示例简单python代码</span><br></pre></td></tr></table></figure>
+
+<p>import requests<br>print(requests.post(‘http://[::]:9000/?properties={“annotators”:”tokenize,ssplit,pos”,”outputFormat”:”json”}’, data = {‘data’:’The quick brown fox jumped over the lazy dog.’}).text)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 三、数据标注结果分析示例  </span><br><span class="line">以所给的数据集中的其中一句为示例：  </span><br><span class="line">On November 29, 2012, Sinopec published It’s inaugural Environmental Protection Report, the first of its kind ever published by a Chinese industrial enterprise. The Report represents the solemn commitment of Sinopec to going green and helping build an environment-friendly and resource-efficient society.  </span><br><span class="line">2012年11月29日，中国石化发布了首份环保报告，这是中国工业企业首次发布环保报告。报告体现了中国石化绿色发展、建设环境友好型资源节约型社会的庄严承诺。  </span><br><span class="line"></span><br><span class="line">Part-of-Speech标注结果：  </span><br><span class="line">![](1.png)  </span><br><span class="line"></span><br><span class="line">对照附录一表格，对前半句逐字的进行解释：  </span><br><span class="line">单词    标签    释义    中文释义  </span><br><span class="line">On    IN    Preposition or subordinating conjunction    介词或从属连词  </span><br><span class="line">November    NNP    Proper noun, singular    专有名词，单数  </span><br><span class="line">29    CD    Cardinal number    基数词  </span><br><span class="line">,    ,          </span><br><span class="line">2012    CD    Cardinal number    基数词  </span><br><span class="line">,    ,          </span><br><span class="line">Sinopec    NNP    Proper noun, singular    专有名词，单数  </span><br><span class="line">published    VBD    Verb, past tense    动词过去式  </span><br><span class="line">It    PRP    Personal pronoun    人称代词  </span><br><span class="line">&apos;s    VBZ    Verb, 3rd person singular present    动词，第三人称单数，现在时  </span><br><span class="line">inaugural    JJ    Adjective    形容词  </span><br><span class="line">Environmental     NNP    Proper noun, singular    专有名词，单数  </span><br><span class="line">Protection     NNP    Proper noun, singular    专有名词，单数  </span><br><span class="line">Report    NNP    Proper noun, singular    专有名词，单数  </span><br><span class="line">  </span><br><span class="line">constituency parsing结果：  </span><br><span class="line">![](2.png)  </span><br><span class="line"></span><br><span class="line">摘取如下图局部进行解释：  </span><br><span class="line">![](3.png)  </span><br><span class="line"></span><br><span class="line">一个成分解析树(constituency parsing)将一段文本转化为短语，树中的非叶子结点是短语的类型，使用Part-of-Speech的标签集，而叶子结点是句子中的词语。  </span><br><span class="line">每一个成分解析树由一个根结点ROOT和句子S开始。短语On November 29, 2012成分为PP，人称代词, 其中子类型IN即On的标签：介词或从属连词，子类型NP为专有名词，单数。以此类推，NP的子节点NNP、CD、,、CD为对应叶子结点单词的Part-of-Speech标签。通过以上过程，即可逐层识别出句子中的短语结构以及短语之间的层次句法关系。  </span><br><span class="line"></span><br><span class="line">## 四、常用Part-of-Speech和Constituency Parsing格式展示</span><br><span class="line">以示例句子An exploration vessel  performing  deepwater seismic activities in  the Kara Sea, off the coast of Russia.为例，附录四代码输出如下：  </span><br><span class="line">（第一部分为part-of-speech输出，常用的格式即一个词对应一个标签）  </span><br><span class="line">Part 1: part-of-speech result word by word:  </span><br><span class="line">sentence  1  </span><br><span class="line">An DT  </span><br><span class="line">exploration NN  </span><br><span class="line">vessel NN  </span><br><span class="line">performing VBG  </span><br><span class="line">deepwater NN  </span><br><span class="line">seismic JJ  </span><br><span class="line">activities NNS  </span><br><span class="line">in IN  </span><br><span class="line">the DT  </span><br><span class="line">Kara NNP  </span><br><span class="line">Sea NNP  </span><br><span class="line">, ,  </span><br><span class="line">off IN  </span><br><span class="line">the DT  </span><br><span class="line">coast NN  </span><br><span class="line">of IN  </span><br><span class="line">Russia NNP  </span><br><span class="line">. .  </span><br><span class="line">  </span><br><span class="line">（第二部分为constituency parsing的树状输出图，缩进代表子树的深度，每一对括号代表一个子树）  </span><br><span class="line">Part 2: constituency parsing in tree format:  </span><br><span class="line">sentence  1  </span><br><span class="line">(ROOT  </span><br><span class="line">  (NP  </span><br><span class="line">    (NP (DT An) (NN exploration) (NN vessel))  </span><br><span class="line">    (VP (VBG performing)  </span><br><span class="line">      (NP  </span><br><span class="line">        (NP (NN deepwater) (JJ seismic) (NNS activities))  </span><br><span class="line">        (PP (IN in)  </span><br><span class="line">          (NP (DT the) (NNP Kara) (NNP Sea))))  </span><br><span class="line">      (, ,)  </span><br><span class="line">      (PP (IN off)  </span><br><span class="line">        (NP  </span><br><span class="line">          (NP (DT the) (NN coast))  </span><br><span class="line">          (PP (IN of)  </span><br><span class="line">            (NP (NNP Russia))))))  </span><br><span class="line">    (. .)))  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">（第三部分为constituency parsing的序列化输出图，每一对括号代表一个子树）  </span><br><span class="line">Part 3: constituency parsing in sequence format(remove new line and blank space):  </span><br><span class="line">sentence  1  </span><br><span class="line">(ROOT(NP(NP (DT An) (NN exploration) (NN vessel))(VP (VBG performing)(NP(NP (NN deepwater) (JJ seismic) (NNS activities))(PP (IN in)(NP (DT the) (NNP Kara) (NNP Sea))))(, ,)(PP (IN off)(NP(NP (DT the) (NN coast))(PP (IN of)(NP (NNP Russia))))))(. .)))  </span><br><span class="line">  </span><br><span class="line">（第四部分为constituency parsing的树结点输出图，即第二部分的树状图，按层次遍历从上至下，从左到右输出树结点及其子（父）结点）  </span><br><span class="line">Part 4: constituency parsing by tree node(from top to bottom):  </span><br><span class="line">sentence  1  </span><br><span class="line">tree node value:ROOT tree node child:[&apos;NP&apos;]  </span><br><span class="line">tree node value:NP tree node child:[&apos;NP &apos;, &apos;VP &apos;, &apos;. .&apos;]  </span><br><span class="line">tree node value:NP  tree node child:[&apos;DT An&apos;, &apos;NN exploration&apos;, &apos;NN vessel&apos;]  </span><br><span class="line">tree node value:VP  tree node child:[&apos;VBG performing&apos;, &apos;NP&apos;, &apos;, ,&apos;, &apos;PP &apos;]  </span><br><span class="line">tree node value:. . tree node child:[]  </span><br><span class="line">tree node value:DT An tree node child:[]  </span><br><span class="line">tree node value:NN exploration tree node child:[]  </span><br><span class="line">tree node value:NN vessel tree node child:[]  </span><br><span class="line">tree node value:VBG performing tree node child:[]  </span><br><span class="line">tree node value:NP tree node child:[&apos;NP &apos;, &apos;PP &apos;]  </span><br><span class="line">tree node value:, , tree node child:[]  </span><br><span class="line">tree node value:PP  tree node child:[&apos;IN off&apos;, &apos;NP&apos;]  </span><br><span class="line">tree node value:NP  tree node child:[&apos;NN deepwater&apos;, &apos;JJ seismic&apos;, &apos;NNS activities&apos;]  </span><br><span class="line">tree node value:PP  tree node child:[&apos;IN in&apos;, &apos;NP &apos;]  </span><br><span class="line">tree node value:IN off tree node child:[]  </span><br><span class="line">tree node value:NP tree node child:[&apos;NP &apos;, &apos;PP &apos;]  </span><br><span class="line">tree node value:NN deepwater tree node child:[]  </span><br><span class="line">tree node value:JJ seismic tree node child:[]  </span><br><span class="line">tree node value:NNS activities tree node child:[]  </span><br><span class="line">tree node value:IN in tree node child:[]  </span><br><span class="line">tree node value:NP  tree node child:[&apos;DT the&apos;, &apos;NNP Kara&apos;, &apos;NNP Sea&apos;]  </span><br><span class="line">tree node value:NP  tree node child:[&apos;DT the&apos;, &apos;NN coast&apos;]  </span><br><span class="line">tree node value:PP  tree node child:[&apos;IN of&apos;, &apos;NP &apos;]  </span><br><span class="line">tree node value:DT the tree node child:[]  </span><br><span class="line">tree node value:NNP Kara tree node child:[]  </span><br><span class="line">tree node value:NNP Sea tree node child:[]  </span><br><span class="line">tree node value:DT the tree node child:[]  </span><br><span class="line">tree node value:NN coast tree node child:[]  </span><br><span class="line">tree node value:IN of tree node child:[]  </span><br><span class="line">tree node value:NP  tree node child:[&apos;NNP Russia&apos;]  </span><br><span class="line">tree node value:NNP Russia tree node child:[]  </span><br><span class="line"></span><br><span class="line">## 附录一  </span><br><span class="line">Part-of-speech标签对应表（英语）  </span><br><span class="line">版本1 https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html  </span><br><span class="line">版本2 https://www.sketchengine.eu/penn-treebank-tagset/  </span><br><span class="line">各版本的标签集有细微的不同，主要是部分标签的重命名。  </span><br><span class="line"></span><br><span class="line">## 附录二  </span><br><span class="line">以下为示例句子&quot;Good Morning&quot;的完整返回格式。</span><br></pre></td></tr></table></figure>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="CoreNLP-to-HTML.xsl" type="text/xsl"?>
+<root>
+<document>
+<sentences>
+<sentence id="1">
+<tokens>
+<token id="1">
+<word>Good</word>
+<lemma>good</lemma>
+<characteroffsetbegin>0</characteroffsetbegin>
+<characteroffsetend>4</characteroffsetend>
+<pos>JJ</pos>
+<ner>O</ner>
+<speaker>PER0</speaker>
+</token>
+<token id="2">
+<word>morning</word>
+<lemma>morning</lemma>
+<characteroffsetbegin>5</characteroffsetbegin>
+<characteroffsetend>12</characteroffsetend>
+<pos>NN</pos>
+<ner>O</ner>
+<speaker>PER0</speaker>
+</token>
+<token id="3">
+<word>.</word>
+<lemma>.</lemma>
+<characteroffsetbegin>12</characteroffsetbegin>
+<characteroffsetend>13</characteroffsetend>
+<pos>.</pos>
+<ner>O</ner>
+<speaker>PER0</speaker>
+</token>
+</tokens>
+<dependencies type="basic-dependencies">
+<dep type="root">
+<governor idx="0">ROOT</governor>
+<dependent idx="2">morning</dependent>
+</dep>
+<dep type="amod">
+<governor idx="2">morning</governor>
+<dependent idx="1">Good</dependent>
+</dep>
+<dep type="punct">
+<governor idx="2">morning</governor>
+<dependent idx="3">.</dependent>
+</dep>
+</dependencies>
+<dependencies type="collapsed-dependencies">
+<dep type="root">
+<governor idx="0">ROOT</governor>
+<dependent idx="2">morning</dependent>
+</dep>
+<dep type="amod">
+<governor idx="2">morning</governor>
+<dependent idx="1">Good</dependent>
+</dep>
+<dep type="punct">
+<governor idx="2">morning</governor>
+<dependent idx="3">.</dependent>
+</dep>
+</dependencies>
+<dependencies type="collapsed-ccprocessed-dependencies">
+<dep type="root">
+<governor idx="0">ROOT</governor>
+<dependent idx="2">morning</dependent>
+</dep>
+<dep type="amod">
+<governor idx="2">morning</governor>
+<dependent idx="1">Good</dependent>
+</dep>
+<dep type="punct">
+<governor idx="2">morning</governor>
+<dependent idx="3">.</dependent>
+</dep>
+</dependencies>
+<dependencies type="enhanced-dependencies">
+<dep type="root">
+<governor idx="0">ROOT</governor>
+<dependent idx="2">morning</dependent>
+</dep>
+<dep type="amod">
+<governor idx="2">morning</governor>
+<dependent idx="1">Good</dependent>
+</dep>
+<dep type="punct">
+<governor idx="2">morning</governor>
+<dependent idx="3">.</dependent>
+</dep>
+</dependencies>
+<dependencies type="enhanced-plus-plus-dependencies">
+<dep type="root">
+<governor idx="0">ROOT</governor>
+<dependent idx="2">morning</dependent>
+</dep>
+<dep type="amod">
+<governor idx="2">morning</governor>
+<dependent idx="1">Good</dependent>
+</dep>
+<dep type="punct">
+<governor idx="2">morning</governor>
+<dependent idx="3">.</dependent>
+</dep>
+</dependencies>
+</sentence>
+</sentences>
+<coreference>
+</coreference></document>
+</root>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">格式说明：  </span><br><span class="line">&lt;sentences&gt;下是对每个句子的每个单词进行标注，&lt;lemma&gt;为词根，&lt;POS&gt;是Part-of-Speech标签。  </span><br><span class="line">&lt;dependencies type=&quot;&quot;&gt;对应不同类型的依存句法分析器。&lt;governor&gt;和&lt;dependent&gt;分别指向句法分析箭头的头尾结点。  </span><br><span class="line">若要在命令行中调用成分句法分析器，需要修改调用脚本。  </span><br><span class="line"></span><br><span class="line">## 附录三 处理第四部分的python 代码</span><br></pre></td></tr></table></figure>
+
+<p>import requests<br>import json</p>
+<p>sentence = ‘An exploration vessel  performing  deepwater seismic activities in  the Kara Sea, off the coast of Russia.’<br>sentence = sentence.replace(“  “, “ “).encode(‘utf-8’)<br>print(“process sentence: “, sentence)<br>process_str = requests.post(‘<a href="http://localhost:9000/?properties={&quot;annotators&quot;:&quot;tokenize" target="_blank" rel="noopener">http://localhost:9000/?properties={&quot;annotators&quot;:&quot;tokenize</a>, ssplit, pos, parse”,”outputFormat”:”json”}’, data=sentence).text<br>#print(process_str)<br>process_json = json.loads(process_str)</p>
+<p>print()<br>print(“Part 1: part-of-speech result word by word:”)<br>for i in range(len(process_json[‘sentences’])):<br>print(“sentence “, i+1)<br>token_list = process_json[‘sentences’][i][‘tokens’]<br>for token in token_list:<br>print(token[‘word’] + “ “ + token[‘pos’])</p>
+<p>print()<br>print(“Part 2: constituency parsing in tree format:”)<br>for i in range(len(process_json[‘sentences’])):<br>print(“sentence “, i+1)<br>print(process_json[‘sentences’][i][‘parse’])<br>print()<br>print(“Part 3: constituency parsing in sequence format(remove new line and blank space):”)<br>for i in range(len(process_json[‘sentences’])):<br>print(“sentence “, i+1)<br>print(process_json[‘sentences’][i][‘parse’].replace(“\n”,””).replace(“  “,””))</p>
+<p>class Node:<br>parent = “”<br>child = []<br>value = “”</p>
+<p>def construct_parsing_tree(s):<br>s = s[1:-1]<br>root = 0<br>i = 0<br>lastNode = 0<br>nodeStack = []<br>while i &lt; len(s):<br>if s[i] == ‘(‘:<br>i += 1<br>elif s[i] == ‘)’:<br>nodeStack.pop()<br>i += 1<br>elif s[i] == ‘ ‘:<br>i += 1<br>else:<br>word = “”<br>while i &lt; len(s) and s[i] != ‘(‘ and s[i] != ‘)’:<br>word += s[i]<br>i += 1<br>lastNode = Node()<br>lastNode.value = word<br>lastNode.child = []<br>if root == 0:<br>root = lastNode<br>else:<br>parent_node = nodeStack[-1]<br>parent_node.child.append(lastNode)<br>nodeStack.append(lastNode)<br>return root</p>
+<p>print()<br>print(“Part 4: constituency parsing by tree node(from top to bottom):”)<br>for i in range(len(process_json[‘sentences’])):<br>print(“sentence “, i+1)<br>process_tree = construct_parsing_tree(process_json[‘sentences’][i][‘parse’].replace(“\n”,””).replace(“  “,””))<br>currentStack = [process_tree]<br>while currentStack:<br>nextStack = []<br>for tree in currentStack:<br>if tree.child != []:<br>nextStack.extend([subtree for subtree in tree.child])<br>tree_child = [subtree.value for subtree in tree.child]<br>print(“tree node value:” + str(tree.value) + “ tree node child:” + str(tree_child))<br>currentStack = nextStack<br>print()<br>print(“process finish”)</p>
+<pre><code></code></pre>
+    </article>
+    <!-- license  -->
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2020/02/08/位运算算法题总结/" title= "位运算算法题总结">
+                    <div class="prevTitle">位运算算法题总结</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+    <div id="lv-container" data-id="city" data-uid= MTAyMC80Njk1Ni8yMzQ1Nw>
+        <script type="text/javascript">
+            (function (d, s) {
+                var j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') { return; }
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:201664793028@mail.scut.edu.cn" class="iconfont-archer email" title=email ></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/haibin-chen" class="iconfont-archer github" target="_blank" title=github></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="//www.zhihu.com/people/chen-hai-bin-27-72/posts" class="iconfont-archer zhihu" target="_blank" title=zhihu></a>
+            
+        
+    
+        
+            
+                <a href="//www.douban.com/people/H937332325/" class="iconfont-archer douban" target="_blank" title=douban></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">小站访客: <span id="busuanzi_value_site_pv"></span> : )</span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Standford-Corenlp工具包功能文档"><span class="toc-number">1.</span> <span class="toc-text">Standford Corenlp工具包功能文档</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、安装"><span class="toc-number">1.1.</span> <span class="toc-text">一、安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、快速使用"><span class="toc-number">1.2.</span> <span class="toc-text">二、快速使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-可视化网页调用，在命令行执行"><span class="toc-number">1.2.1.</span> <span class="toc-text">1. 可视化网页调用，在命令行执行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-命令行调用-corenlp-sh"><span class="toc-number">1.2.2.</span> <span class="toc-text">2. 命令行调用./corenlp.sh</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-代码调用"><span class="toc-number">1.2.3.</span> <span class="toc-text">3. 代码调用</span></a></li></ol></li></ol></li></ol>
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 14
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/14</span><a class="archive-post-title" href= "/2020/02/14/Standford-Corenlp工具包功能文档/" >Standford Corenlp工具包功能文档</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/08</span><a class="archive-post-title" href= "/2020/02/08/位运算算法题总结/" >位运算算法题总结</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/31</span><a class="archive-post-title" href= "/2020/01/31/今日的小想法/" >今日的小想法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/23</span><a class="archive-post-title" href= "/2020/01/23/辞旧迎新，爱之所爱！我的2019/" >辞旧迎新，爱之所爱！我的2019</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/23</span><a class="archive-post-title" href= "/2020/01/23/NLP-in-2019/" >NLP in 2019</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/21</span><a class="archive-post-title" href= "/2020/01/21/中文错别字纠正调研/" >中文错别字纠正调研</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/06</span><a class="archive-post-title" href= "/2020/01/06/haskell-notes/" >haskell notes</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/22</span><a class="archive-post-title" href= "/2019/12/22/高性能与云计算相关知识/" >高性能与云计算相关知识</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/08</span><a class="archive-post-title" href= "/2019/12/08/automata-note/" >automata_note</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/04</span><a class="archive-post-title" href= "/2019/11/04/如何快速部署tensorflow到docker中-以bert-as-service为例/" >如何快速部署tensorflow到docker中(以bert-as-service为例)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/22</span><a class="archive-post-title" href= "/2019/10/22/tensorflow模型部署指南/" >tensorflow模型部署指南</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/18</span><a class="archive-post-title" href= "/2019/10/18/基于RNN-我们还能加些什么-（文本分类）/" >基于RNN 我们还能加些什么?（文本分类）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/05</span><a class="archive-post-title" href= "/2019/10/05/why-blog/" >why blog?</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/04</span><a class="archive-post-title" href= "/2019/10/04/2019-10-04论文分享/" >2019-10-04论文分享</a>
+        </li>
+    
+    </div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="论文分享"><span class="iconfont-archer">&#xe606;</span>论文分享</span>
+    
+        <span class="sidebar-tag-name" data-tags="NLP related"><span class="iconfont-archer">&#xe606;</span>NLP related</span>
+    
+        <span class="sidebar-tag-name" data-tags="CS课程笔记"><span class="iconfont-archer">&#xe606;</span>CS课程笔记</span>
+    
+        <span class="sidebar-tag-name" data-tags="随想"><span class="iconfont-archer">&#xe606;</span>随想</span>
+    
+        <span class="sidebar-tag-name" data-tags="算法题"><span class="iconfont-archer">&#xe606;</span>算法题</span>
+    
+        <span class="sidebar-tag-name" data-tags="专题整理"><span class="iconfont-archer">&#xe606;</span>专题整理</span>
+    
+        <span class="sidebar-tag-name" data-tags="代码二三事"><span class="iconfont-archer">&#xe606;</span>代码二三事</span>
+    
+        <span class="sidebar-tag-name" data-tags="年终总结"><span class="iconfont-archer">&#xe606;</span>年终总结</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br/>
+    1、请确保node版本大于6.2<br/>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "John Doe"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
+     
+    </body>
+</html>
+
+
