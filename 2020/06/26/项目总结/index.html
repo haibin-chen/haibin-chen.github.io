@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>haskell notes · Haibin&#39;s Studio</title>
+    <title>项目总结 · Haibin&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/" >Haibin&#39;s Studio</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">haskell notes</a>
+                <a href="#" class="post-name">项目总结</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            haskell notes
+            项目总结
             <!-- 404 -->
             
         </h1>
@@ -264,14 +264,20 @@ height:50vh;
             <div class="post-intros">
                 <!-- 文章页标签  -->
                 
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "项目">项目</a>
+    
+</div>
+                
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">862</span>Reading time: <span class="post-count reading-time">3 min</span></span>
+                        <span>Word count: <span class="post-count word-count">892</span>Reading time: <span class="post-count reading-time">3 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2020/01/06</span>
+                    <span class="post-intro-time">2020/06/26</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -395,55 +401,32 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h2 id="Haskell-笔记"><a href="#Haskell-笔记" class="headerlink" title="Haskell 笔记"></a>Haskell 笔记</h2><p>记录看haskell入门资料的一些笔记。   </p>
-<h3 id="语言特性"><a href="#语言特性" class="headerlink" title="语言特性"></a>语言特性</h3><p>纯函数式编程，静态类型，惰性<br>常用运算符</p>
-<h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3><ol>
-<li>基础函数格式：doubleMe x = x + x  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ghci&gt; :l baby   </span><br><span class="line">[1 of 1] Compiling Main             ( baby.hs, interpreted )   </span><br><span class="line">Ok, modules loaded: Main.   </span><br><span class="line">ghci&gt; doubleMe 9   </span><br><span class="line">18</span><br></pre></td></tr></table></figure>
+        <h1 id="一个表格问题的探索"><a href="#一个表格问题的探索" class="headerlink" title="一个表格问题的探索"></a>一个表格问题的探索</h1><h2 id="问题定义"><a href="#问题定义" class="headerlink" title="问题定义"></a>问题定义</h2><p>无线表格预切分后存在一些误切的空格、文本，对这一类情况进行合并，方便后续表格理解任务。  </p>
+<h2 id="模型说明"><a href="#模型说明" class="headerlink" title="模型说明"></a>模型说明</h2><ol>
+<li>模型输入输出定义：输入为表格序列化表示，输出为每个格子是否合并。</li>
+<li>双BERT模型。BERT的输入除了原来的embedding还有行/列embedding。（参考ACL 2020 google表格理解的模型）</li>
+<li>第一个BERT编码字符embedding，每个格子的表示为字符embedding的平均。将每个格子的表示输入第二个BERT里，做0/1的序列标注问题。（基于BERT的LSTM/CNN/GNN并没有明显的提升）</li>
+<li>针对多行多列合并切分/问题，使用句子对NLI问题进行辅助判断，现在比较初步的方法是，针对多行/多列问题，贪心算法计算切分点。针对N行N列问题，迭代的两行两列进行合并方向的判断。     </li>
+</ol>
+<h2 id="Case-study"><a href="#Case-study" class="headerlink" title="Case study"></a>Case study</h2><p>PPTX  </p>
+<h2 id="规则放在哪里"><a href="#规则放在哪里" class="headerlink" title="规则放在哪里"></a>规则放在哪里</h2><p>我觉得机器学习任务，在支持以下流程的情况下，似乎可以有这样的大致套路：  </p>
+<ol>
+<li>hard规则过滤。比如表格缺失、用户自定义业务特征等，针对字符串是不是有一些固定的正则过滤方法。（学好正则！）  </li>
+<li>机器学习模型层+soft规则过滤。在该问题中，可能有一些也许有效的soft业务特征，如是不是空格切分后存在空行？是不是文本内容占满并且写过行了？但是这些特征也不是必然和标签关系对应的。像现在基于预训练模型的特征非常强，如果只是单纯拼接到特征或FFN映射之类的，很难体现在最终效果上。组内一位算法工程师的建议是，胶囊网络对特征的引导作用很强，其他推荐系统的embedding方法好像还没找到在文档理解问题的应用方法。组内另一位同学是把深度学习预测标签+特征构造为一个机器学习问题，再用一个GBDT/XGBOOST拟合，效果也体现的比较明显。  </li>
+</ol>
+<h2 id="评测方式"><a href="#评测方式" class="headerlink" title="评测方式"></a>评测方式</h2><p>change F1。合并前后文本内容发生合并的格子的F1。  </p>
+<h2 id="后续提升点"><a href="#后续提升点" class="headerlink" title="后续提升点"></a>后续提升点</h2><ol>
+<li>其实这个问题是CV+NLP的问题，可以考虑显示地加入视觉信息。  </li>
+<li>发现finetune的BERT预训练模型，常用文本finetune后的预训练特征和表格问题并不通用，并没有带来提升。  </li>
+</ol>
+<h2 id="其他点"><a href="#其他点" class="headerlink" title="其他点"></a>其他点</h2><ol>
+<li>code review要做好，有时候模型的问题经常是代码的问题、然后是脏数据的问题。    </li>
+<li>经常会有这个疑问：数据究竟够了吗？现在的做法是，在确认任务设置基本合理的情况下（训练集过拟合），评估自己的模型对不同比例数据的敏感度。  </li>
+<li>构造好的数据是everything。  </li>
+<li>压测并不是做的很完整，后续要填坑。  </li>
+<li>对于tensorflow高级estimator API，可以加入Hook来获得训练过程中验证集的loss和准确率变化。  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class EvaluationHook(tf.train.SessionRunHook):  </span><br><span class="line">    def __init__(self, **wrapper):  </span><br><span class="line">        self.estimator = wrapper[&apos;estimator&apos;]  </span><br><span class="line">        self.eval_steps, self.train_eval_steps = wrapper[&apos;eval_steps&apos;]  </span><br><span class="line">        self.eval_input_fn, self.train_eval_input_fn = wrapper[&apos;eval_input_fn&apos;]  </span><br><span class="line">        self.train_steps = int(wrapper[&apos;train_steps&apos;] / FLAGS.num_train_epochs)  </span><br><span class="line">        self.step = 0  </span><br><span class="line">    def after_run(self, run_context, run_values):</span><br><span class="line">        self.step += 1  </span><br><span class="line">        if (self.step % int(self.train_steps * FLAGS.eval_epoch_frequency) == 0):</span><br><span class="line">            epoch = self.step // self.train_steps</span><br><span class="line">            result = self.estimator.predict(input_fn=self.eval_input_fn, yield_single_examples=True)  </span><br><span class="line">eval_hook = EvaluationHook(eval_steps=(eval_steps, train_eval_steps), train_steps=num_train_steps, estimator=estimator, eval_input_fn=(eval_input_fn, train_eval_input_fn))  </span><br><span class="line">estimator.train(input_fn=train_input_fn, max_steps=num_train_steps, hooks=[eval_hook])</span><br></pre></td></tr></table></figure>
 
 </li>
-</ol>
-<p>函数名::参数1类型=&gt;参数2类型=&gt;结果类型<br>函数名 参数1 参数2 =&gt; 函数体<br>2. 常用语法表达：注意一定要有else分支。list的(:) 右结合运算<br>3. 数据容器：同质元素list 异质元素tuple<br>4. 常用功能的语法糖：cycle 集合的使用 Enum定义类型<br>map取一个函数和List做参数，遍历该List的每个元素来调用该函数产生一个新的List。<br>map (+3) [1,5,3,1,6]与[x+3 | x &lt;- [1,5,3,1,6] 等价<br>filter函数取一个限制条件和一个List，返回该List中所有符合该条件的元素。<br>flip，它的作用是将两个参数的顺序互换。<br>zip允许在2个列表中，每次抽取列表中的一个元素，进行组合操作：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Prelude Data.List&gt; :type zip</span><br><span class="line">zip :: [a] -&gt; [b] -&gt; [(a, b)]</span><br><span class="line"></span><br><span class="line">Prelude Data.List&gt; zip [1, 3, 5] [2, 4, 6]</span><br><span class="line">[(1,2),(3,4),(5,6)]</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">quicksort :: (Ord a) =&gt; [a] -&gt; [a]     </span><br><span class="line">quicksort [] = []     </span><br><span class="line">quicksort (x:xs) =      </span><br><span class="line">let smallerSorted = quicksort (filter (&lt;x) xs)   </span><br><span class="line">biggerSorted = quicksort (filter (&gt;x) xs)      </span><br><span class="line">in  smallerSorted ++ [x] ++ biggerSorted</span><br></pre></td></tr></table></figure>
-
-<h3 id="语言特性："><a href="#语言特性：" class="headerlink" title="语言特性："></a>语言特性：</h3><ol>
-<li><p>类型检查：:t<br>类型定义行为的接口 e.g.(==) :: (Eq a) =&gt; a -&gt; a -&gt; Bool : 相等函数取两个相同类型的值作为参数并返回一个布尔值，而这两个参数的类型同在Eq类之中（即类型约束）</p>
-</li>
-<li><p>模式匹配：按模式从中取得代码命令  _为通用匹配符号<br>e.g. List Patterns  [1,2,3]本质就是1:2:3:[]的语法糖，x:xs这样的模式可以将list的头部绑定为x，尾部绑定为xs。如果这list只有一个元素，那么xs就是一个空list。<br>Lambda expression 更加简洁！  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def sq(x):</span><br><span class="line">return x * x</span><br><span class="line"></span><br><span class="line">map(sq, [y for y in range(10)])</span><br><span class="line"></span><br><span class="line">map( lambda x: x*x, [y for y in range(10)] )</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>higher order 应用：filter<br>fold取一个二元函数 包含一个初始值和折叠(fold)list的最后一个值<br>foldr(:) [ ] xs : (:)类似于+的操作符, []为list comprehension迭代中的空list 即fold的开始  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sum&apos; :: (Num a) =&gt; [a] -&gt; a   </span><br><span class="line">sum&apos; xs = foldl (\acc x -&gt; acc + x) 0 xs</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<p>PPT page 22:It also makes obvious the fact that foldr (:) [] is the identity function on lists, as replacing cons with cons and nil with nil will not change anything.<br>$: 左结合转换为右结合  </p>
-<h3 id="应用场景特性"><a href="#应用场景特性" class="headerlink" title="应用场景特性"></a>应用场景特性</h3><ol>
-<li>基于模式匹配与list的隐式递归 定义的quicksort  </li>
-</ol>
-<h3 id="对于quiz和考试"><a href="#对于quiz和考试" class="headerlink" title="对于quiz和考试"></a>对于quiz和考试</h3><p>记忆经典程序 -&gt; 模仿编写；记忆语法点  </p>
-<h3 id="出bug了咋办"><a href="#出bug了咋办" class="headerlink" title="出bug了咋办"></a>出bug了咋办</h3><p>Google查！用英语查更香！积累经验！后面结合对任务背景的了解和计算机基础知识（内存 操作系统）debug</p>
-<h3 id="Quiz-implement-Data-Set"><a href="#Quiz-implement-Data-Set" class="headerlink" title="Quiz : implement Data.Set"></a>Quiz : implement Data.Set</h3><p>必須具有 Ord 的功能！  也可以是插入时做判断:   </p>
-<pre><code>insert :: Integer -&gt; Set Integer -&gt; Set Integer
-insert x (Set xs)
-| not (x `elem` xs) = Set (x:xs)
-| otherwise         = Set xs</code></pre><p>一些idea: 构造<code>set (filter (/= x) xs)</code>  交集 <code>filter (&#39;elem&#39; xs2) xs1</code>  并集 <code>filter (&#39;repeat&#39; xs2) xs1 ++ xs2</code>  </p>
-<h3 id="习题-amp-Lab"><a href="#习题-amp-Lab" class="headerlink" title="习题  &amp; Lab"></a>习题  &amp; Lab</h3><ol>
-<li><a href="Haskell_PPT5_answer.pdf">Haskell_PPT5_some_answer</a>  </li>
-<li><a href="LabSheet1.hs">LabSheet1</a>, <a href="LabSheet2.pdf">LabSheet2</a>, <a href="LabSheet3.pdf">LabSheet3</a>, <a href="LabSheet4.pdf">LabSheet4</a>  </li>
-<li><a href="exercise.hs">I want more more more coding!</a></li>
-</ol>
-<h3 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h3><ol>
-<li><a href="http://www.kancloud.cn:8080/kancloud/learnyouahaskell/44651" target="_blank" rel="noopener">haskell趣学指南</a><br><a href="https://www.youtube.com/watch?v=XKUsGSjnITc&list=PLAYqRAte9oRIChcPR_DD4uc8mCR6d3RiJ&index=11&t=0s" target="_blank" rel="noopener">youtube视频</a>  </li>
-<li><a href="https://rwh.readthedocs.io/en/latest/index.html" target="_blank" rel="noopener">Real World Haskell 官方教程书 中文版</a>  </li>
-<li><a href="https://wiki.haskell.org/Haskell" target="_blank" rel="noopener">Haskell wiki</a>  </li>
-<li><a href="https://en.wikibooks.org/wiki/Haskell" target="_blank" rel="noopener">官方教程：Haskell Wikibook</a>  </li>
-<li><a href="https://github.com/winterland1989/magic-haskell" target="_blank" rel="noopener">魔力haskell相关课程资料 PPT代码等</a></li>
-<li><a href="https://github.com/bitemyapp/learnhaskell/blob/master/guide-zh_CN.md" target="_blank" rel="noopener">其他英文github资料</a>  </li>
-<li><a href="https://pan.baidu.com/s/1bbK4k33Kp-bU7y3R4dyViA" target="_blank" rel="noopener">Haskell函数式编程入门</a>  </li>
-<li><a href="https://pan.baidu.com/s/1l6jK2modPxizJT-q42XCwg" target="_blank" rel="noopener">魔力Haskell</a>  </li>
 </ol>
 
     </article>
@@ -453,17 +436,12 @@ insert x (Set xs)
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href= "/2020/01/21/中文错别字纠正调研/" title= "中文错别字纠正调研">
-                    <div class="nextTitle">中文错别字纠正调研</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2019/12/22/高性能与云计算相关知识/" title= "高性能与云计算相关知识">
-                    <div class="prevTitle">高性能与云计算相关知识</div>
+                <a href= "/2020/02/14/Standford-Corenlp工具包功能文档/" title= "Standford Corenlp工具包功能文档">
+                    <div class="prevTitle">Standford Corenlp工具包功能文档</div>
                 </a>
             
         </li>
@@ -598,7 +576,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Haskell-笔记"><span class="toc-number">1.</span> <span class="toc-text">Haskell 笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#语言特性"><span class="toc-number">1.1.</span> <span class="toc-text">语言特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本语法"><span class="toc-number">1.2.</span> <span class="toc-text">基本语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#语言特性："><span class="toc-number">1.3.</span> <span class="toc-text">语言特性：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#应用场景特性"><span class="toc-number">1.4.</span> <span class="toc-text">应用场景特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对于quiz和考试"><span class="toc-number">1.5.</span> <span class="toc-text">对于quiz和考试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#出bug了咋办"><span class="toc-number">1.6.</span> <span class="toc-text">出bug了咋办</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Quiz-implement-Data-Set"><span class="toc-number">1.7.</span> <span class="toc-text">Quiz : implement Data.Set</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#习题-amp-Lab"><span class="toc-number">1.8.</span> <span class="toc-text">习题  &amp; Lab</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#相关资源"><span class="toc-number">1.9.</span> <span class="toc-text">相关资源</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一个表格问题的探索"><span class="toc-number">1.</span> <span class="toc-text">一个表格问题的探索</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题定义"><span class="toc-number">1.1.</span> <span class="toc-text">问题定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模型说明"><span class="toc-number">1.2.</span> <span class="toc-text">模型说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Case-study"><span class="toc-number">1.3.</span> <span class="toc-text">Case study</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#规则放在哪里"><span class="toc-number">1.4.</span> <span class="toc-text">规则放在哪里</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#评测方式"><span class="toc-number">1.5.</span> <span class="toc-text">评测方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后续提升点"><span class="toc-number">1.6.</span> <span class="toc-text">后续提升点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他点"><span class="toc-number">1.7.</span> <span class="toc-text">其他点</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
