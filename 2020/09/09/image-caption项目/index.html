@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Haibin&#39;s Studio</title>
+    <title>image caption项目 · Haibin&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >Haibin&#39;s Studio</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">image caption项目</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>Haibin's Studio</a>
 </header>
@@ -220,24 +231,74 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(//source.unsplash.com/1024x768/?nature)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            image caption项目
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "项目">项目</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count word-count">517</span>Reading time: <span class="post-count reading-time">1 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2020/09/09</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,40 +399,64 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/08/位运算算法题总结/" >
-            
-                <span>位运算算法题总结</span>
-        </a>
-        <div class="abstract-content">
-            位运算算法题总结位运算是对整数(char类型)在内存中的二进制位直接进行操作，题目类型相对比较灵活，下面就整理出leetcode中位运算题的一些常见思路。  
-位运算基础知识与:&amp;或:|取反:~异或:^左移右移:&lt;&lt; &gt;&gt;非:!从这些基础操作出发，引申出一些性质，算法题往往从这些特性出发：(1) 判断奇偶: 最后一位与1的结果 a &amp; 1(2) 一个数和自己异或的结果为0: 判断数字出现的字数; 位操作来实现整数交换(3) 正负号变换: 取反加一(4) 整数加法: ^实现不带进位的加法, 再实现记录每一位的carry进位值(5) 赋值操作: A |...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/08</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法题">算法题</a>
-    
-</div>
-            
-        </div>
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="短暂的image-caption任务"><a href="#短暂的image-caption任务" class="headerlink" title="短暂的image caption任务"></a>短暂的image caption任务</h1><h2 id="项目总结"><a href="#项目总结" class="headerlink" title="项目总结"></a>项目总结</h2><p>给定题目图片，使用相关OCR技术进行识别。中文则识别为中文，公式需要识别为latex格式。  </p>
+<h2 id="要点总结"><a href="#要点总结" class="headerlink" title="要点总结"></a>要点总结</h2><p>技术路线1：在很少预标注OCR任务上（如不到1000张图片），针对混合识别的image caption很难拟合。主要原因在于中文字库和latex关键字字库大于3000个，在少量数据的情况下很难学习到有效分辨性特征。  </p>
+<h3 id="优化思路1：模型使用在大规模中文OCR训练后的模型作为初始化，在下游小数据上进行微调，中文结果有所上升。"><a href="#优化思路1：模型使用在大规模中文OCR训练后的模型作为初始化，在下游小数据上进行微调，中文结果有所上升。" class="headerlink" title="优化思路1：模型使用在大规模中文OCR训练后的模型作为初始化，在下游小数据上进行微调，中文结果有所上升。"></a>优化思路1：模型使用在大规模中文OCR训练后的模型作为初始化，在下游小数据上进行微调，中文结果有所上升。</h3><h3 id="优化思路2：使用xelatex生成中文公式混合的增强数据，再使用pdfconverter工具生成图片，生成了万量级e的增强数据。"><a href="#优化思路2：使用xelatex生成中文公式混合的增强数据，再使用pdfconverter工具生成图片，生成了万量级e的增强数据。" class="headerlink" title="优化思路2：使用xelatex生成中文公式混合的增强数据，再使用pdfconverter工具生成图片，生成了万量级e的增强数据。"></a>优化思路2：使用xelatex生成中文公式混合的增强数据，再使用pdfconverter工具生成图片，生成了万量级e的增强数据。</h3><p>使用以上两个思路，中文的准确率可达到95%，公式准确率可达到50%。由于没有充足的时间整理常见公式的模板，随机生成的公式比较简单，如常见的分式、幂次等，公式识别的准确率明显更低，混合识别难度更大。<br>技术路线2：将该任务定义为目标检测任务，分割中文和公式。针对中文和公式，分别使用现有OCR工具如中文天若OCR、公式mathpix接口进行专门识别，最后进行合并。<br>从结果上来看，在少量数据上，目标检测算法上手更快，在几百条样本的量级上也能达到60%的mAP准确率，实际IOU的准确率召回率可达到75%。  </p>
+<p>技术路线反思：  </p>
+<ol>
+<li>没有充分利用迁移学习、元学习等工具来更好地解决小样本启动问题。</li>
+<li>公式问题存在不同ground truth、关键字组合多等问题，需要研究latex格式模板来更好地生成增强数据。  </li>
+<li>小样本情况下应更多探索自动文本检测数据生成的相关项目。  </li>
+</ol>
+
     </article>
+    <!-- license  -->
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2020/06/27/如何理清一篇论文-持续更新/" title= "如何理清一篇论文(持续更新)">
+                    <div class="prevTitle">如何理清一篇论文(持续更新)</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+    <div id="lv-container" data-id="city" data-uid= MTAyMC80Njk1Ni8yMzQ1Nw>
+        <script type="text/javascript">
+            (function (d, s) {
+                var j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') { return; }
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -457,6 +542,24 @@
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#短暂的image-caption任务"><span class="toc-number">1.</span> <span class="toc-text">短暂的image caption任务</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#项目总结"><span class="toc-number">1.1.</span> <span class="toc-text">项目总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#要点总结"><span class="toc-number">1.2.</span> <span class="toc-text">要点总结</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#优化思路1：模型使用在大规模中文OCR训练后的模型作为初始化，在下游小数据上进行微调，中文结果有所上升。"><span class="toc-number">1.2.1.</span> <span class="toc-text">优化思路1：模型使用在大规模中文OCR训练后的模型作为初始化，在下游小数据上进行微调，中文结果有所上升。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#优化思路2：使用xelatex生成中文公式混合的增强数据，再使用pdfconverter工具生成图片，生成了万量级e的增强数据。"><span class="toc-number">1.2.2.</span> <span class="toc-text">优化思路2：使用xelatex生成中文公式混合的增强数据，再使用pdfconverter工具生成图片，生成了万量级e的增强数据。</span></a></li></ol></li></ol></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -849,6 +952,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>

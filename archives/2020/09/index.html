@@ -346,24 +346,25 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/08/位运算算法题总结/" >
+        <a class="abstract-title" href = "/2020/09/09/image-caption项目/" >
             
-                <span>位运算算法题总结</span>
+                <span>image caption项目</span>
         </a>
         <div class="abstract-content">
-            位运算算法题总结位运算是对整数(char类型)在内存中的二进制位直接进行操作，题目类型相对比较灵活，下面就整理出leetcode中位运算题的一些常见思路。  
-位运算基础知识与:&amp;或:|取反:~异或:^左移右移:&lt;&lt; &gt;&gt;非:!从这些基础操作出发，引申出一些性质，算法题往往从这些特性出发：(1) 判断奇偶: 最后一位与1的结果 a &amp; 1(2) 一个数和自己异或的结果为0: 判断数字出现的字数; 位操作来实现整数交换(3) 正负号变换: 取反加一(4) 整数加法: ^实现不带进位的加法, 再实现记录每一位的carry进位值(5) 赋值操作: A |...
+            短暂的image caption任务项目总结给定题目图片，使用相关OCR技术进行识别。中文则识别为中文，公式需要识别为latex格式。  
+要点总结技术路线1：在很少预标注OCR任务上（如不到1000张图片），针对混合识别的image caption很难拟合。主要原因在于中文字库和latex关键字字库大于3000个，在少量数据的情况下很难学习到有效分辨性特征。  
+优化思路1：模型使用在大规模中文OCR训练后的模型作为初始化，在下游小数据上进行微调，中文结果有所上升。优化思路2：使用xelatex生成中文公式混合的增强数据，再使用pdfconverter工具生成图片，生成了万量级e的增强...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/08</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/09</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法题">算法题</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "项目">项目</a>
     
 </div>
             

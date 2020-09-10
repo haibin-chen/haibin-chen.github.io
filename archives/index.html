@@ -346,6 +346,37 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/09/09/image-caption项目/" >
+            
+                <span>image caption项目</span>
+        </a>
+        <div class="abstract-content">
+            短暂的image caption任务项目总结给定题目图片，使用相关OCR技术进行识别。中文则识别为中文，公式需要识别为latex格式。  
+要点总结技术路线1：在很少预标注OCR任务上（如不到1000张图片），针对混合识别的image caption很难拟合。主要原因在于中文字库和latex关键字字库大于3000个，在少量数据的情况下很难学习到有效分辨性特征。  
+优化思路1：模型使用在大规模中文OCR训练后的模型作为初始化，在下游小数据上进行微调，中文结果有所上升。优化思路2：使用xelatex生成中文公式混合的增强数据，再使用pdfconverter工具生成图片，生成了万量级e的增强...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/09</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "项目">项目</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/06/27/如何理清一篇论文-持续更新/" >
             
                 <span>如何理清一篇论文(持续更新)</span>
@@ -620,36 +651,6 @@ Distil...
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/01/06/haskell-notes/" >
-            
-                <span>haskell notes</span>
-        </a>
-        <div class="abstract-content">
-            Haskell 笔记记录看haskell入门资料的一些笔记。   
-语言特性纯函数式编程，静态类型，惰性常用运算符
-基本语法
-基础函数格式：doubleMe x = x + x  12345ghci&gt; :l baby   [1 of 1] Compiling Main             ( baby.hs, interpreted )   Ok, modules loaded: Main.   ghci&gt; doubleMe 9   18
-
-
-
-函数名::参数1类型=&gt;参数2类型=&gt;结果类型函数名 参数1 参数2 =&gt; 函数体2. 常用语法表达：注意一定...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/06</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
@@ -917,9 +918,20 @@ Distil...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 17
+        Total : 18
         </div>
         <!-- search  -->
         
@@ -932,6 +944,11 @@ Distil...
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href= "/2020/09/09/image-caption项目/" >image caption项目</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1040,15 +1057,15 @@ Distil...
     
         <span class="sidebar-tag-name" data-tags="cv-related"><span class="iconfont-archer">&#xe606;</span>cv-related</span>
     
+        <span class="sidebar-tag-name" data-tags="项目"><span class="iconfont-archer">&#xe606;</span>项目</span>
+    
         <span class="sidebar-tag-name" data-tags="随想"><span class="iconfont-archer">&#xe606;</span>随想</span>
+    
+        <span class="sidebar-tag-name" data-tags="专题整理"><span class="iconfont-archer">&#xe606;</span>专题整理</span>
     
         <span class="sidebar-tag-name" data-tags="算法题"><span class="iconfont-archer">&#xe606;</span>算法题</span>
     
         <span class="sidebar-tag-name" data-tags="代码二三事"><span class="iconfont-archer">&#xe606;</span>代码二三事</span>
-    
-        <span class="sidebar-tag-name" data-tags="专题整理"><span class="iconfont-archer">&#xe606;</span>专题整理</span>
-    
-        <span class="sidebar-tag-name" data-tags="项目"><span class="iconfont-archer">&#xe606;</span>项目</span>
     
         <span class="sidebar-tag-name" data-tags="年终总结"><span class="iconfont-archer">&#xe606;</span>年终总结</span>
     
