@@ -272,7 +272,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">894</span>Reading time: <span class="post-count reading-time">3 min</span></span>
+                        <span>Word count: <span class="post-count word-count">1k</span>Reading time: <span class="post-count reading-time">3 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -414,6 +414,7 @@ height:50vh;
 <li>hard规则过滤。比如表格缺失、用户自定义业务特征等，针对字符串是不是有一些固定的正则过滤方法。（学好正则！）  </li>
 <li>机器学习模型层+soft规则过滤。在该问题中，可能有一些也许有效的soft业务特征，如是不是空格切分后存在空行？是不是文本内容占满并且写过行了？但是这些特征也不是必然和标签关系对应的。像现在基于预训练模型的特征非常强，如果只是单纯拼接到特征或FFN映射之类的，很难体现在最终效果上。组内一位算法工程师的建议是，胶囊网络对特征的引导作用很强，其他推荐系统的embedding方法好像还没找到在文档理解问题的应用方法。组内另一位同学是把深度学习预测标签+特征构造为一个机器学习问题，再用一个GBDT/XGBOOST拟合，效果也体现的比较明显。  </li>
 </ol>
+<h3 id="update"><a href="#update" class="headerlink" title="update"></a>update</h3><p>最近看到了”串行化”和”并行化”的方法，上面阐述的是串行化，好处是可以快速迭代过滤大部分case，明显的可以用规则过滤，过完模型的规则也可以兜底一些长尾分布等。今天看到了”并行化”的方法，也就是有点类似于投票融合，多种规则和模型的置信度进行加权合并。  </p>
 <h2 id="评测方式"><a href="#评测方式" class="headerlink" title="评测方式"></a>评测方式</h2><p>change F1。合并前后文本内容发生合并的格子的F1。  </p>
 <h2 id="后续提升点"><a href="#后续提升点" class="headerlink" title="后续提升点"></a>后续提升点</h2><ol>
 <li>其实这个问题是CV+NLP的问题，可以考虑显示地加入视觉信息。  </li>
@@ -581,7 +582,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一个表格问题的探索"><span class="toc-number">1.</span> <span class="toc-text">一个表格问题的探索</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题定义"><span class="toc-number">1.1.</span> <span class="toc-text">问题定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模型说明"><span class="toc-number">1.2.</span> <span class="toc-text">模型说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Case-study"><span class="toc-number">1.3.</span> <span class="toc-text">Case study</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#规则放在哪里"><span class="toc-number">1.4.</span> <span class="toc-text">规则放在哪里</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#评测方式"><span class="toc-number">1.5.</span> <span class="toc-text">评测方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后续提升点"><span class="toc-number">1.6.</span> <span class="toc-text">后续提升点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他点"><span class="toc-number">1.7.</span> <span class="toc-text">其他点</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一个表格问题的探索"><span class="toc-number">1.</span> <span class="toc-text">一个表格问题的探索</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题定义"><span class="toc-number">1.1.</span> <span class="toc-text">问题定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模型说明"><span class="toc-number">1.2.</span> <span class="toc-text">模型说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Case-study"><span class="toc-number">1.3.</span> <span class="toc-text">Case study</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#规则放在哪里"><span class="toc-number">1.4.</span> <span class="toc-text">规则放在哪里</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#update"><span class="toc-number">1.4.1.</span> <span class="toc-text">update</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#评测方式"><span class="toc-number">1.5.</span> <span class="toc-text">评测方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后续提升点"><span class="toc-number">1.6.</span> <span class="toc-text">后续提升点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他点"><span class="toc-number">1.7.</span> <span class="toc-text">其他点</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -779,9 +780,20 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 19
+        Total : 20
         </div>
         <!-- search  -->
         
@@ -794,6 +806,11 @@ top:50vh;
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2020/09/28/2018-2020文本分类工作整理-模型类/" >2018-2020文本分类工作整理(模型类)</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -904,23 +921,23 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="CS课程笔记"><span class="iconfont-archer">&#xe606;</span>CS课程笔记</span>
+        <span class="sidebar-tag-name" data-tags="论文分享"><span class="iconfont-archer">&#xe606;</span>论文分享</span>
     
         <span class="sidebar-tag-name" data-tags="NLP related"><span class="iconfont-archer">&#xe606;</span>NLP related</span>
     
-        <span class="sidebar-tag-name" data-tags="论文分享"><span class="iconfont-archer">&#xe606;</span>论文分享</span>
+        <span class="sidebar-tag-name" data-tags="CS课程笔记"><span class="iconfont-archer">&#xe606;</span>CS课程笔记</span>
     
         <span class="sidebar-tag-name" data-tags="cv-related"><span class="iconfont-archer">&#xe606;</span>cv-related</span>
     
-        <span class="sidebar-tag-name" data-tags="随想"><span class="iconfont-archer">&#xe606;</span>随想</span>
-    
         <span class="sidebar-tag-name" data-tags="项目"><span class="iconfont-archer">&#xe606;</span>项目</span>
     
-        <span class="sidebar-tag-name" data-tags="专题整理"><span class="iconfont-archer">&#xe606;</span>专题整理</span>
+        <span class="sidebar-tag-name" data-tags="随想"><span class="iconfont-archer">&#xe606;</span>随想</span>
     
         <span class="sidebar-tag-name" data-tags="算法题"><span class="iconfont-archer">&#xe606;</span>算法题</span>
     
         <span class="sidebar-tag-name" data-tags="代码二三事"><span class="iconfont-archer">&#xe606;</span>代码二三事</span>
+    
+        <span class="sidebar-tag-name" data-tags="专题整理"><span class="iconfont-archer">&#xe606;</span>专题整理</span>
     
         <span class="sidebar-tag-name" data-tags="年终总结"><span class="iconfont-archer">&#xe606;</span>年终总结</span>
     

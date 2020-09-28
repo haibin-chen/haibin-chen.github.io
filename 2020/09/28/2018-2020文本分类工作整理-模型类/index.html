@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>如何理清一篇论文(持续更新) · Haibin&#39;s Studio</title>
+    <title>2018-2020文本分类工作整理(模型类) · Haibin&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/" >Haibin&#39;s Studio</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">如何理清一篇论文(持续更新)</a>
+                <a href="#" class="post-name">2018-2020文本分类工作整理(模型类)</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            如何理清一篇论文(持续更新)
+            2018-2020文本分类工作整理(模型类)
             <!-- 404 -->
             
         </h1>
@@ -264,20 +264,14 @@ height:50vh;
             <div class="post-intros">
                 <!-- 文章页标签  -->
                 
-                    <div class= post-intro-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "NLP related">NLP related</a>
-    
-</div>
-                
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">345</span>Reading time: <span class="post-count reading-time">1 min</span></span>
+                        <span>Word count: <span class="post-count word-count">1.3k</span>Reading time: <span class="post-count reading-time">5 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2020/06/27</span>
+                    <span class="post-intro-time">2020/09/28</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -401,18 +395,57 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="如何理清一篇论文-持续更新"><a href="#如何理清一篇论文-持续更新" class="headerlink" title="如何理清一篇论文(持续更新)"></a>如何理清一篇论文(持续更新)</h1><h2 id="这篇文章是什么主题"><a href="#这篇文章是什么主题" class="headerlink" title="这篇文章是什么主题"></a>这篇文章是什么主题</h2><p>Abstract + 图表 + Conclusion即可大概了解  </p>
-<h2 id="创新点是什么"><a href="#创新点是什么" class="headerlink" title="创新点是什么"></a>创新点是什么</h2><p>对于审稿而言，创新点是最重要、最开始就要指出来的。其后才是实验、细节的问题。如何抓住创新点？从精要的Introduction入手，回答如下的问题：  </p>
-<ol>
-<li>文章针对的核心问题是什么？相关论文是怎么做的，与别人本质的不同是什么？是不是从哪些假设出发？逻辑链是否合理？</li>
-<li>这个核心问题影响到了这个任务的什么地方？是不是值得挖掘的工作方向？  </li>
-<li>从核心问题出发，模型的设计是不是针对问题的，相对比较自然、通用地解决问题？他的好处与劣处？  </li>
+        <h1 id="2018-2020文本分类工作整理-模型类"><a href="#2018-2020文本分类工作整理-模型类" class="headerlink" title="2018-2020文本分类工作整理(模型类)"></a>2018-2020文本分类工作整理(模型类)</h1><p>不完全地整理一部分最近的文本分类模型的改进，对于motivation比较相近的文章（如用句法树建图做文本分类），只挑选部分代表性文章。  </p>
+<h2 id="常见文本分类任务"><a href="#常见文本分类任务" class="headerlink" title="常见文本分类任务"></a>常见文本分类任务</h2><h3 id="传统文本分类：长度不同、领域不同（新闻、电影评论）"><a href="#传统文本分类：长度不同、领域不同（新闻、电影评论）" class="headerlink" title="传统文本分类：长度不同、领域不同（新闻、电影评论）"></a>传统文本分类：长度不同、领域不同（新闻、电影评论）</h3><h3 id="Aspect-based-情感分类：设计情感词与文本的交互（句法联系-两部分的特征融合方式）；复杂任务如同时抽取情感词和情感分类；"><a href="#Aspect-based-情感分类：设计情感词与文本的交互（句法联系-两部分的特征融合方式）；复杂任务如同时抽取情感词和情感分类；" class="headerlink" title="Aspect-based 情感分类：设计情感词与文本的交互（句法联系/两部分的特征融合方式）；复杂任务如同时抽取情感词和情感分类；"></a>Aspect-based 情感分类：设计情感词与文本的交互（句法联系/两部分的特征融合方式）；复杂任务如同时抽取情感词和情感分类；</h3><h3 id="（层次化）多标签文本分类：理解任务要求（标签格式）的变化"><a href="#（层次化）多标签文本分类：理解任务要求（标签格式）的变化" class="headerlink" title="（层次化）多标签文本分类：理解任务要求（标签格式）的变化"></a>（层次化）多标签文本分类：理解任务要求（标签格式）的变化</h3><h2 id="2018-2020-NLP会议"><a href="#2018-2020-NLP会议" class="headerlink" title="2018-2020 NLP会议"></a>2018-2020 NLP会议</h2><h3 id="传统文本分类"><a href="#传统文本分类" class="headerlink" title="传统文本分类"></a>传统文本分类</h3><ol>
+<li>Joint Embedding of Words and Labels for Text Classification 2018 ACL 引入标签信息  </li>
+<li>Disconnected Recurrent Neural Networks for Text Categorization 2018 ACL 切割、分段RNN  </li>
+<li>Semantic-Unit-Based Dilated Convolution for Multi-Label Text Classification 2018 EMNLP dilate结构+hybrid attention  </li>
+<li>Heterogeneous Graph Attention Networks for Semi-supervised Short Text Classification 2019 EMNLP 短文本分类，建立了词 实体 主题的异构图  </li>
 </ol>
-<h2 id="阅读正文时需要关注的细节"><a href="#阅读正文时需要关注的细节" class="headerlink" title="阅读正文时需要关注的细节"></a>阅读正文时需要关注的细节</h2><ol>
-<li>文章是否提出了新概念？有没有新概念的相关工作？由新概念引出的观点有没有相关论证或相关工作的支撑？  </li>
-<li>文章的实验分析部分能不能对应Introduction抛出来的论点和思路？  </li>
-<li>模型的提升是不是significant的？有没有和同类的、近两年的工作比较？  </li>
-<li>模型图片是否清晰易懂、突出重点？让非该领域的读者也能快速get到motivation。  </li>
+<h3 id="细粒度分类"><a href="#细粒度分类" class="headerlink" title="细粒度分类"></a>细粒度分类</h3><ol start="5">
+<li>Syntax-Aware Aspect Level Sentiment Classification with Graph Attention Networks 2019 EMNLP 图注意力网络（句法树建图）  </li>
+<li>Aspect Sentiment Classification with Document-level Sentiment Preference Modeling 2020 ACL 同一类aspect和同一文档aspect，建图  </li>
+</ol>
+<h3 id="多标签分类"><a href="#多标签分类" class="headerlink" title="多标签分类"></a>多标签分类</h3><ol start="7">
+<li>Label-Specific Document Representation for Multi-Label Text Classification 2019 EMNLP 标签空间+文本空间embedding的动态融合  </li>
+<li>SGM: Sequence Generation Model for Multi-label Classification 2018 COLING 序列生成做多标签文本分类，引入标签间联系  </li>
+<li>Ranking-Based Autoencoder for Extreme Multi-label Classification 2019 NAACL 引入基于margin loss的自编码器，文本和标签特征融合后可重构标签  </li>
+</ol>
+<h3 id="层次化多标签"><a href="#层次化多标签" class="headerlink" title="层次化多标签"></a>层次化多标签</h3><ol start="10">
+<li>HFT-CNN: Learning Hierarchical Category Structure for Multi-label Short Text Categorization 2018 EMNLP 层数加权loss  </li>
+<li>Hierarchy-Aware Global Model for Hierarchical Text Classification 2020 ACL 图网络建模标签层次  </li>
+<li>Hierarchical Text Classification with Reinforced Label Assignment 2020 ACL 使用强化学习建模马尔科夫搜索路径，在层次标签树中进行搜索  </li>
+</ol>
+<h3 id="可解释性类"><a href="#可解释性类" class="headerlink" title="可解释性类"></a>可解释性类</h3><ol start="13">
+<li><p>Rethinking Complex Neural Network Architectures forDocument Classification 2019 NAACL<br>在合适的正则化策略下，一个LSTM(无attention)在文本分类下也能达到较好效果  </p>
+</li>
+<li><p>Text Classification with Few Examples using Controlled Generalization 2019 NAACL<br>从大型外部语料任务中提取针对性有效（合适的范围、泛化特征）特征如ngram提取器、共现性提取器，用于少数据的对应任务中。  </p>
+</li>
+<li><p>Generating Hierarchical Explanations on Text Classification via Feature Interaction Detection 2020 ACL 特征交互来分割和分层、评估词对于模型预测结果的贡献度  </p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ol start="16">
+<li>Zero-shot Text Classification via Reinforced Self-training 2020 ACL 零样本文本分类，强化学习学习自学习策略，即在测试类别挑出置信度高的做为伪标签  </li>
+<li>Out-of-Domain Detection for Low-Resource Text Classification Tasks 2019 EMNLP<br>训练一个few shot网络做二分类的OOD异常检测任务  </li>
+<li>Deep Unknown Intent Detection with Margin Loss 2019 ACL 借鉴OOD异常检测任务中的密度检测，训练识别新意图  </li>
+</ol>
+</li>
+</ol>
+<h2 id="2018-2020其余顶会如NIPS-ICML-KDD"><a href="#2018-2020其余顶会如NIPS-ICML-KDD" class="headerlink" title="2018-2020其余顶会如NIPS ICML KDD"></a>2018-2020其余顶会如NIPS ICML KDD</h2><h3 id="传统文本分类-1"><a href="#传统文本分类-1" class="headerlink" title="传统文本分类"></a>传统文本分类</h3><ol start="19">
+<li>DiSAN: Directional Self-Attention Network for RNN/CNN-Free Language Understanding 2018 AAAI 有向注意力机制，以及相关的方向注意力机制工作  </li>
+<li>Multi-Scale Self-Attention for Text Classification 2020 AAAI transformer引入多尺度结构  </li>
+<li>Ordered Neurons: Integrating Tree Structures Into Recurrent Neural Networks 2019 ICLR LSTM或CNN结构研究范例，层次化的有序LSTM  </li>
+<li>Tensor Graph Convolutional Networks for Text Classification AAAI 2020 设计了语义、句法和序列图及其交互  </li>
+</ol>
+<h3 id="多标签文本分类"><a href="#多标签文本分类" class="headerlink" title="多标签文本分类"></a>多标签文本分类</h3><ol start="23">
+<li>AttentionXML: Extreme Multi-Label Text Classification with Multi-Label Attention Based Recurrent Neural Networks 2019 NIPS K-means构造元层次化标签和标签树  </li>
+<li>Two-Stage Label Embedding via Neural Factorization Machine for Multi-Label Classification 2019 AAAI 用FM建立label表示的联系，loss考虑了标签相关性  </li>
+<li>Taming Pretrained Transformers for Extreme Multi-label Text Classification KDD 2020 先聚类 分类器选出最大的类别后进行ranking排序，避免了极多标签的搜索问题  </li>
+</ol>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol>
+<li>这两年多了很多基于transformer减少参数、适应长文本等的研究，当然也对应着bert结构的蒸馏、压缩等探索  </li>
+<li>针对传统文本分类的变少了，增加了很多做细粒度情感分类的工作。今年有一些细粒度情感工作比较类似，都是围绕句法树、图神经网络等套上去，当然这一块也有一些新任务吧（比如联合识别情感词和情感类型）  </li>
+<li>多标签文本分类的工作也增加了，其中包括普通多标签文本、层次化多标签、极多标签（KDD NIPS）  </li>
+<li>元学习、小样本分类刚刚起步，基本都在原数据集上调整为few shot形式，暂时没有统一的评测或技术方向的标准。  </li>
+<li>总结一下图网络建图的几大形式：句法图、知识图谱关系建图、实体句子主题文档等多层次建图、多个句子之间建图、多对象等迭代更新（如一问一答的模式）….图网络过去一年把文本分类、实体识别、阅读理解、多轮QA等套了个遍，还有没有新玩法？  </li>
 </ol>
 
     </article>
@@ -422,17 +455,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href= "/2020/09/09/image-caption项目/" title= "image caption项目">
-                    <div class="nextTitle">image caption项目</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2020/06/26/项目总结/" title= "项目总结">
-                    <div class="prevTitle">项目总结</div>
+                <a href= "/2020/09/11/今日祝福/" title= "今日祝福">
+                    <div class="prevTitle">今日祝福</div>
                 </a>
             
         </li>
@@ -567,7 +595,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#如何理清一篇论文-持续更新"><span class="toc-number">1.</span> <span class="toc-text">如何理清一篇论文(持续更新)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#这篇文章是什么主题"><span class="toc-number">1.1.</span> <span class="toc-text">这篇文章是什么主题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创新点是什么"><span class="toc-number">1.2.</span> <span class="toc-text">创新点是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#阅读正文时需要关注的细节"><span class="toc-number">1.3.</span> <span class="toc-text">阅读正文时需要关注的细节</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#2018-2020文本分类工作整理-模型类"><span class="toc-number">1.</span> <span class="toc-text">2018-2020文本分类工作整理(模型类)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#常见文本分类任务"><span class="toc-number">1.1.</span> <span class="toc-text">常见文本分类任务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#传统文本分类：长度不同、领域不同（新闻、电影评论）"><span class="toc-number">1.1.1.</span> <span class="toc-text">传统文本分类：长度不同、领域不同（新闻、电影评论）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Aspect-based-情感分类：设计情感词与文本的交互（句法联系-两部分的特征融合方式）；复杂任务如同时抽取情感词和情感分类；"><span class="toc-number">1.1.2.</span> <span class="toc-text">Aspect-based 情感分类：设计情感词与文本的交互（句法联系/两部分的特征融合方式）；复杂任务如同时抽取情感词和情感分类；</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#（层次化）多标签文本分类：理解任务要求（标签格式）的变化"><span class="toc-number">1.1.3.</span> <span class="toc-text">（层次化）多标签文本分类：理解任务要求（标签格式）的变化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2018-2020-NLP会议"><span class="toc-number">1.2.</span> <span class="toc-text">2018-2020 NLP会议</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#传统文本分类"><span class="toc-number">1.2.1.</span> <span class="toc-text">传统文本分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#细粒度分类"><span class="toc-number">1.2.2.</span> <span class="toc-text">细粒度分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多标签分类"><span class="toc-number">1.2.3.</span> <span class="toc-text">多标签分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#层次化多标签"><span class="toc-number">1.2.4.</span> <span class="toc-text">层次化多标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可解释性类"><span class="toc-number">1.2.5.</span> <span class="toc-text">可解释性类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他"><span class="toc-number">1.2.6.</span> <span class="toc-text">其他</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2018-2020其余顶会如NIPS-ICML-KDD"><span class="toc-number">1.3.</span> <span class="toc-text">2018-2020其余顶会如NIPS ICML KDD</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#传统文本分类-1"><span class="toc-number">1.3.1.</span> <span class="toc-text">传统文本分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多标签文本分类"><span class="toc-number">1.3.2.</span> <span class="toc-text">多标签文本分类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">1.4.</span> <span class="toc-text">总结</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
