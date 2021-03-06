@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Haibin&#39;s Studio</title>
+    <title>fastText源码中有意思的地方 · Haibin&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -77,6 +77,8 @@
 
     <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
@@ -201,14 +203,23 @@
 </head>
 
     
-        <body class="home-body">
+        <body class="post-body">
     
     
-<header class="header index-header">
+<header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >Haibin&#39;s Studio</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">fastText源码中有意思的地方</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>Haibin's Studio</a>
 </header>
@@ -227,17 +238,17 @@ height:50vh;
     <!-- 主页  -->
     
     
-    <!-- 文章页  -->
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/index-bg1.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(//source.unsplash.com/random/800x600)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            Haibin's Studio
-            <!-- 文章页  -->
+            fastText源码中有意思的地方
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
@@ -245,12 +256,51 @@ height:50vh;
             <!-- 主页副标题  -->
             
             
-                you are bound for great things
-            
-            <!-- 文章页  -->
+            <!-- 404 -->
             
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "NLP related">NLP related</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "代码二三事">代码二三事</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count word-count">1.1k</span>Reading time: <span class="post-count reading-time">4 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2021/03/06</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -351,239 +401,85 @@ height:50vh;
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/11/04/如何快速部署tensorflow到docker中-以bert-as-service为例/" >
-            
-                <span>如何快速部署tensorflow到docker中(以bert-as-service为例)</span>
-        </a>
-        <div class="abstract-content">
-            部署流程注：若使用tensorflow serving则可使用官方提供的方法部署
-本地测试部署以bert-as-service为例，先把模型相关的.pb等文件放在bert-as-service文件夹中。  
-docker安装可参照使用 Docker 部署 TensorFlow 环境，gpu版本记得安装GPUtil和nvidia-docker。  
-模型部署快速创建容器：docker run -it –gpus all -v /bert-as-service:/notebooks -p 5555:5555 -p 5556:5556 -p 5557:5557 tensorflow/tenso...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/04</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "代码二三事">代码二三事</a>
-    
-</div>
-            
-        </div>
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>本文不讨论fastText的技术原理，主要讨论工程实现v0.1.0中有意思的点和一些新版特性。主要结构如下：源码结构、源码走读与关键函数分析、效率优化分析。  </p>
+<h1 id="源码结构"><a href="#源码结构" class="headerlink" title="源码结构"></a>源码结构</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">args.h, args.cc: 模型参数定义  </span><br><span class="line">autotune.h, autotune.cc: 参数更新控制  </span><br><span class="line">densematrix.h, densematrix.cc: 矩阵封装  </span><br><span class="line">dictionary.h, dictionary.cc: 字典封装</span><br><span class="line">fasttext.h, fasttext.cc: 主类，控制训练、加载等  </span><br><span class="line">loss.h, loss.cc: 封装hierarchy和NCE等loss计算  </span><br><span class="line">matrix.h, matrix.cc: 矩阵基类  </span><br><span class="line">meter.h, meter.cc: 结果评判  </span><br><span class="line">model.h, model.cc: 模型封装，控制状态、计算、更新</span><br><span class="line">quantmatrix.h, quantmatrix.cc, productquantizer.h, productquantizer.cc: 乘积量化(压缩)  </span><br><span class="line">utils.h, utils.cc: 辅助类</span><br><span class="line">vector.h, vector.cc: 封装vector实现更多功能</span><br></pre></td></tr></table></figure>
+
+<p>从源码结构来看，核心函数以model文件展开，延伸到模型更新、loss计算等。</p>
+<h1 id="源码走读"><a href="#源码走读" class="headerlink" title="源码走读"></a>源码走读</h1><h2 id="关键参数"><a href="#关键参数" class="headerlink" title="关键参数"></a>关键参数</h2><p>wi_: lookup表，输入矩阵<br>wo_:输出映射矩阵<br>grad_: 中间梯度<br>loss_: 损失<br>output_: 词向量  </p>
+<h2 id="fasttext-h-fasttext-cc"><a href="#fasttext-h-fasttext-cc" class="headerlink" title="fasttext.h, fasttext.cc"></a>fasttext.h, fasttext.cc</h2><p>train函数为训练入口，在startThreads中进行多线程训练。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// c++ 11中的lambda表达式，语法糖。利用lambda表达式可以编写内嵌的匿名函数，以替换独立函数或者函数对象，这里[]用来捕获所在作用域的变量，[=]默认以值捕获所有变量。</span><br><span class="line">for (int32_t i = 0; i &lt; args_-&gt;thread; i++) &#123;</span><br><span class="line">    threads.push_back(std::thread([=]() &#123; trainThread(i, callback); &#125;));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在trainThread中，将训练文件按照总字节数（utils::size）均分成多个部分进行训练。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//记录已处理token数localTokenCount，更新lr，线程0负责输出信息、更新loss</span><br><span class="line">if (localTokenCount &gt; args_-&gt;lrUpdateRate) &#123;</span><br><span class="line">    tokenCount_ += localTokenCount;</span><br><span class="line">    localTokenCount = 0;</span><br><span class="line">    if (threadId == 0 &amp;&amp; args_-&gt;verbose &gt; 1) &#123;</span><br><span class="line">        loss_ = state.getLoss();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>接下来调用cbow，supervised，skip-gram等不同函数进行训练。这些函数并没有加锁，所以梯度更新时这里也会引入一些随机性。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">//以cbow为例</span><br><span class="line">std::vector&lt;int32_t&gt; bow;</span><br><span class="line">std::uniform_int_distribution&lt;&gt; uniform(1, args_-&gt;ws);</span><br><span class="line">//句子中每个词更新一次</span><br><span class="line">for (int32_t w = 0; w &lt; line.size(); w++) &#123;</span><br><span class="line">    //上下文长度</span><br><span class="line">    int32_t boundary = uniform(state.rng);</span><br><span class="line">    bow.clear();</span><br><span class="line">    for (int32_t c = -boundary; c &lt;= boundary; c++) &#123;</span><br><span class="line">        if (c != 0 &amp;&amp; w + c &gt;= 0 &amp;&amp; w + c &lt; line.size()) &#123;</span><br><span class="line">            //获取ngram信息</span><br><span class="line">            const std::vector&lt;int32_t&gt;&amp; ngrams = dict_-&gt;getSubwords(line[w + c]);</span><br><span class="line">            bow.insert(bow.end(), ngrams.cbegin(), ngrams.cend());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">//梯度更新</span><br><span class="line">model_-&gt;update(bow, line, w, lr, state);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>接下来是模型更新部分update函数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//计算hidden状态</span><br><span class="line">computeHidden(input, state);</span><br><span class="line">Vector&amp; grad = state.grad;</span><br><span class="line">grad.zero();</span><br><span class="line">//计算loss</span><br><span class="line">real lossValue = loss_-&gt;forward(targets, targetIndex, state, lr, true);</span><br></pre></td></tr></table></figure>
+
+<p>loss主要分析negativeSampling和hierarchicalSoftmax。  </p>
+<h2 id="negativeSampling"><a href="#negativeSampling" class="headerlink" title="negativeSampling"></a>negativeSampling</h2><h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">for (size_t i = 0; i &lt; targetCounts.size(); i++) &#123;</span><br><span class="line">    //出现频率的平方</span><br><span class="line">    z += pow(targetCounts[i], 0.5);</span><br><span class="line">&#125;</span><br><span class="line">for (size_t i = 0; i &lt; targetCounts.size(); i++) &#123;</span><br><span class="line">    real c = pow(targetCounts[i], 0.5);</span><br><span class="line">    //乘以一个很大的数，作为加入negative的数量</span><br><span class="line">    for (size_t j = 0; j &lt; c * NegativeSamplingLoss::NEGATIVE_TABLE_SIZE / z;</span><br><span class="line">j++) &#123;</span><br><span class="line">        negatives_.push_back(i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>计算二分类问题，和下面相同。  </p>
+<h2 id="hierarchicalSoftmax"><a href="#hierarchicalSoftmax" class="headerlink" title="hierarchicalSoftmax"></a>hierarchicalSoftmax</h2><h3 id="关键参数-1"><a href="#关键参数-1" class="headerlink" title="关键参数"></a>关键参数</h3><p>paths_: huffman tree路径<br>codes_: huffman tree编码  </p>
+<h3 id="buildTree"><a href="#buildTree" class="headerlink" title="buildTree"></a>buildTree</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">int32_t leaf = osz_ - 1;</span><br><span class="line">int32_t node = osz_;</span><br><span class="line">for (int32_t i = osz_; i &lt; 2 * osz_ - 1; i++) &#123;</span><br><span class="line">    //构建左右结点</span><br><span class="line">    int32_t mini[2] = &#123;0&#125;;</span><br><span class="line">    for (int32_t j = 0; j &lt; 2; j++) &#123;</span><br><span class="line">        //leaf&gt;=0则还剩叶子结点，且leaf的值比当前内部结点小，两者归并</span><br><span class="line">        if (leaf &gt;= 0 &amp;&amp; tree_[leaf].count &lt; tree_[node].count) &#123;</span><br><span class="line">            mini[j] = leaf--;</span><br><span class="line">        //否则归并中间结点</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            mini[j] = node++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line">tree_[i].left = mini[0];</span><br><span class="line">tree_[i].right = mini[1];</span><br><span class="line">tree_[i].count = tree_[mini[0]].count + tree_[mini[1]].count;</span><br></pre></td></tr></table></figure>
+
+<h3 id="loss"><a href="#loss" class="headerlink" title="loss"></a>loss</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for (int32_t i = 0; i &lt; pathToRoot.size(); i++) &#123;</span><br><span class="line">    loss += binaryLogistic(pathToRoot[i], state, binaryCode[i], lr, backprop);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>最后就是个沿路径的二分类LR。</p>
+<h2 id="几个值得说一下的地方"><a href="#几个值得说一下的地方" class="headerlink" title="几个值得说一下的地方"></a>几个值得说一下的地方</h2><h4 id="预先按-8-8-的区间计算sigmoid的值存下来，后面查表即可"><a href="#预先按-8-8-的区间计算sigmoid的值存下来，后面查表即可" class="headerlink" title="预先按[-8, 8]的区间计算sigmoid的值存下来，后面查表即可"></a>预先按[-8, 8]的区间计算sigmoid的值存下来，后面查表即可</h4><h4 id="构建huffman树的时候，每次取最小的两个值，不优化就是O-n-2-，使用优先队列就是O-nlogn-。而这里的实现是先排序O-nlogn-，构造leaf和node两个指针模拟建树过程，每次获得特定结点复杂度都是O-1"><a href="#构建huffman树的时候，每次取最小的两个值，不优化就是O-n-2-，使用优先队列就是O-nlogn-。而这里的实现是先排序O-nlogn-，构造leaf和node两个指针模拟建树过程，每次获得特定结点复杂度都是O-1" class="headerlink" title="构建huffman树的时候，每次取最小的两个值，不优化就是O(n^2)，使用优先队列就是O(nlogn)。而这里的实现是先排序O(nlogn)，构造leaf和node两个指针模拟建树过程，每次获得特定结点复杂度都是O(1)"></a>构建huffman树的时候，每次取最小的两个值，不优化就是O(n^2)，使用优先队列就是O(nlogn)。而这里的实现是先排序O(nlogn)，构造leaf和node两个指针模拟建树过程，每次获得特定结点复杂度都是O(1)</h4><h4 id="压缩算法加快检索的方式是进行按某几个维度进行聚类，聚类标签二值化编码，是有损的。"><a href="#压缩算法加快检索的方式是进行按某几个维度进行聚类，聚类标签二值化编码，是有损的。" class="headerlink" title="压缩算法加快检索的方式是进行按某几个维度进行聚类，聚类标签二值化编码，是有损的。"></a>压缩算法加快检索的方式是进行按某几个维度进行聚类，聚类标签二值化编码，是有损的。</h4><h4 id="词典使用线性哈希计算，冲突使用简单的线性后探测法。"><a href="#词典使用线性哈希计算，冲突使用简单的线性后探测法。" class="headerlink" title="词典使用线性哈希计算，冲突使用简单的线性后探测法。"></a>词典使用线性哈希计算，冲突使用简单的线性后探测法。</h4><p>以上两点来自<a href="https://zhuanlan.zhihu.com/p/64960839" target="_blank" rel="noopener">该链接</a>   </p>
+<h4 id="提供了自动调参，设置了一些经验参数，每次引入一些高斯扰动。"><a href="#提供了自动调参，设置了一些经验参数，每次引入一些高斯扰动。" class="headerlink" title="提供了自动调参，设置了一些经验参数，每次引入一些高斯扰动。"></a>提供了自动调参，设置了一些经验参数，每次引入一些高斯扰动。</h4>
     </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/10/22/tensorflow模型部署指南/" >
-            
-                <span>tensorflow模型部署指南</span>
-        </a>
-        <div class="abstract-content">
-            从训练到部署~
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/10/22</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "代码二三事">代码二三事</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/10/18/基于RNN-我们还能加些什么-（文本分类）/" >
-            
-                <span>基于RNN 我们还能加些什么?（文本分类）</span>
-        </a>
-        <div class="abstract-content">
-            文本分类相关工作整理
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/10/18</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "专题整理">专题整理</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/10/05/why-blog/" >
-            
-                <span>why blog?</span>
-        </a>
-        <div class="abstract-content">
-            自言自语
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/10/05</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "随想">随想</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/10/04/2019-10-04论文分享/" >
-            
-                <span>2019-10-04论文分享</span>
-        </a>
-        <div class="abstract-content">
-            在高铁上看完的~
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/10/04</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "论文分享">论文分享</a>
-    
-</div>
-            
-        </div>
-    </article>
+    <!-- license  -->
     
     <!-- paginator  -->
-    
-    <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/page/2/">&#60; PREV</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
-    </nav>
-    
-</main>
-            <!-- profile -->
+    <ul class="post-paginator">
+        <li class="next">
             
-            <div class="profile">
-    <img class="profile-avatar" alt="avatar" src= /avatar/IMG_8130.jpg >
-    <div class="profile-name">haibin-chen</div>
-    
-    <div class="profile-signature">
-        来偷看海斌斌的小窝啦
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2021/03/01/记录一些小坑/" title= "记录一些小坑">
+                    <div class="prevTitle">记录一些小坑</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+    <div id="lv-container" data-id="city" data-uid= MTAyMC80Njk1Ni8yMzQ1Nw>
+        <script type="text/javascript">
+            (function (d, s) {
+                var j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') { return; }
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
     </div>
+
+<!-- City版安装代码已完成 -->
     
     
-    <div class="profile-social">
-        
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
     
-        
-            
-                <a href="mailto:201664793028@mail.scut.edu.cn" class="iconfont-archer email" title=email ></a>
-            
-        
-    
-        
-            
-                <a href="//github.com/haibin-chen" class="iconfont-archer github" target="_blank" title=github></a>
-            
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-            
-                <a href="//www.zhihu.com/people/chen-hai-bin-27-72/posts" class="iconfont-archer zhihu" target="_blank" title=zhihu></a>
-            
-        
-    
-        
-            
-                <a href="//www.douban.com/people/H937332325/" class="iconfont-archer douban" target="_blank" title=douban></a>
-            
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
 
-    </div>
-    
-    
-    
-</div>
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
             
         </div>
         <footer class="footer footer-unloaded">
@@ -667,6 +563,24 @@ docker安装可参照使用 Docker 部署 TensorFlow 环境，gpu版本记得安
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#源码结构"><span class="toc-number">1.</span> <span class="toc-text">源码结构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#源码走读"><span class="toc-number">2.</span> <span class="toc-text">源码走读</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#关键参数"><span class="toc-number">2.1.</span> <span class="toc-text">关键参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#fasttext-h-fasttext-cc"><span class="toc-number">2.2.</span> <span class="toc-text">fasttext.h, fasttext.cc</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#negativeSampling"><span class="toc-number">2.3.</span> <span class="toc-text">negativeSampling</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#初始化"><span class="toc-number">2.3.1.</span> <span class="toc-text">初始化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hierarchicalSoftmax"><span class="toc-number">2.4.</span> <span class="toc-text">hierarchicalSoftmax</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#关键参数-1"><span class="toc-number">2.4.1.</span> <span class="toc-text">关键参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#buildTree"><span class="toc-number">2.4.2.</span> <span class="toc-text">buildTree</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#loss"><span class="toc-number">2.4.3.</span> <span class="toc-text">loss</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#几个值得说一下的地方"><span class="toc-number">2.5.</span> <span class="toc-text">几个值得说一下的地方</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#预先按-8-8-的区间计算sigmoid的值存下来，后面查表即可"><span class="toc-number">2.5.0.1.</span> <span class="toc-text">预先按[-8, 8]的区间计算sigmoid的值存下来，后面查表即可</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#构建huffman树的时候，每次取最小的两个值，不优化就是O-n-2-，使用优先队列就是O-nlogn-。而这里的实现是先排序O-nlogn-，构造leaf和node两个指针模拟建树过程，每次获得特定结点复杂度都是O-1"><span class="toc-number">2.5.0.2.</span> <span class="toc-text">构建huffman树的时候，每次取最小的两个值，不优化就是O(n^2)，使用优先队列就是O(nlogn)。而这里的实现是先排序O(nlogn)，构造leaf和node两个指针模拟建树过程，每次获得特定结点复杂度都是O(1)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#压缩算法加快检索的方式是进行按某几个维度进行聚类，聚类标签二值化编码，是有损的。"><span class="toc-number">2.5.0.3.</span> <span class="toc-text">压缩算法加快检索的方式是进行按某几个维度进行聚类，聚类标签二值化编码，是有损的。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#词典使用线性哈希计算，冲突使用简单的线性后探测法。"><span class="toc-number">2.5.0.4.</span> <span class="toc-text">词典使用线性哈希计算，冲突使用简单的线性后探测法。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#提供了自动调参，设置了一些经验参数，每次引入一些高斯扰动。"><span class="toc-number">2.5.0.5.</span> <span class="toc-text">提供了自动调参，设置了一些经验参数，每次引入一些高斯扰动。</span></a></li></ol></li></ol></li></ol></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1214,6 +1128,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
