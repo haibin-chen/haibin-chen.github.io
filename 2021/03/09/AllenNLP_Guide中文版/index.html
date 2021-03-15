@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>why blog? · Haibin&#39;s Studio</title>
+    <title>AllenNLP Guide中文版 · Haibin&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/" >Haibin&#39;s Studio</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">why blog?</a>
+                <a href="#" class="post-name">AllenNLP Guide中文版</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            why blog?
+            AllenNLP Guide中文版
             <!-- 404 -->
             
         </h1>
@@ -266,18 +266,18 @@ height:50vh;
                 
                     <div class= post-intro-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "随想">随想</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "NLP related">NLP related</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">195</span>Reading time: <span class="post-count reading-time">1 min</span></span>
+                        <span>Word count: <span class="post-count word-count">359</span>Reading time: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/10/05</span>
+                    <span class="post-intro-time">2021/03/09</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -401,13 +401,21 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h2 id="随想"><a href="#随想" class="headerlink" title="随想"></a>随想</h2><p>　　以后这里就是我的<a href="http://haibinchen.top" target="_blank" rel="noopener">小站</a>啦。</p>
-<p>　　说起建站的初衷…意识到接下来几年的研究生生活会单调一些，就想着记录一下自己每个阶段的所思所想，过几年写在简历上还能给自己壮壮胆不是（逃</p>
-<p>　　内容呢，肯定是以技术博客为主的，当然也会写写随想 读书笔记啥的</p>
-<p>　　其实我是个挺爱和人bb和人分享的人，也喜欢写写知乎专栏啥的。朋友圈是不怎么发了，也不知道从何写起，认识的人多了，又想着得照顾各位的感受和各位的看法，可能是太要面子了吧hhh</p>
-<p>　　欢迎随时来评论撩我呀！</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Welcome to my website!</span><br></pre></td></tr></table></figure>
-
+        <h1 id="AllenNLP-官方Guide速览"><a href="#AllenNLP-官方Guide速览" class="headerlink" title="AllenNLP 官方Guide速览"></a>AllenNLP 官方Guide速览</h1><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><ol>
+<li>训练样本被抽象为Instance，Instance中包含若干个Fields，如TextFIeld，LabelField  </li>
+<li>提供了数据集读取的封装类DatasetReader，通过重写_read()方法实现。  </li>
+<li>通过封装好的Vocab读取、Embed读取、pytorch层构建Model。  </li>
+<li>除了py文件，也支持json配置文件加载以上配置，命令行调用allennlp train。  </li>
+<li>封装了bert、elmo等预训练模型；allennlp-server是官方提供的基于Flask的简单可视化、部署工具。</li>
+</ol>
+<h2 id="Abstractions-Design-and-Testing"><a href="#Abstractions-Design-and-Testing" class="headerlink" title="Abstractions, Design, and Testing"></a>Abstractions, Design, and Testing</h2><ol>
+<li>AllenNLP Model是PyTorch Module子类，输入输出都是Dict。</li>
+<li>在模型中实现make_output_human_readable和forward_on_instance可以将返回tensor重新封装到Instance中。  </li>
+<li>load与save除了模型外，还将config和vocab保存下来。  </li>
+<li>config的设计基于Dependency Injection，即传递依赖(config)给调用方(model)，而不是让让调用方直接获得依赖。继承FromParams/Params类实现。  </li>
+<li>使用registrable类实现多态性、多个构造器。Model类通过装饰器获得该特性。</li>
+</ol>
+<h1 id="AllenNLP-2-0新特性"><a href="#AllenNLP-2-0新特性" class="headerlink" title="AllenNLP 2.0新特性"></a>AllenNLP 2.0新特性</h1><h2 id="MultiProcessDataLoader"><a href="#MultiProcessDataLoader" class="headerlink" title="MultiProcessDataLoader"></a>MultiProcessDataLoader</h2><p>基于pytorch的multiprocess实现，支持共享CUDA张量、数据对应的梯度。<br>针对大数据集使用lazy模式，即小数据集默认都放在内存。<br>主要由num_workers控制进程数量，设为0则都在主线程，该经验参数我一般设为4。<br>大概实现过程是，get_context获得进程上下文模式，新建JoinableQueue，启动对应worker，join操作。多进程的具体对象是根据num_workers数量copy多个DatasetReader。  </p>
 
     </article>
     <!-- license  -->
@@ -417,16 +425,16 @@ height:50vh;
         <li class="next">
             
                 <div class="nextSlogan">Next Post</div>
-                <a href= "/2019/10/18/基于RNN-我们还能加些什么-（文本分类）/" title= "基于RNN 我们还能加些什么?（文本分类）">
-                    <div class="nextTitle">基于RNN 我们还能加些什么?（文本分类）</div>
+                <a href= "/2021/03/15/文本-序列标注-分类任务方法论整理/" title= "文本(序列标注)分类任务方法论整理">
+                    <div class="nextTitle">文本(序列标注)分类任务方法论整理</div>
                 </a>
             
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2019/10/04/2019-10-04论文分享/" title= "2019-10-04论文分享">
-                    <div class="prevTitle">2019-10-04论文分享</div>
+                <a href= "/2021/03/06/fastText源码中有意思的地方和新版特性/" title= "fastText源码中有意思的地方">
+                    <div class="prevTitle">fastText源码中有意思的地方</div>
                 </a>
             
         </li>
@@ -561,7 +569,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#随想"><span class="toc-number">1.</span> <span class="toc-text">随想</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#AllenNLP-官方Guide速览"><span class="toc-number">1.</span> <span class="toc-text">AllenNLP 官方Guide速览</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.1.</span> <span class="toc-text">Quick Start</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Abstractions-Design-and-Testing"><span class="toc-number">1.2.</span> <span class="toc-text">Abstractions, Design, and Testing</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#AllenNLP-2-0新特性"><span class="toc-number">2.</span> <span class="toc-text">AllenNLP 2.0新特性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#MultiProcessDataLoader"><span class="toc-number">2.1.</span> <span class="toc-text">MultiProcessDataLoader</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>

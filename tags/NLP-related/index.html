@@ -346,6 +346,75 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/03/15/文本-序列标注-分类任务方法论整理/" >
+            
+                <span>文本(序列标注)分类任务方法论整理</span>
+        </a>
+        <div class="abstract-content">
+            这个博客主要整理一些文本分类、序列标注任务具体实践中的整体方法论，慢慢更新&amp;重构。
+数据篇训练数据要多少？众所周知，数据越多越好。那么，如何衡量数据量增加的边际效应递减呢？如何考量增加什么数据呢？  
+
+做增量学习实验。总体而言，深度学习模型的边际效应往往类似于对数回归模型，f(x)=alogb+c。当然也可以使用专门描述边际效应的一些模型如渐进回归模型。选取若干个数据点进行实验，在感官上和量化上控制数据要求。  
+任务特定的场景下，根据效果提升的瓶颈来决定是否增加训练数据、还是增加词典/pattern匹配。对于实体识别来说，特定实体的规律性（人名大小写，地点名后接路字）、实体是...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/15</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "NLP related">NLP related</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2021/03/09/AllenNLP_Guide中文版/" >
+            
+                <span>AllenNLP Guide中文版</span>
+        </a>
+        <div class="abstract-content">
+            AllenNLP 官方Guide速览Quick Start
+训练样本被抽象为Instance，Instance中包含若干个Fields，如TextFIeld，LabelField  
+提供了数据集读取的封装类DatasetReader，通过重写_read()方法实现。  
+通过封装好的Vocab读取、Embed读取、pytorch层构建Model。  
+除了py文件，也支持json配置文件加载以上配置，命令行调用allennlp train。  
+封装了bert、elmo等预训练模型；allennlp-server是官方提供的基于Flask的简单可视化、部署工具。
+
+Abstractio...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/09</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "NLP related">NLP related</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/03/06/fastText源码中有意思的地方和新版特性/" >
             
                 <span>fastText源码中有意思的地方</span>
@@ -865,9 +934,49 @@ Distil...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 25
+        Total : 27
         </div>
         <!-- search  -->
         
@@ -880,6 +989,16 @@ Distil...
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/15</span><a class="archive-post-title" href= "/2021/03/15/文本-序列标注-分类任务方法论整理/" >文本(序列标注)分类任务方法论整理</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/09</span><a class="archive-post-title" href= "/2021/03/09/AllenNLP_Guide中文版/" >AllenNLP Guide中文版</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1029,21 +1148,21 @@ Distil...
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
+        <span class="sidebar-tag-name" data-tags="NLP related"><span class="iconfont-archer">&#xe606;</span>NLP related</span>
+    
         <span class="sidebar-tag-name" data-tags="论文分享"><span class="iconfont-archer">&#xe606;</span>论文分享</span>
     
-        <span class="sidebar-tag-name" data-tags="NLP related"><span class="iconfont-archer">&#xe606;</span>NLP related</span>
+        <span class="sidebar-tag-name" data-tags="CS课程笔记"><span class="iconfont-archer">&#xe606;</span>CS课程笔记</span>
     
         <span class="sidebar-tag-name" data-tags="cv-related"><span class="iconfont-archer">&#xe606;</span>cv-related</span>
     
         <span class="sidebar-tag-name" data-tags="代码二三事"><span class="iconfont-archer">&#xe606;</span>代码二三事</span>
     
-        <span class="sidebar-tag-name" data-tags="CS课程笔记"><span class="iconfont-archer">&#xe606;</span>CS课程笔记</span>
-    
         <span class="sidebar-tag-name" data-tags="项目"><span class="iconfont-archer">&#xe606;</span>项目</span>
     
-        <span class="sidebar-tag-name" data-tags="随想"><span class="iconfont-archer">&#xe606;</span>随想</span>
-    
         <span class="sidebar-tag-name" data-tags="年终总结"><span class="iconfont-archer">&#xe606;</span>年终总结</span>
+    
+        <span class="sidebar-tag-name" data-tags="随想"><span class="iconfont-archer">&#xe606;</span>随想</span>
     
         <span class="sidebar-tag-name" data-tags="算法题"><span class="iconfont-archer">&#xe606;</span>算法题</span>
     
