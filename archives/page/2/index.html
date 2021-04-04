@@ -346,12 +346,67 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2020/06/27/如何理清一篇论文-持续更新/" >
+        <a class="abstract-title" href = "/2020/09/11/今日祝福/" >
+            
+                <span>今日祝福</span>
+        </a>
+        <div class="abstract-content">
+            ##转眼间又是开学季，可能是在本校的缘故，这几天其实没有太多的新鲜感。回想过去一段时间的经历，这是非常危险的，容易陷入浑浑噩噩的状态。阔别校园许久，我觉得我身上失去了“学生气”，变得有点世故、迂腐。保持虚心、思考是非常重要的，努力做到知行合一。希望自己将“学生气”投入到新一阶段的课程、科研、思考中，也祝自己和自己身边所有可爱的人好运！  
+
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/11</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2020/09/09/image-caption项目/" >
+            
+                <span>image caption项目</span>
+        </a>
+        <div class="abstract-content">
+            短暂的image caption任务项目总结给定题目图片，使用相关OCR技术进行识别。中文则识别为中文，公式需要识别为latex格式。  
+要点总结技术路线1：在很少预标注OCR任务上（如不到1000张图片），针对混合识别的image caption很难拟合。主要原因在于中文字库和latex关键字字库大于3000个，在少量数据的情况下很难学习到有效分辨性特征。  
+优化思路1：模型使用在大规模中文OCR训练后的模型作为初始化，在下游小数据上进行微调，中文结果有所上升。优化思路2：使用xelatex生成中文公式混合的增强数据，再使用pdfconverter工具生成图片，生成了万量级e的增强...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/09</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "项目">项目</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2020/06/27/如何理清并写好一篇论文-持续更新/" >
             
                 <span>如何理清一篇论文(持续更新)</span>
         </a>
         <div class="abstract-content">
-            如何理清一篇论文(持续更新)这篇文章是什么主题Abstract + 图表 + Conclusion即可大概了解  
+            如何理清并写好一篇论文(持续更新)这篇文章是什么主题Abstract + 图表 + Conclusion即可大概了解  
 创新点是什么对于审稿而言，创新点是最重要、最开始就要指出来的。其后才是实验、细节的问题。如何抓住创新点？从精要的Introduction入手，回答如下的问题：  
 
 文章针对的核心问题是什么？相关论文是怎么做的，与别人本质的不同是什么？是不是从哪些假设出发？逻辑链是否合理？
@@ -359,7 +414,7 @@
 从核心问题出发，模型的设计是不是针对问题的，相对比较自然、通用地解决问题？他的好处与劣处？  
 
 阅读正文时需要关注的细节
-文章是...
+...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -589,63 +644,6 @@ Distil...
         <a class="post-tag" href="javascript:void(0);" data-tags = "NLP related">NLP related</a>
     
 </div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/01/21/中文错别字纠正调研/" >
-            
-                <span>中文错别字纠正调研</span>
-        </a>
-        <div class="abstract-content">
-            中文错别字识别方案调研任务定义：NLP中的语言建模任务，在已有的句子中判断某个字的出现（困惑度）是否合理，是否符合人类的表达习惯。  
-相关技术方案参考
-达观的解决方案：http://www.datagrand.com/blog/search-query.html方法：基于字之间书写过程中的“距离”，搜索可能的正确词语；基于语言模型修正。数据：爬虫系统爬取优质词条词典、拼音纠错词典、从检索结果是否很差推测是否有错，不需要标注语料。  
-
-百度AI提及的解决方案：https://mp.weixin.qq.com/s/r0kWgPHKthPgGqTbVc3lKw将错误分为3类：用词错误，音近...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/21</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/01/06/haskell-notes/" >
-            
-                <span>haskell notes</span>
-        </a>
-        <div class="abstract-content">
-            Haskell 笔记记录看haskell入门资料的一些笔记。   
-语言特性纯函数式编程，静态类型，惰性常用运算符
-基本语法
-基础函数格式：doubleMe x = x + x  12345ghci&gt; :l baby   [1 of 1] Compiling Main             ( baby.hs, interpreted )   Ok, modules loaded: Main.   ghci&gt; doubleMe 9   18
-
-
-
-函数名::参数1类型=&gt;参数2类型=&gt;结果类型函数名 参数1 参数2 =&gt; 函数体2. 常用语法表达：注意一定...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/06</span>
-            </div>
-            <!-- tags  -->
             
         </div>
     </article>
@@ -1079,9 +1077,39 @@ Distil...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 27
+        Total : 29
         </div>
         <!-- search  -->
         
@@ -1094,6 +1122,16 @@ Distil...
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/28</span><a class="archive-post-title" href= "/2021/03/28/机器学习与深度学习部分基础点整理/" >机器学习与深度学习常见面试题链接整理</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/21</span><a class="archive-post-title" href= "/2021/03/21/指代消解-词pair-问题范式简介-以roberta为例/" >指代消解(词pair)问题范式简介(以roberta为例)</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1156,7 +1194,7 @@ Distil...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/27</span><a class="archive-post-title" href= "/2020/06/27/如何理清一篇论文-持续更新/" >如何理清一篇论文(持续更新)</a>
+            <span class="archive-post-date">06/27</span><a class="archive-post-title" href= "/2020/06/27/如何理清并写好一篇论文-持续更新/" >如何理清一篇论文(持续更新)</a>
         </li>
     
     
@@ -1253,13 +1291,13 @@ Distil...
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="NLP related"><span class="iconfont-archer">&#xe606;</span>NLP related</span>
-    
         <span class="sidebar-tag-name" data-tags="论文分享"><span class="iconfont-archer">&#xe606;</span>论文分享</span>
     
-        <span class="sidebar-tag-name" data-tags="CS课程笔记"><span class="iconfont-archer">&#xe606;</span>CS课程笔记</span>
+        <span class="sidebar-tag-name" data-tags="NLP related"><span class="iconfont-archer">&#xe606;</span>NLP related</span>
     
         <span class="sidebar-tag-name" data-tags="cv-related"><span class="iconfont-archer">&#xe606;</span>cv-related</span>
+    
+        <span class="sidebar-tag-name" data-tags="CS课程笔记"><span class="iconfont-archer">&#xe606;</span>CS课程笔记</span>
     
         <span class="sidebar-tag-name" data-tags="代码二三事"><span class="iconfont-archer">&#xe606;</span>代码二三事</span>
     

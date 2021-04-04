@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Haibin&#39;s Studio</title>
+    <title>指代消解(词pair)问题范式简介(以roberta为例) · Haibin&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >Haibin&#39;s Studio</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">指代消解(词pair)问题范式简介(以roberta为例)</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>Haibin's Studio</a>
 </header>
@@ -220,24 +231,74 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(//source.unsplash.com/random/800x600)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            指代消解(词pair)问题范式简介(以roberta为例)
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "NLP related">NLP related</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count word-count">310</span>Reading time: <span class="post-count reading-time">1 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2021/03/21</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,71 +399,68 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/01/12/一些有意思的音乐/" >
-            
-                <span>一些有意思的音乐</span>
-        </a>
-        <div class="abstract-content">
-            前卫摇滚篇其实啥都能往前卫摇滚里装，实验性的、极简的、玩神奇器乐的、玩古典的…下面讨论的大多是玩古典的。在古典中大量的对称性、规律性、乐理乃至创作风格上改，相信很容易被喷毁经典的…最近听了很多60-80年代广义上前卫的摇滚音乐，找到了很多有意思的专辑！
-Rain And Tears——Aphrodite’s Child经典D大调卡农原版在这还是非常流行化的改编，背景节奏保留了大部分原曲，没有很多变奏，对我来说勾起的就是以前打音游的h时光了..
-Romeo And Juliet——Emerson, Lake &amp; Palmer我比较喜欢含这首歌专辑Black Moon，整张碟听最舒服...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/01/12</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "随想">随想</a>
-    
-</div>
-            
-        </div>
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="词对匹配问题范式简介-以roberta为例"><a href="#词对匹配问题范式简介-以roberta为例" class="headerlink" title="词对匹配问题范式简介(以roberta为例)"></a>词对匹配问题范式简介(以roberta为例)</h1><p>最近接触了一个任务为SuperGLUE中的Winograd Schema Challenge (WSC)，给定句子、代词pronoun(比如him)和主语词，判断这两个词是否对应。我乍一看还延续了以前文本匹配的思路，把两个词的表示拿出来concat/sum做分类。看了一下roberta的实现方式，是基于MLM预测对应位置词语。构造负样本然后用margin ranking loss去做的，用交叉熵也可以。  </p>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><p>{“text”: “Bernard , who had not told the government official that he was less than 21 when he filed for a homestead claim, did not consider that he had done anything dishonest. Still, anyone who knew that he was 19 years old could take his claim away from him.”,<br>“target”: {“span2_index”: 26, “span1_index”: 0, “span1_text”: “Bernard”, “span2_text”: “he”}, “idx”: 48, “label”: true}  </p>
+<h2 id="数据构造"><a href="#数据构造" class="headerlink" title="数据构造"></a>数据构造</h2><p>query为名词如Bernard，借助spacy从这个句子里找出更多candidate如government official构造负样本。当label为true时，将不同掩码词预测概率做交叉熵/ranking loss。  </p>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>可以有下面两种方式：  </p>
+<ol>
+<li>The <em>trophy</em> would not fit in the brown suitcase because [it] was too big.<br>True  </li>
+<li>The trophy would not fit in the brown suitcase because [it] was too big.<br>‘The trophy’<br>名词span的抽取也用到了数据构造里的方法，对应词最大则取为true。    </li>
+</ol>
+
     </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/01/02/todays x 2020/" >
-            
-                <span>todays x 2020</span>
-        </a>
-        <div class="abstract-content">
-            图：冬天期待的就是照进宿舍楼的阳光，猫猫眯眼享受.jpg
-· 越来越容易感受到身体对自己的反馈了· 最近半年主要都在考虑手头的事情，很多深处的感受都被藏起来了。浅层的感受就是日常放大自己的焦虑与不安，当然对现在的心态来说——也就那回事了· 经过这几天心情的波动与调整后，好像又找到生活热情的来源。当然内容无非就是活在当下…意义就在一点一滴中…试探享乐主义虚无主义的边界…诸如此类。找到的好像是一个又一个阶段，有的阶段就是浮于表面…有的阶段经常会有很兴奋的想法，会认真的去想怎么记录、怎么实现· 对了，最近又找到很多很喜欢的音乐，在progressive rock前卫摇滚中。像前几天和朋友聊到的...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/01/02</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "年终总结">年终总结</a>
-    
-</div>
-            
-        </div>
-    </article>
+    <!-- license  -->
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2021/03/28/机器学习与深度学习部分基础点整理/" title= "机器学习与深度学习常见面试题链接整理">
+                    <div class="nextTitle">机器学习与深度学习常见面试题链接整理</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2021/03/15/文本-序列标注-分类任务方法论整理/" title= "文本(序列标注)分类任务方法论整理">
+                    <div class="prevTitle">文本(序列标注)分类任务方法论整理</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+    <div id="lv-container" data-id="city" data-uid= MTAyMC80Njk1Ni8yMzQ1Nw>
+        <script type="text/javascript">
+            (function (d, s) {
+                var j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') { return; }
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -488,6 +546,24 @@ Romeo And Juliet——Emerson, Lake &amp; Palmer我比较喜欢含这首歌专�
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#词对匹配问题范式简介-以roberta为例"><span class="toc-number">1.</span> <span class="toc-text">词对匹配问题范式简介(以roberta为例)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#例子"><span class="toc-number">1.1.</span> <span class="toc-text">例子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据构造"><span class="toc-number">1.2.</span> <span class="toc-text">数据构造</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试"><span class="toc-number">1.3.</span> <span class="toc-text">测试</span></a></li></ol></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1125,6 +1201,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
