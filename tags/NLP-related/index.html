@@ -346,6 +346,40 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/04/09/数学题目层次化分类特点整理/" >
+            
+                <span>数学题目层次化分类特点整理</span>
+        </a>
+        <div class="abstract-content">
+            数学题目层次化分类特点整理大致流程：标签集合构建-&gt;清洗-&gt;BERT+层次化图网络-&gt;TurboTransformer  
+公式特点首先要拆成char级别的分词。  
+存在可替换常量。例子：公式2x=5替换为@x+@y=@。公式y=4x^2替换为#=4#^2。在以上的例子中，把常量替换为@，把字母替换为#。存在一定LaTeX子结构如上标、下标。例子：LaTeX专有数学符号\sin，上标结构^，下标结构_
+1line = re.sub(&apos;\d+(\.\d*)?&apos;,&apos;@&apos;,line)
+
+噪声清洗体现在拆成char级别的分词中。需要匹配...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/09</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "NLP related">NLP related</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/03/21/指代消解-词pair-问题范式简介-以roberta为例/" >
             
                 <span>指代消解(词pair)问题范式简介(以roberta为例)</span>
@@ -381,11 +415,11 @@
                 <span>文本(序列标注)分类任务方法论整理</span>
         </a>
         <div class="abstract-content">
-            这个博客主要整理一些文本分类、序列标注任务具体实践中的整体方法论，慢慢更新&amp;重构。
+            这个博客主要整理一些文本分类、序列标注任务具体实践中的整体方法论，慢慢更新&amp;重构。目标是希望能逐步建立自己在机器学习任务中的pipeline思维。  
 数据篇训练数据要多少？众所周知，数据越多越好。那么，如何衡量数据量增加的边际效应递减呢？如何考量增加什么数据呢？  
 
 做增量学习实验。总体而言，深度学习模型的边际效应往往类似于对数回归模型，f(x)=alogb+c。当然也可以使用专门描述边际效应的一些模型如渐进回归模型。选取若干个数据点进行实验，在感官上和量化上控制数据要求。  
-任务特定的场景下，根据效果提升的瓶颈来决定是否增加训练数据、还是增加词典/pattern匹配。对于实体识别来说，特定实体的规律性（人名大小写，地点名后接路字）、实体是...
+任务特定的场景下，根据效果提升的瓶颈来决定是否增加训练数据、还是增加词典/pattern匹配。对于...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -1034,9 +1068,35 @@ Distil...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 29
+        Total : 31
         </div>
         <!-- search  -->
         
@@ -1049,6 +1109,11 @@ Distil...
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/09</span><a class="archive-post-title" href= "/2021/04/09/数学题目层次化分类特点整理/" >数学题目层次化分类特点整理</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1213,6 +1278,20 @@ Distil...
             <span class="archive-post-date">10/04</span><a class="archive-post-title" href= "/2019/10/04/2019-10-04论文分享/" >2019-10-04论文分享</a>
         </li>
     
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2017 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2017/04/20/test/" >test</a>
+        </li>
+    
     </div>
   </div>
         <div class="sidebar-panel-tags">
@@ -1220,23 +1299,23 @@ Distil...
     
         <span class="sidebar-tag-name" data-tags="论文分享"><span class="iconfont-archer">&#xe606;</span>论文分享</span>
     
+        <span class="sidebar-tag-name" data-tags="CS课程笔记"><span class="iconfont-archer">&#xe606;</span>CS课程笔记</span>
+    
         <span class="sidebar-tag-name" data-tags="NLP related"><span class="iconfont-archer">&#xe606;</span>NLP related</span>
     
         <span class="sidebar-tag-name" data-tags="cv-related"><span class="iconfont-archer">&#xe606;</span>cv-related</span>
     
-        <span class="sidebar-tag-name" data-tags="CS课程笔记"><span class="iconfont-archer">&#xe606;</span>CS课程笔记</span>
+        <span class="sidebar-tag-name" data-tags="项目"><span class="iconfont-archer">&#xe606;</span>项目</span>
     
         <span class="sidebar-tag-name" data-tags="代码二三事"><span class="iconfont-archer">&#xe606;</span>代码二三事</span>
-    
-        <span class="sidebar-tag-name" data-tags="项目"><span class="iconfont-archer">&#xe606;</span>项目</span>
     
         <span class="sidebar-tag-name" data-tags="年终总结"><span class="iconfont-archer">&#xe606;</span>年终总结</span>
     
         <span class="sidebar-tag-name" data-tags="随想"><span class="iconfont-archer">&#xe606;</span>随想</span>
     
-        <span class="sidebar-tag-name" data-tags="算法题"><span class="iconfont-archer">&#xe606;</span>算法题</span>
-    
         <span class="sidebar-tag-name" data-tags="专题整理"><span class="iconfont-archer">&#xe606;</span>专题整理</span>
+    
+        <span class="sidebar-tag-name" data-tags="算法题"><span class="iconfont-archer">&#xe606;</span>算法题</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
