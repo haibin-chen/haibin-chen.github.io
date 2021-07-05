@@ -266,7 +266,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">702</span>Reading time: <span class="post-count reading-time">2 min</span></span>
+                        <span>Word count: <span class="post-count word-count">956</span>Reading time: <span class="post-count reading-time">3 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -395,9 +395,12 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h2 id="会议"><a href="#会议" class="headerlink" title="会议"></a>会议</h2><h3 id="HiMatch-Hierarchy-aware-Label-Semantics-Matching-Network-for-Hierarchical-Text-Classification-2021-ACL"><a href="#HiMatch-Hierarchy-aware-Label-Semantics-Matching-Network-for-Hierarchical-Text-Classification-2021-ACL" class="headerlink" title="HiMatch: Hierarchy-aware Label Semantics Matching Network for Hierarchical Text Classification (2021 ACL)"></a>HiMatch: Hierarchy-aware Label Semantics Matching Network for Hierarchical Text Classification (2021 ACL)</h3><p>已有的工作没有考虑到文本和不同层次的标签语义的关系，主要思路是把标签语义和文本语义根据层次化结构做细粒度的匹配。<br>未来这个工作可能拓展到few-shot，zero-shot的场景。  </p>
-<h2 id="期刊"><a href="#期刊" class="headerlink" title="期刊"></a>期刊</h2><h3 id="Corpus-level-Graph-Aggregation-Network-for-Sequence-Labeling-2021-TASLP"><a href="#Corpus-level-Graph-Aggregation-Network-for-Sequence-Labeling-2021-TASLP" class="headerlink" title="Corpus-level Graph Aggregation Network for Sequence Labeling (2021 TASLP)"></a>Corpus-level Graph Aggregation Network for Sequence Labeling (2021 TASLP)</h3><p>这篇是我本科毕业时开始做的第一篇工作。近一年很多序列标注的文章都会讨论Document-level的信息，把序列标注从句子级别的视角放大到文档级别。这篇文章进一步考虑了”corpus”级别的信息，即：这一类型的语料是不是有特定的主题？是不是有特定的常见词语搭配？在模型上使用了图网络，融合主题信息、共现信息、非序列化的句法树信息。其中一个新意就是把外部知识抽象为图网络结点，比如使用LDA抽取主题信息，使用某个主题的主题词做为“虚拟主题结点”的表示，使用某个主题和不同句子的相似程度做为图网络边的表示。<br>序列标注的未来在哪里？如果单刷结果，预训练模型成为至关重要的手段。外部知识如何发挥作用？这篇工作给出的视角是，不借助知识图谱等“强外部信息”，根据语料的特点（主题、共现信息）抽象为图网络虚拟结点，以此可以与序列化信息做融合。<br>现在看来，这篇文章有”tricky”的部分。原因一是这个套路现在很常见，用图网络融合了不同知识。原因二是受限于领域基准数据集，序列标注的效果提升会比较困难，所以显的提升不大。  </p>
-<h4 id="与现有工作的联系"><a href="#与现有工作的联系" class="headerlink" title="与现有工作的联系"></a>与现有工作的联系</h4><p>现在做中文NER很常见的baseline就是基于lattice LSTM，即把中文词汇信息融入到模型里面，常用的建模方法也是图网络。在序列任务里，对于非序列化的外部信息，合理构建图网络是常见的知识融合方式。  </p>
+        <h2 id="会议"><a href="#会议" class="headerlink" title="会议"></a>会议</h2><h3 id="HiMatch-Hierarchy-aware-Label-Semantics-Matching-Network-for-Hierarchical-Text-Classification-2021-ACL"><a href="#HiMatch-Hierarchy-aware-Label-Semantics-Matching-Network-for-Hierarchical-Text-Classification-2021-ACL" class="headerlink" title="HiMatch: Hierarchy-aware Label Semantics Matching Network for Hierarchical Text Classification (2021 ACL)"></a>HiMatch: Hierarchy-aware Label Semantics Matching Network for Hierarchical Text Classification (2021 ACL)</h3><p>已有的工作没有考虑到文本和不同层次的标签语义的关系，主要思路是把标签语义和文本语义根据层次化结构做细粒度的匹配。  </p>
+<ol>
+<li>在某些场景下，也许把标签看成已有的query库(规则库)去做匹配。从标签的特点来看，相对来说是比较特定、细粒度的概念，最好与其他标签重合度小，这样用检索(相似度)的思路去做才比较有效。从标签的query库(数据集)来看，备选query的代表性也要足够强，缺少的话会影响召回。进一步地拓展应用场景，上面谈的都是监督学习，对于一些只有少量标注的标签，使用代表性的关键词来做匹配也是低数据量启动的思路之一，这样就是接近无监督的。  </li>
+<li>和最近比较耀眼的PET、prompt-based有可结合之处，用MLM的思路微调任务相关的prompt embedding，使得下游任务更切合上游预训练任务的形式。  </li>
+<li>未来这个工作可能拓展到few-shot，zero-shot的场景，甚至融合知识图谱标签属性的matching。<br>改进点还包括树编码的研究等。  <h2 id="期刊"><a href="#期刊" class="headerlink" title="期刊"></a>期刊</h2><h3 id="Corpus-level-Graph-Aggregation-Network-for-Sequence-Labeling-2021-TASLP"><a href="#Corpus-level-Graph-Aggregation-Network-for-Sequence-Labeling-2021-TASLP" class="headerlink" title="Corpus-level Graph Aggregation Network for Sequence Labeling (2021 TASLP)"></a>Corpus-level Graph Aggregation Network for Sequence Labeling (2021 TASLP)</h3>这篇是我本科毕业时开始做的第一篇工作。近一年很多序列标注的文章都会讨论Document-level的信息，把序列标注从句子级别的视角放大到文档级别。这篇文章进一步考虑了”corpus”级别的信息，即：这一类型的语料是不是有特定的主题？是不是有特定的常见词语搭配？在模型上使用了图网络，融合主题信息、共现信息、非序列化的句法树信息。其中一个新意就是把外部知识抽象为图网络结点，比如使用LDA抽取主题信息，使用某个主题的主题词做为“虚拟主题结点”的表示，使用某个主题和不同句子的相似程度做为图网络边的表示。<br>序列标注的未来在哪里？如果单刷结果，预训练模型成为至关重要的手段。外部知识如何发挥作用？这篇工作给出的视角是，不借助知识图谱等“强外部信息”，根据语料的特点（主题、共现信息）抽象为图网络虚拟结点，以此可以与序列化信息做融合。<br>现在看来，这篇文章有”tricky”的部分。原因一是这个套路现在很常见，用图网络融合了不同知识。原因二是受限于领域基准数据集，序列标注的效果提升会比较困难，所以显的提升不大。  <h4 id="与现有工作的联系"><a href="#与现有工作的联系" class="headerlink" title="与现有工作的联系"></a>与现有工作的联系</h4>现在做中文NER很常见的baseline就是基于lattice LSTM，即把中文词汇信息融入到模型里面，常用的建模方法也是图网络。在序列任务里，对于非序列化的外部信息，合理构建图网络是常见的知识融合方式。  </li>
+</ol>
 <h2 id="专利"><a href="#专利" class="headerlink" title="专利"></a>专利</h2><p>面向分级读物的多尺度难度向量分类方法 (2020 专利授权)<br>文本分类任务，使用语言学特征为输入，用GBDT分类挑出难易文本。应用数据集是教育分级读物和新闻具体性分类。暂时没有在已有模型上印证该外部信息对份额里模型的帮助。但已有相关论文探索了“难度”对模型的影响，如简单的文本在Transformer低层就输出，降低推断成本。  </p>
 
     </article>
@@ -408,8 +411,8 @@ height:50vh;
         <li class="next">
             
                 <div class="nextSlogan">Next Post</div>
-                <a href= "/2099/01/01/站内导引/" title= "站内导引">
-                    <div class="nextTitle">站内导引</div>
+                <a href= "/2021/07/05/中文错别字纠正调研/" title= "中文错别字纠正调研(2021更新)">
+                    <div class="nextTitle">中文错别字纠正调研(2021更新)</div>
                 </a>
             
         </li>
@@ -965,22 +968,9 @@ top:50vh;
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 33
+        Total : 32
         </div>
         <!-- search  -->
         
@@ -1010,6 +1000,11 @@ top:50vh;
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">07/05</span><a class="archive-post-title" href= "/2021/07/05/中文错别字纠正调研/" >中文错别字纠正调研(2021更新)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">05/11</span><a class="archive-post-title" href= "/2021/05/11/个人学术工作的Insight/" >个人学术工作的一些Insight</a>
         </li>
     
@@ -1021,11 +1016,6 @@ top:50vh;
     
         <li class="archive-post-item">
             <span class="archive-post-date">04/09</span><a class="archive-post-title" href= "/2021/04/09/数学题目层次化分类特点整理/" >数学题目层次化分类特点整理</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/28</span><a class="archive-post-title" href= "/2021/03/28/机器学习与深度学习部分基础点整理/" >机器学习与深度学习常见面试题链接整理</a>
         </li>
     
     
@@ -1134,11 +1124,6 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/21</span><a class="archive-post-title" href= "/2020/01/21/中文错别字纠正调研/" >中文错别字纠正调研</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">01/06</span><a class="archive-post-title" href= "/2020/01/06/haskell-notes/" >haskell notes</a>
         </li>
     
@@ -1191,9 +1176,9 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="NLP related"><span class="iconfont-archer">&#xe606;</span>NLP related</span>
-    
         <span class="sidebar-tag-name" data-tags="论文分享"><span class="iconfont-archer">&#xe606;</span>论文分享</span>
+    
+        <span class="sidebar-tag-name" data-tags="NLP related"><span class="iconfont-archer">&#xe606;</span>NLP related</span>
     
         <span class="sidebar-tag-name" data-tags="cv-related"><span class="iconfont-archer">&#xe606;</span>cv-related</span>
     
@@ -1203,13 +1188,13 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="项目"><span class="iconfont-archer">&#xe606;</span>项目</span>
     
-        <span class="sidebar-tag-name" data-tags="随想"><span class="iconfont-archer">&#xe606;</span>随想</span>
-    
         <span class="sidebar-tag-name" data-tags="年终总结"><span class="iconfont-archer">&#xe606;</span>年终总结</span>
     
-        <span class="sidebar-tag-name" data-tags="算法题"><span class="iconfont-archer">&#xe606;</span>算法题</span>
+        <span class="sidebar-tag-name" data-tags="随想"><span class="iconfont-archer">&#xe606;</span>随想</span>
     
         <span class="sidebar-tag-name" data-tags="杂谈"><span class="iconfont-archer">&#xe606;</span>杂谈</span>
+    
+        <span class="sidebar-tag-name" data-tags="算法题"><span class="iconfont-archer">&#xe606;</span>算法题</span>
     
         <span class="sidebar-tag-name" data-tags="专题整理"><span class="iconfont-archer">&#xe606;</span>专题整理</span>
     

@@ -345,7 +345,7 @@
 <h3 id="BP"><a href="#BP" class="headerlink" title="BP"></a>BP</h3><p>推导示例可见Wu Si Neural Network，代码实现梯度下降<a href="bp.py">code</a>   </p>
 <h4 id="sigmoid和softmax交叉熵求导结果"><a href="#sigmoid和softmax交叉熵求导结果" class="headerlink" title="sigmoid和softmax交叉熵求导结果"></a>sigmoid和softmax交叉熵求导结果</h4><p><a href="https://zhuanlan.zhihu.com/p/86787709" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/86787709</a><br><a href="https://zhuanlan.zhihu.com/p/105758059" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/105758059</a>  </p>
 <h3 id="过拟合"><a href="#过拟合" class="headerlink" title="过拟合"></a>过拟合</h3><p>数据增强、更好的模型、正则化、dropout、模型bagging    </p>
-<h3 id="SGD与Adam的区别"><a href="#SGD与Adam的区别" class="headerlink" title="SGD与Adam的区别"></a>SGD与Adam的区别</h3><p>Adam还加入了动量，利用梯度的一阶矩估计和二阶矩估计动态调整每个参数的学习率    </p>
+<h3 id="SGD与Adam的区别"><a href="#SGD与Adam的区别" class="headerlink" title="SGD与Adam的区别"></a>SGD与Adam的区别</h3><p>Adam还加入了动量，利用梯度的一阶矩估计和二阶矩估计动态调整每个参数的学习率，数据稀疏情况下可能更好、总体收敛速度更快<br>两者的选择<a href="https://zhuanlan.zhihu.com/p/32338983" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/32338983</a>  </p>
 <h3 id="Tanh与Relu等激活函数的适用场景"><a href="#Tanh与Relu等激活函数的适用场景" class="headerlink" title="Tanh与Relu等激活函数的适用场景"></a>Tanh与Relu等激活函数的适用场景</h3><ol>
 <li>sigmoid导数范围[0, 0.25], 收敛速度慢.  </li>
 <li>tanh收敛速度快, 但是激活区间小.  </li>
@@ -360,15 +360,16 @@
 </ol>
 <h3 id="为什么随机初始化，如果都是0-1会怎样"><a href="#为什么随机初始化，如果都是0-1会怎样" class="headerlink" title="为什么随机初始化，如果都是0/1会怎样"></a>为什么随机初始化，如果都是0/1会怎样</h3><p>失去不对称性，无法收敛<br><a href="https://zhuanlan.zhihu.com/p/27190255" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/27190255</a>  </p>
 <h3 id="L1、L2正则化，权重衰减＝L2正则化？"><a href="#L1、L2正则化，权重衰减＝L2正则化？" class="headerlink" title="L1、L2正则化，权重衰减＝L2正则化？"></a>L1、L2正则化，权重衰减＝L2正则化？</h3><p><a href="https://www.zhihu.com/question/37096933" target="_blank" rel="noopener">https://www.zhihu.com/question/37096933</a><br><a href="https://zhuanlan.zhihu.com/p/143608316" target="_blank" rel="noopener">L2正则化可被证明为SGD情况下的权值衰减</a>  </p>
-<h3 id="Softmax、CrossEntropy梯度求导"><a href="#Softmax、CrossEntropy梯度求导" class="headerlink" title="Softmax、CrossEntropy梯度求导"></a>Softmax、CrossEntropy梯度求导</h3><h4 id="分类损失不能用mse"><a href="#分类损失不能用mse" class="headerlink" title="分类损失不能用mse?"></a>分类损失不能用mse?</h4><h2 id="词向量"><a href="#词向量" class="headerlink" title="词向量"></a>词向量</h2><h3 id="word2vec-vs-glove"><a href="#word2vec-vs-glove" class="headerlink" title="word2vec vs glove"></a>word2vec vs glove</h3><ol>
+<h3 id="Softmax、CrossEntropy梯度求导"><a href="#Softmax、CrossEntropy梯度求导" class="headerlink" title="Softmax、CrossEntropy梯度求导"></a>Softmax、CrossEntropy梯度求导</h3><h4 id="分类损失不能用mse"><a href="#分类损失不能用mse" class="headerlink" title="分类损失不能用mse?"></a>分类损失不能用mse?</h4><h3 id="GBDT-XGBoost"><a href="#GBDT-XGBoost" class="headerlink" title="GBDT/XGBoost"></a>GBDT/XGBoost</h3><h3 id="手推SVM"><a href="#手推SVM" class="headerlink" title="手推SVM"></a>手推SVM</h3><h2 id="词向量"><a href="#词向量" class="headerlink" title="词向量"></a>词向量</h2><h3 id="word2vec-vs-glove"><a href="#word2vec-vs-glove" class="headerlink" title="word2vec vs glove"></a>word2vec vs glove</h3><ol>
 <li>输入: glove的滑窗是构建co-occurance matrix，是基于全局语料提前统计的，而word2vec是局部划窗，因此fasttext也支持了continual learning。  </li>
 <li>损失: word2vec损失函数实质上是加权交叉熵；glove的损失函数是加权最小二乘回归(平方损失)，在context的维度上降维，学习word的低维表示。  </li>
 </ol>
-<h2 id="概率图模型-amp-基础模型"><a href="#概率图模型-amp-基础模型" class="headerlink" title="概率图模型&amp;基础模型"></a>概率图模型&amp;基础模型</h2><h3 id="HMM"><a href="#HMM" class="headerlink" title="HMM"></a>HMM</h3><h3 id="CRF"><a href="#CRF" class="headerlink" title="CRF"></a>CRF</h3><h4 id="代码实现细节"><a href="#代码实现细节" class="headerlink" title="代码实现细节"></a>代码实现细节</h4><h3 id="HMM-vs-MEMM-vs-CRF"><a href="#HMM-vs-MEMM-vs-CRF" class="headerlink" title="HMM vs MEMM vs CRF"></a>HMM vs MEMM vs CRF</h3><ol>
+<h3 id="word2vec优化"><a href="#word2vec优化" class="headerlink" title="word2vec优化"></a>word2vec优化</h3><h2 id="概率图模型-amp-基础模型"><a href="#概率图模型-amp-基础模型" class="headerlink" title="概率图模型&amp;基础模型"></a>概率图模型&amp;基础模型</h2><h3 id="HMM"><a href="#HMM" class="headerlink" title="HMM"></a>HMM</h3><h3 id="CRF"><a href="#CRF" class="headerlink" title="CRF"></a>CRF</h3><h4 id="代码实现细节"><a href="#代码实现细节" class="headerlink" title="代码实现细节"></a>代码实现细节</h4><h3 id="HMM-vs-MEMM-vs-CRF"><a href="#HMM-vs-MEMM-vs-CRF" class="headerlink" title="HMM vs MEMM vs CRF"></a>HMM vs MEMM vs CRF</h3><ol>
 <li>都是有向图模型，HMM生成式，剩余两个判别式。  </li>
 <li>MEMM打破了HMM的观测独立性假设，MEMM考虑到相邻状态之间依赖关系，且考虑整个观察序列，但由于是局部归一，不一定是最优转移概率。因此，MEMM有标注偏置即倾向于选择拥有更少转移的状态（减少概率分散）。CRF则计算整个标记序列的联合概率分布。  </li>
 </ol>
-<h3 id="LDA"><a href="#LDA" class="headerlink" title="LDA"></a>LDA</h3><h3 id="TF-IDF"><a href="#TF-IDF" class="headerlink" title="TF-IDF"></a>TF-IDF</h3><p>TF:词频&amp;归一化<br>IDF:逆文档概率，关键词的普遍程度：IDF = log (D/1+{t_i \in d_j})，D表示总文档个数，t_i表示包含词t_i的文档数量<br>TF-IDF = TF*IDF  </p>
+<h3 id="LDA"><a href="#LDA" class="headerlink" title="LDA"></a>LDA</h3><p>吉布斯采样  </p>
+<h3 id="TF-IDF"><a href="#TF-IDF" class="headerlink" title="TF-IDF"></a>TF-IDF</h3><p>TF:词频&amp;归一化<br>IDF:逆文档概率，关键词的普遍程度：IDF = log (D/1+{t_i \in d_j})，D表示总文档个数，t_i表示包含词t_i的文档数量<br>TF-IDF = TF*IDF  </p>
 <h2 id="Attention-amp-Transformer"><a href="#Attention-amp-Transformer" class="headerlink" title="Attention &amp; Transformer"></a>Attention &amp; Transformer</h2><h3 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h3><p>self-attention-&gt;add&amp;normalize(with shortcut of input)-&gt;FFN(relu perception+linear projection)-&gt;add&amp;normalize(with shortcut of first add&amp;normalize)<br><a href="https://www.nowcoder.com/discuss/351902" target="_blank" rel="noopener">https://www.nowcoder.com/discuss/351902</a>  </p>
 <h3 id="位置编码"><a href="#位置编码" class="headerlink" title="位置编码"></a>位置编码</h3><p><a href="position_encoding.jpg"></a><br>pos表示单词的位置， i表示单词的维度，位置a+b的位置向量可以表示为位置a的特征向量的线性变化，捕捉了相对位置。  </p>
 <h3 id="加速"><a href="#加速" class="headerlink" title="加速"></a>加速</h3><p>分块、蒸馏、pruning、量化等  </p>
@@ -377,16 +378,22 @@
 <h3 id="bert-为什么scale-product"><a href="#bert-为什么scale-product" class="headerlink" title="bert 为什么scale product"></a>bert 为什么scale product</h3><p><a href="https://www.zhihu.com/question/339723385" target="_blank" rel="noopener">https://www.zhihu.com/question/339723385</a>  </p>
 <ol>
 <li>可能梯度消失，当然最后一层的softmax就不需要了    </li>
-<li>根号维度等价于除以方差  <h3 id="BERT衍生模型（roberta、albert、electra、xlnet）的改进点"><a href="#BERT衍生模型（roberta、albert、electra、xlnet）的改进点" class="headerlink" title="BERT衍生模型（roberta、albert、electra、xlnet）的改进点"></a>BERT衍生模型（roberta、albert、electra、xlnet）的改进点</h3></li>
+<li>根号维度等价于除以方差  <h3 id="参数量计算"><a href="#参数量计算" class="headerlink" title="参数量计算"></a>参数量计算</h3></li>
+<li>input_parm=(vocab+512+2)*768就是输入embeding层对应的参数，分别对应的是tokenembedding,position-embedding，segment-embedding;   </li>
+<li>768*2 layer normalization  </li>
+<li>(768+1)<em>12</em>64<em>3是自注意层12个多头Q,K,V对应的参数量, (768+1)</em>768是线性变换    </li>
+<li>768*2 layer normalization  </li>
+<li>两层FFN，一层是768<em>(3072+1)(with relu)，一层是3072</em>(768+1)<br>加起来就是110M左右  <h3 id="Layer-Normalization和BN"><a href="#Layer-Normalization和BN" class="headerlink" title="Layer Normalization和BN"></a>Layer Normalization和BN</h3>输入表示可以看成均值0方差1的球形均匀空间，控制输入embedding-&gt;多层表示学习结合语义叠加后的偏移。  <h3 id="BERT衍生模型（roberta、albert、electra、xlnet）的改进点"><a href="#BERT衍生模型（roberta、albert、electra、xlnet）的改进点" class="headerlink" title="BERT衍生模型（roberta、albert、electra、xlnet）的改进点"></a>BERT衍生模型（roberta、albert、electra、xlnet）的改进点</h3></li>
 </ol>
 <h2 id="其他深度学习模型-领域"><a href="#其他深度学习模型-领域" class="headerlink" title="其他深度学习模型/领域"></a>其他深度学习模型/领域</h2><h3 id="新词发现"><a href="#新词发现" class="headerlink" title="新词发现"></a>新词发现</h3><p>不同的ngram组合概率+阈值筛选、预训练语言模型词与词相关性构建方法  </p>
 <h3 id="RNN-LSTM"><a href="#RNN-LSTM" class="headerlink" title="RNN/LSTM"></a>RNN/LSTM</h3><p>numpy实现github.com/chaoming0625/NumpyDL    </p>
-<h3 id="CNN"><a href="#CNN" class="headerlink" title="CNN"></a>CNN</h3><p>1x1卷积的作用: 实现跨通道的交互和非线性信息融合, 进行卷积核通道数的降维和升维<br>参数量、内存计算：<a href="https://www.jianshu.com/p/b8d48c99a47c" target="_blank" rel="noopener">https://www.jianshu.com/p/b8d48c99a47c</a>  </p>
+<h3 id="CNN"><a href="#CNN" class="headerlink" title="CNN"></a>CNN</h3><p>1x1卷积的作用: 实现跨通道的交互和非线性信息融合, 进行卷积核通道数的降维和升维<br>参数量、内存计算：<a href="https://www.jianshu.com/p/b8d48c99a47c" target="_blank" rel="noopener">https://www.jianshu.com/p/b8d48c99a47c</a><br>max pooling梯度计算要记录下最大值的index<br>CNN RNN的梯度计算  </p>
 <h3 id="GCN"><a href="#GCN" class="headerlink" title="GCN"></a>GCN</h3><p>图卷积filter函数-&gt;定义成laplacian矩阵形式，传播了邻居结点信息-&gt;Chebyshev多项式近似filter计算-&gt;H=\sigma(D^(-1/2)<em>A</em>D^(-1/2)<em>X</em>W)  </p>
-<h4 id="CNN与GCN的区别"><a href="#CNN与GCN的区别" class="headerlink" title="CNN与GCN的区别"></a>CNN与GCN的区别</h4><h2 id="情景题"><a href="#情景题" class="headerlink" title="情景题"></a>情景题</h2><p>System Design<br>异常点检测  </p>
+<h4 id="CNN与GCN的区别"><a href="#CNN与GCN的区别" class="headerlink" title="CNN与GCN的区别"></a>CNN与GCN的区别</h4><h3 id="每个领域state-of-art工作梳理"><a href="#每个领域state-of-art工作梳理" class="headerlink" title="每个领域state-of-art工作梳理"></a>每个领域state-of-art工作梳理</h3><h2 id="情景题"><a href="#情景题" class="headerlink" title="情景题"></a>情景题</h2><p>System Design<br>异常点检测  </p>
 <h2 id="搜广推"><a href="#搜广推" class="headerlink" title="搜广推"></a>搜广推</h2><h3 id="ESIM"><a href="#ESIM" class="headerlink" title="ESIM"></a>ESIM</h3><p>Enhanced LSTM for Natural Language Inference TACL 2017<br>inter-sentence attention  </p>
 <h3 id="DSSM"><a href="#DSSM" class="headerlink" title="DSSM"></a>DSSM</h3><p>Deep Structured Semantic Model，将query和item分别用深度神经网络表达为低维语义向量，cos计算相似度  </p>
-<h2 id="编程语言"><a href="#编程语言" class="headerlink" title="编程语言"></a>编程语言</h2><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>排序算法稳定性：数值相同的值相对次序是否改变，场景：为二次排序服务，如排序后销量相同时是否还按价格排序<br>堆排序、快速排序、选择排序不是稳定的排序算法，而基数排序、冒泡排序、插入排序、折半插入排序、归并排序是稳定的排序算法。  </p>
+<h2 id="编程语言"><a href="#编程语言" class="headerlink" title="编程语言"></a>编程语言</h2><h3 id="python"><a href="#python" class="headerlink" title="python"></a>python</h3><p>Python中的dict和set都是通过哈希表<br>Python都是引用传递，使用copy浅拷贝时变量的地址变了，但变量内(如列表内)的值地址相同，deepcopy就是完全复制新的。<br>装饰器：不改变函数的情况下多加功能  </p>
+<h4 id="GIL-多线程"><a href="#GIL-多线程" class="headerlink" title="GIL 多线程"></a>GIL 多线程</h4><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>排序算法稳定性：数值相同的值相对次序是否改变，场景：为二次排序服务，如排序后销量相同时是否还按价格排序<br>堆排序、快速排序、选择排序不是稳定的排序算法，而基数排序、冒泡排序、插入排序、折半插入排序、归并排序是稳定的排序算法。  </p>
 <h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p>再根据问题答案重新整理完善吧<br><a href="https://zhuanlan.zhihu.com/p/57153934" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/57153934</a>  </p>
 
     </article>
@@ -926,22 +933,9 @@
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 33
+        Total : 32
         </div>
         <!-- search  -->
         
@@ -971,6 +965,11 @@
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">07/05</span><a class="archive-post-title" href= "/2021/07/05/中文错别字纠正调研/" >中文错别字纠正调研(2021更新)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">05/11</span><a class="archive-post-title" href= "/2021/05/11/个人学术工作的Insight/" >个人学术工作的一些Insight</a>
         </li>
     
@@ -982,11 +981,6 @@
     
         <li class="archive-post-item">
             <span class="archive-post-date">04/09</span><a class="archive-post-title" href= "/2021/04/09/数学题目层次化分类特点整理/" >数学题目层次化分类特点整理</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/28</span><a class="archive-post-title" href= "/2021/03/28/机器学习与深度学习部分基础点整理/" >机器学习与深度学习常见面试题链接整理</a>
         </li>
     
     
@@ -1095,11 +1089,6 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/21</span><a class="archive-post-title" href= "/2020/01/21/中文错别字纠正调研/" >中文错别字纠正调研</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">01/06</span><a class="archive-post-title" href= "/2020/01/06/haskell-notes/" >haskell notes</a>
         </li>
     
@@ -1152,9 +1141,9 @@
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="NLP related"><span class="iconfont-archer">&#xe606;</span>NLP related</span>
-    
         <span class="sidebar-tag-name" data-tags="论文分享"><span class="iconfont-archer">&#xe606;</span>论文分享</span>
+    
+        <span class="sidebar-tag-name" data-tags="NLP related"><span class="iconfont-archer">&#xe606;</span>NLP related</span>
     
         <span class="sidebar-tag-name" data-tags="cv-related"><span class="iconfont-archer">&#xe606;</span>cv-related</span>
     
@@ -1164,13 +1153,13 @@
     
         <span class="sidebar-tag-name" data-tags="项目"><span class="iconfont-archer">&#xe606;</span>项目</span>
     
-        <span class="sidebar-tag-name" data-tags="随想"><span class="iconfont-archer">&#xe606;</span>随想</span>
-    
         <span class="sidebar-tag-name" data-tags="年终总结"><span class="iconfont-archer">&#xe606;</span>年终总结</span>
     
-        <span class="sidebar-tag-name" data-tags="算法题"><span class="iconfont-archer">&#xe606;</span>算法题</span>
+        <span class="sidebar-tag-name" data-tags="随想"><span class="iconfont-archer">&#xe606;</span>随想</span>
     
         <span class="sidebar-tag-name" data-tags="杂谈"><span class="iconfont-archer">&#xe606;</span>杂谈</span>
+    
+        <span class="sidebar-tag-name" data-tags="算法题"><span class="iconfont-archer">&#xe606;</span>算法题</span>
     
         <span class="sidebar-tag-name" data-tags="专题整理"><span class="iconfont-archer">&#xe606;</span>专题整理</span>
     

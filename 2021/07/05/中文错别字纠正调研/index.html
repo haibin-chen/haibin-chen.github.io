@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>机器学习与深度学习常见面试题链接整理 · Haibin&#39;s Studio</title>
+    <title>中文错别字纠正调研(2021更新) · Haibin&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/" >Haibin&#39;s Studio</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">机器学习与深度学习常见面试题链接整理</a>
+                <a href="#" class="post-name">中文错别字纠正调研(2021更新)</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            机器学习与深度学习常见面试题链接整理
+            中文错别字纠正调研(2021更新)
             <!-- 404 -->
             
         </h1>
@@ -266,12 +266,12 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">65</span>Reading time: <span class="post-count reading-time">1 min</span></span>
+                        <span>Word count: <span class="post-count word-count">2.5k</span>Reading time: <span class="post-count reading-time">9 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2021/03/28</span>
+                    <span class="post-intro-time">2021/07/05</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -395,15 +395,49 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>主要是记录一些零碎的机器学习、深度学习的知识点。  </p>
-<h2 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h2><p><a href="https://zhuanlan.zhihu.com/p/66519299" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/66519299</a></p>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
-<li><a href="https://github.com/geektutu/interview-questions" target="_blank" rel="noopener">https://github.com/geektutu/interview-questions</a>  </li>
-<li><a href="https://github.com/amusi/Deep-Learning-Interview-Book" target="_blank" rel="noopener">https://github.com/amusi/Deep-Learning-Interview-Book</a>  </li>
-<li><a href="https://github.com/wangyuGithub01/Machine_Learning_Resources" target="_blank" rel="noopener">https://github.com/wangyuGithub01/Machine_Learning_Resources</a>  </li>
-<li><a href="https://blog.csdn.net/v_july_v/article/details/78121924" target="_blank" rel="noopener">https://blog.csdn.net/v_july_v/article/details/78121924</a>  </li>
-<li><a href="https://github.com/lengyue1024/BAT_interviews" target="_blank" rel="noopener">https://github.com/lengyue1024/BAT_interviews</a>  </li>
+        <h2 id="中文错别字识别方案调研-2021更新"><a href="#中文错别字识别方案调研-2021更新" class="headerlink" title="中文错别字识别方案调研(2021更新)"></a>中文错别字识别方案调研(2021更新)</h2><p>任务定义：NLP中的语言建模任务，在已有的句子中判断某个字的出现（困惑度）是否合理，是否符合人类的表达习惯。  </p>
+<h3 id="相关技术方案参考"><a href="#相关技术方案参考" class="headerlink" title="相关技术方案参考"></a>相关技术方案参考</h3><ol>
+<li><p>达观的解决方案：<a href="http://www.datagrand.com/blog/search-query.html" target="_blank" rel="noopener">http://www.datagrand.com/blog/search-query.html</a><br>方法：基于字之间书写过程中的“距离”，搜索可能的正确词语；基于语言模型修正。<br>数据：爬虫系统爬取优质词条词典、拼音纠错词典、从检索结果是否很差推测是否有错，不需要标注语料。  </p>
+</li>
+<li><p>百度AI提及的解决方案：<a href="https://mp.weixin.qq.com/s/r0kWgPHKthPgGqTbVc3lKw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/r0kWgPHKthPgGqTbVc3lKw</a><br>将错误分为3类：用词错误，音近、词近；文法/句法错误；知识性错误<br>技术：基于机器翻译的方法，主要思想是把纠错看成同种语言中错误句子翻译为正确句子的过程，大规模训练语言模型后，以机器翻译任务形式进行微调训练，需要标注语料。<br>纠错系统：ECNet框架，线下挖掘句对、词对齐、phrase抽取，线上检测后候选排序。Restricted-V NEC，端到端机器翻译。  </p>
+</li>
+<li><p>腾讯内部搜索平台部提及的解决方案：<a href="https://cloud.tencent.com/developer/article/1030059" target="_blank" rel="noopener">https://cloud.tencent.com/developer/article/1030059</a><br>分为召回层和决策层，召回层包含不同领域的错字检测模块，决策层基于用户、字形字音等分类，需要标注语料。  </p>
+</li>
+<li><p>开源方案：<a href="https://github.com/shibing624/pycorrector" target="_blank" rel="noopener">https://github.com/shibing624/pycorrector</a><br>基于规则：先用外部分词工具分词，若某个字的语言模型得分或某个词不在词典中，则判定错误，再基于词典、字典替换该字，使用语言模型判断最好的替换。  </p>
+</li>
 </ol>
+<p>基于深度模型：<br>RNN-CRF：阿里巴巴2016中文语法纠错比赛CGED2018第一名方案<br>conv_seq2seq：NLPCC-2018第三名方案<br>BERT：基于MASK输出获得错词判断。  </p>
+<ol start="5">
+<li>几种相关规则定义：<br>编辑距离：由一个转成另一个所需的最少编辑操作次数<br>若有先验数据，使用LSH局部敏感性哈希/KD Tree等返回候选的相似选项  </li>
+</ol>
+<h3 id="2021更新"><a href="#2021更新" class="headerlink" title="2021更新"></a>2021更新</h3><p>主要挑战在数据增强和数据集构建上  </p>
+<h4 id="更多技术方案"><a href="#更多技术方案" class="headerlink" title="更多技术方案"></a>更多技术方案</h4><p>文本编辑的方法，可以是生成模型或序列标注模型，设计对应的keep, remove, add, insert等标签[1]。<br>[1] Encode, Tag, Realize: High-Precision Text Editing 2019 EMNLP  </p>
+<h4 id="进一步的挑战"><a href="#进一步的挑战" class="headerlink" title="进一步的挑战"></a>进一步的挑战</h4><p>识别和纠正近义词的难度比较大，以下给出部分参考方案。<br>① 近义词候选集构建。可考虑词向量相似性[1]、近义词词典[2]、聚类模型[3]、用户编辑历史[4]等<br>[1] <a href="https://ai.tencent.com/ailab/nlp/zh/embedding.html" target="_blank" rel="noopener">https://ai.tencent.com/ailab/nlp/zh/embedding.html</a><br>[2] <a href="https://github.com/chatopera/Synonyms" target="_blank" rel="noopener">https://github.com/chatopera/Synonyms</a><br>[3] Semantic Word Clusters Using Signed Spectral Clustering (2017 ACL)<br>[4] Corpora Generation for Grammatical Error Correction (2019 NAACL)  </p>
+<p>② 语言模型针对同义词的表示进行优化<br>思路类似于跨语言模型的同义词表示对齐，简单的方案可以在微调语言模型时，构建原句和替换同义词的新句，使用辅助损失拉近同义词的距离。  </p>
+<p>③ 纠正时与已有规则结合<br>以Mask-Predict: Parallel Decoding of Conditional Masked Language Models(2019 EMNLP)的思路为例，该模型生成时是多轮生成的，对于不确定性大的词，可以结合已有混淆集等设计精排模型。  </p>
+<p>④ 尝试融合增强数据进行预训练<br>Neural Grammatical Error Correction Systems with Unsupervised Pre-training on Synthetic Data (ACL Workshop 2019)<br>An Empirical Study of Incorporating Pseudo Data into Grammatical Error Correction EMNLP 2019  </p>
+<p>其中③可能值得更进一步思考，借鉴检索模型的做法，如何综合考虑搜索广度和速度，体现在对错别字纠正任务的粗排和细排中。  </p>
+<h4 id="如何更好地构建监督数据集？"><a href="#如何更好地构建监督数据集？" class="headerlink" title="如何更好地构建监督数据集？"></a>如何更好地构建监督数据集？</h4><p>① 半监督学习：将已有模型在未标注的领域语料上打伪标签，筛选部分样本做为新的训练集，迭代训练，也可参考self-training过程。需要考虑噪声数据筛选、置信度修正等。<br>相关工作：<br>[1] Fine-Tuning Pre-trained Language Model with Weak Supervision: A Contrastive-Regularized Self-Training Approach (2021 NAACL)<br>[2] MixText: Linguistically-Informed Interpolation of Hidden Space for Semi-Supervised Text Classification (2020 ACL)<br>② 主动学习：让模型选出最有信息量、不确定性高（熵值大）、代表性高的无监督或数据增强样本进行标注、修正。<br>相关工作：<br>Deep active learning for named entity recognition (2017 RepL4NLP)<br>A Survey of Active Learning for Text Classification using Deep Neural Networks (2020 arxiv)<br>③ 交叉验证/集成学习：对数据集进行交叉验证可以根据标签不一致的情况，对样本进行筛选与修正。<br>④ 对抗思想是提高模型鲁棒性的重要手段，特别是依赖数据增强的领域。在文档提及的论文Exploration and Exploitation: Two Ways to ImproveChinese Spelling Correction Models(ACL 2021)中，可将对抗思想看成筛选数据增强样本的手段。<br>除此之外，也可在输入表示加入扰动，如Adversarial Training Methods for Semi-Supervised Text Classification(ICLR 2017)<br>⑤ 避免过拟合于特定的数据增强方法，需要考虑测试集鲁棒性。由于神经网络的记忆能力远大于泛化能力，最好准备一个与训练集不同类型的文档类型，测试模型的泛化能力。同时，数据增强方法也要增强多样性，可不局限于错别字类型的数据增强方式，也可以考虑整个样本的数据增强[1]，如常见的替换、删除、生成式增强[2]等。<br>[1] UDA:Unsupervised Data Augmentation for Consistency Training NeurIPS 2020<br>[2] Data Augmentation Using Pre-trained Transformer Models AACL 2020  </p>
+<h3 id="语料要求"><a href="#语料要求" class="headerlink" title="语料要求"></a>语料要求</h3><p>中文语料即可。该任务语料的选择与BERT相同，只需要相关领域的中文文本即可。关键在于能覆盖该领域大多数语言表达的语料库（多样性）及足够的语料数量。  </p>
+<h3 id="学术界调研"><a href="#学术界调研" class="headerlink" title="学术界调研"></a>学术界调研</h3><p>该任务工程性较强。且任务语言特点较强，中文的错字常把整个字打成音似字、形似字，与英文的增删字符不同。从问题来看，属于语言模型中的子应用，与目前大规模的预训练语言模型一脉相承。因此在学术界提升上关注BERT关于词语掩码预测任务的改进即可。具体相关论文和讨论可见附录。  </p>
+<h3 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h3><ol>
+<li>开源方案4中包含同音字、形似字、错别字混淆集、人名地名等字典  </li>
+<li>字典类数据库如新华字典 <a href="https://github.com/pwxcoo/chinese-xinhua" target="_blank" rel="noopener">https://github.com/pwxcoo/chinese-xinhua</a>  </li>
+<li>搜狗中文字词搭配关系数据 <a href="http://www.sogou.com/labs/resource/list_lan.php" target="_blank" rel="noopener">http://www.sogou.com/labs/resource/list_lan.php</a>  </li>
+</ol>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ol>
+<li>基于规则与深度学习两路结合。  </li>
+<li>基于规则保证了任务早期性能基线baseline的基础，即通过开源字典、实体构建常用词库与常用搭配，匹配用户输入错字。后期再基于用户数据积累字典、词典、常错字、音似字、形似字、金融领域常用专有名词等。需要注意的是，BERT为代表的预训练模型并不能捕捉字形、字音的相似关系，所以基于形似音似等规则方法，为便捷、有效的辅助信息。  </li>
+<li>基于深度学习。BERT系列模型在预训练过程中的任务就是预测某个字/预测某个句子，对应错字识别就是根据上下文去预测这个字的内容，两者在AI上对应的思路是相同的。训练过程即我们整理语料后，微调BERT时顺便做这个任务即可。如果该任务在上两者优化后效果仍比较差，再考虑标注数据应用翻译模型等提升效果。  </li>
+<li>如果落地场景与用户搜索相关，还有许多工程上的思路。如根据搜索结果的丰富性判断是否可能输入错误；模型通过相似性计算获取与用户输入相似的表达或搭配；在用户搜索库候选召回相近的常用字段等。  </li>
+</ol>
+<h3 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h3><h4 id="文本错误类型，开源的数据定义示例"><a href="#文本错误类型，开源的数据定义示例" class="headerlink" title="文本错误类型，开源的数据定义示例"></a>文本错误类型，开源的数据定义示例</h4><p>•    谐音字词，如 配副眼睛-配副眼镜<br>•    混淆音字词，如 流浪织女-牛郎织女<br>•    字词顺序颠倒，如 伍迪艾伦-艾伦伍迪<br>•    字词补全，如 爱有天意-假如爱有天意<br>•    形似字错误，如 高梁-高粱<br>•    中文拼音全拼，如 xingfu-幸福<br>•    中文拼音缩写，如 sz-深圳<br>•    语法错误，如 想象难以-难以想象  </p>
+<h4 id="部分相关论文"><a href="#部分相关论文" class="headerlink" title="部分相关论文"></a>部分相关论文</h4><p>Youdao’s Winning Solution to the NLPCC-2018 Task 2 Challenge: A Neural Machine Translation Approach to Chinese Grammatical Error Correction - 网易有道<br>错误分为表面错误和语法错误，使用相似字音表+5-gram解决低级错误，使用字级、词级 Transformer 模型解决高级错误，将低级模型和高级模型进行组合，最终再用5-gram语言模型对纠正后句子进行困惑度分析，选择困惑度最低的句子。  </p>
+<p>Chinese Grammatical Error Correction Using Statistical and Neural Models - 阿里巴巴<br>多模型平行结构，使用基于规则、基于统计和神经网络三大类模型，先在类别内进行低级组合得到类别候选，再对类别候选进行高级组合。  </p>
+<p>Pre-Training with Whole Word Masking for Chinese BERT - 哈工大+科大讯飞<br>BERT MASK时随机MASK整个中文词语而非单字，在这里可以MASK掉容易写错的字。  </p>
+<p>Chinese Spelling Check System Based on Tri-gram Model<br>构造由容易被混淆的字符及词组成的混淆集 基于二元/三元文法等匹配  </p>
+<p>A Sequence to Sequence Learning for Chinese Grammatical Error Correction<br>根据标注语料，使用seq2seq模型生成正确序列  </p>
+<p>基于 Transformer 增强架构的中文语法纠错方法<br>Transformer架构的NMT机器翻译模型  </p>
 
     </article>
     <!-- license  -->
@@ -413,16 +447,16 @@ height:50vh;
         <li class="next">
             
                 <div class="nextSlogan">Next Post</div>
-                <a href= "/2021/04/09/数学题目层次化分类特点整理/" title= "数学题目层次化分类特点整理">
-                    <div class="nextTitle">数学题目层次化分类特点整理</div>
+                <a href= "/2099/01/01/站内导引/" title= "站内导引">
+                    <div class="nextTitle">站内导引</div>
                 </a>
             
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2021/03/21/指代消解-词pair-问题范式简介-以roberta为例/" title= "指代消解(词pair)问题范式简介(以roberta为例)">
-                    <div class="prevTitle">指代消解(词pair)问题范式简介(以roberta为例)</div>
+                <a href= "/2021/05/11/个人学术工作的Insight/" title= "个人学术工作的一些Insight">
+                    <div class="prevTitle">个人学术工作的一些Insight</div>
                 </a>
             
         </li>
@@ -557,7 +591,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#线性回归"><span class="toc-number">1.</span> <span class="toc-text">线性回归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-number">2.</span> <span class="toc-text">Reference</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#中文错别字识别方案调研-2021更新"><span class="toc-number">1.</span> <span class="toc-text">中文错别字识别方案调研(2021更新)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#相关技术方案参考"><span class="toc-number">1.1.</span> <span class="toc-text">相关技术方案参考</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2021更新"><span class="toc-number">1.2.</span> <span class="toc-text">2021更新</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#更多技术方案"><span class="toc-number">1.2.1.</span> <span class="toc-text">更多技术方案</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#进一步的挑战"><span class="toc-number">1.2.2.</span> <span class="toc-text">进一步的挑战</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#如何更好地构建监督数据集？"><span class="toc-number">1.2.3.</span> <span class="toc-text">如何更好地构建监督数据集？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#语料要求"><span class="toc-number">1.3.</span> <span class="toc-text">语料要求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#学术界调研"><span class="toc-number">1.4.</span> <span class="toc-text">学术界调研</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#相关资源"><span class="toc-number">1.5.</span> <span class="toc-text">相关资源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">1.6.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#附录"><span class="toc-number">1.7.</span> <span class="toc-text">附录</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#文本错误类型，开源的数据定义示例"><span class="toc-number">1.7.1.</span> <span class="toc-text">文本错误类型，开源的数据定义示例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#部分相关论文"><span class="toc-number">1.7.2.</span> <span class="toc-text">部分相关论文</span></a></li></ol></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -970,22 +1004,9 @@ top:50vh;
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 33
+        Total : 32
         </div>
         <!-- search  -->
         
@@ -1015,6 +1036,11 @@ top:50vh;
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">07/05</span><a class="archive-post-title" href= "/2021/07/05/中文错别字纠正调研/" >中文错别字纠正调研(2021更新)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">05/11</span><a class="archive-post-title" href= "/2021/05/11/个人学术工作的Insight/" >个人学术工作的一些Insight</a>
         </li>
     
@@ -1026,11 +1052,6 @@ top:50vh;
     
         <li class="archive-post-item">
             <span class="archive-post-date">04/09</span><a class="archive-post-title" href= "/2021/04/09/数学题目层次化分类特点整理/" >数学题目层次化分类特点整理</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">03/28</span><a class="archive-post-title" href= "/2021/03/28/机器学习与深度学习部分基础点整理/" >机器学习与深度学习常见面试题链接整理</a>
         </li>
     
     
@@ -1139,11 +1160,6 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/21</span><a class="archive-post-title" href= "/2020/01/21/中文错别字纠正调研/" >中文错别字纠正调研</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">01/06</span><a class="archive-post-title" href= "/2020/01/06/haskell-notes/" >haskell notes</a>
         </li>
     
@@ -1196,9 +1212,9 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="NLP related"><span class="iconfont-archer">&#xe606;</span>NLP related</span>
-    
         <span class="sidebar-tag-name" data-tags="论文分享"><span class="iconfont-archer">&#xe606;</span>论文分享</span>
+    
+        <span class="sidebar-tag-name" data-tags="NLP related"><span class="iconfont-archer">&#xe606;</span>NLP related</span>
     
         <span class="sidebar-tag-name" data-tags="cv-related"><span class="iconfont-archer">&#xe606;</span>cv-related</span>
     
@@ -1208,13 +1224,13 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="项目"><span class="iconfont-archer">&#xe606;</span>项目</span>
     
-        <span class="sidebar-tag-name" data-tags="随想"><span class="iconfont-archer">&#xe606;</span>随想</span>
-    
         <span class="sidebar-tag-name" data-tags="年终总结"><span class="iconfont-archer">&#xe606;</span>年终总结</span>
     
-        <span class="sidebar-tag-name" data-tags="算法题"><span class="iconfont-archer">&#xe606;</span>算法题</span>
+        <span class="sidebar-tag-name" data-tags="随想"><span class="iconfont-archer">&#xe606;</span>随想</span>
     
         <span class="sidebar-tag-name" data-tags="杂谈"><span class="iconfont-archer">&#xe606;</span>杂谈</span>
+    
+        <span class="sidebar-tag-name" data-tags="算法题"><span class="iconfont-archer">&#xe606;</span>算法题</span>
     
         <span class="sidebar-tag-name" data-tags="专题整理"><span class="iconfont-archer">&#xe606;</span>专题整理</span>
     
