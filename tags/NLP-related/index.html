@@ -346,6 +346,37 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/07/24/不同场景下CRF的变形与实现/" >
+            
+                <span>不同场景下CRF的变形与实现</span>
+        </a>
+        <div class="abstract-content">
+            CRF原理CRF本身由转移特征函数和状态函数，优点是学习了全局的转移关系。训练时使用正确路径和备选路径的得分值，解码时使用维特比动态规划算法。本文主要基于NN+CRF，即以神经网络的特征为输入，baseline版CRF学习一个标签间的转移矩阵，不考虑传统CRF++中的多位置、跨位置模板等问题。  
+CRF实现下面简单过一下流程，神经网络的输出作为发射概率emission score。使用该发射概率分别计算正确路径的分数和所有备选路径的分数，两者的比值即作为最终损失。以下介绍忽略常见维度变换和一些矩阵操作，主要展示代码上的过程。
+Total Score该函数将转移分数和发射分数加起来，即计...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/07/24</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "NLP related">NLP related</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/04/09/数学题目层次化分类特点整理/" >
             
                 <span>数学题目层次化分类特点整理</span>
@@ -1124,9 +1155,24 @@ Distil...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 33
+        Total : 34
         </div>
         <!-- search  -->
         
@@ -1156,7 +1202,12 @@ Distil...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/09</span><a class="archive-post-title" href= "/2021/07/09/NLP中的embedding有什么特点(慢速更新)/" >NLP中的embedding有什么特点(按更新</a>
+            <span class="archive-post-date">07/24</span><a class="archive-post-title" href= "/2021/07/24/不同场景下CRF的变形与实现/" >不同场景下CRF的变形与实现</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/09</span><a class="archive-post-title" href= "/2021/07/09/NLP中的embedding有什么特点(慢速更新)/" >NLP中的embedding有什么特点(慢速更新)</a>
         </li>
     
     
@@ -1349,9 +1400,9 @@ Distil...
     
         <span class="sidebar-tag-name" data-tags="项目"><span class="iconfont-archer">&#xe606;</span>项目</span>
     
-        <span class="sidebar-tag-name" data-tags="随想"><span class="iconfont-archer">&#xe606;</span>随想</span>
-    
         <span class="sidebar-tag-name" data-tags="年终总结"><span class="iconfont-archer">&#xe606;</span>年终总结</span>
+    
+        <span class="sidebar-tag-name" data-tags="随想"><span class="iconfont-archer">&#xe606;</span>随想</span>
     
         <span class="sidebar-tag-name" data-tags="算法题"><span class="iconfont-archer">&#xe606;</span>算法题</span>
     

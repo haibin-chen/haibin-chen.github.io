@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Haibin&#39;s Studio</title>
+    <title>不同场景下CRF的变形与实现 · Haibin&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >Haibin&#39;s Studio</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">不同场景下CRF的变形与实现</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>Haibin's Studio</a>
 </header>
@@ -220,24 +231,74 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(//source.unsplash.com/random/800x600)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            不同场景下CRF的变形与实现
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "NLP related">NLP related</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count word-count">1.3k</span>Reading time: <span class="post-count reading-time">5 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2021/07/24</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,126 +399,72 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/10/22/tensorflow模型部署指南/" >
-            
-                <span>tensorflow模型部署指南</span>
-        </a>
-        <div class="abstract-content">
-            从训练到部署~
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/10/22</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "代码二三事">代码二三事</a>
-    
-</div>
-            
-        </div>
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="CRF原理"><a href="#CRF原理" class="headerlink" title="CRF原理"></a>CRF原理</h1><p>CRF本身由转移特征函数和状态函数，优点是学习了全局的转移关系。训练时使用正确路径和备选路径的得分值，解码时使用维特比动态规划算法。<br>本文主要基于NN+CRF，即以神经网络的特征为输入，baseline版CRF学习一个标签间的转移矩阵，不考虑传统CRF++中的多位置、跨位置模板等问题。  </p>
+<h1 id="CRF实现"><a href="#CRF实现" class="headerlink" title="CRF实现"></a>CRF实现</h1><p>下面简单过一下流程，神经网络的输出作为发射概率emission score。使用该发射概率分别计算正确路径的分数和所有备选路径的分数，两者的比值即作为最终损失。<br>以下介绍忽略常见维度变换和一些矩阵操作，主要展示代码上的过程。</p>
+<h2 id="Total-Score"><a href="#Total-Score" class="headerlink" title="Total Score"></a>Total Score</h2><p>该函数将转移分数和发射分数加起来，即计算了相邻位置的得分。这里有copy操作，将转移函数拓展为(label_size, label_size)大小，方便矩阵操作。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">def calculate_all_scores(self, lstm_scores):</span><br><span class="line">	# transition (batch_size, length, label_size, label_size) (repeat dimension 0 and 1)</span><br><span class="line">	# lstm_scores (batch_size, length, label_size, label_size) (repeat dimension 2)</span><br><span class="line">    scores = transition + lstm_scores</span><br><span class="line">    return scores</span><br><span class="line">```  </span><br><span class="line">## Forward Score  </span><br><span class="line">上述章节做矩阵扩展和复制的原因是为了类似动态规划的方式求出每个位置的分数，每个位置的alpha都可递归的由上个位置的alpha和当前位置的总分数相加得到。</span><br><span class="line">```  </span><br><span class="line"># tags batchSize, length, label_size, 1</span><br><span class="line"># 取出正确路径分数</span><br><span class="line">currentTagScores = torch.gather(all_scores, 3, tags).view(batchSize, -1, self.label_size)</span><br><span class="line">if sentLength != 1:</span><br><span class="line">    tagTransScoresMiddle = torch.gather(currentTagScores[:, 1:, :], 2, tags[:, : sentLength - 1])</span><br><span class="line"># 开始位置初始化</span><br><span class="line">tagTransScoresBegin = currentTagScores[:, 0, self.start_idx]</span><br><span class="line"># 终止位置初始化，transition可学习矩阵</span><br><span class="line">endTagIds = torch.gather(tags, 1, length)</span><br><span class="line">tagTransScoresEnd = torch.gather(self.transition)</span><br><span class="line"></span><br><span class="line"># 最终分数是逐位置计算的，由累积分数、当前位置发射概率和可学习转移概率组成</span><br><span class="line">score = sum(tagTransScoresBegin) + sum(tagTransScoresEnd)</span><br><span class="line">if sentLength != 1:</span><br><span class="line">    score += sum(tagTransScoresMiddle)</span><br><span class="line">return score</span><br></pre></td></tr></table></figure>
+
+<h2 id="Forward-Unlabeled-Score"><a href="#Forward-Unlabeled-Score" class="headerlink" title="Forward Unlabeled Score"></a>Forward Unlabeled Score</h2><p>获得其他备选非标签序列的分数，即归一化项。  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">alpha = torch.zeros(batch_size, seq_len, self.label_size).to(self.device)</span><br><span class="line"></span><br><span class="line"># 开始位置</span><br><span class="line">alpha[:, 0, :] = all_scores[:, 0,  self.start_idx, :]</span><br><span class="line"></span><br><span class="line">for word_idx in range(1, length):</span><br><span class="line">    before_log_sum_exp = alpha + all_scores[:, word_idx, :, :]</span><br><span class="line">    alpha[:, word_idx, :] = log_sum_exp_pytorch(before_log_sum_exp)</span><br><span class="line"></span><br><span class="line"># 结束位置</span><br><span class="line">last_alpha = torch.gather(alpha, 1, length)</span><br><span class="line">last_alpha += self.transition[:, self.end_idx]</span><br><span class="line"># 对数后取log变成加减运算，数值技巧</span><br><span class="line">last_alpha = log_sum_exp_pytorch(last_alpha.view(batch_size, self.label_size, 1))</span><br><span class="line"></span><br><span class="line">return sum(last_alpha)</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">## Viterbi Decode  </span><br><span class="line">和前向过程类似，O(n)，取argmax就可以  </span><br><span class="line">```  </span><br><span class="line"># scoresIdx 累积分数 idxRecord 类别记录</span><br><span class="line">for wordIdx in range(1, sentLength):</span><br><span class="line">    scoresIdx = scoresRecord[:, wordIdx, :, :] + scores[:, wordIdx, :, :]</span><br><span class="line">    idxRecord[:, wordIdx, :] = argmax(scoresIdx, 1)</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line"># Paritial/Fuzzy CRF  </span><br><span class="line">## 背景  </span><br><span class="line">部分标注的问题。  </span><br><span class="line">即一个实体可能有多种可能的类别，无法标注到具体的类别。常见的情景是在不同的类别规则库（远程监督）都匹配到了，或者不同人的标注结果不一样。  </span><br><span class="line">## 主要思路</span><br><span class="line">以下图prostaglandin synthesis为例，保留所有可能的序列为正确序列。  </span><br><span class="line">![](1.jpg)  </span><br><span class="line"></span><br><span class="line">## 主要实现  </span><br><span class="line">在上面的forward score章节，多传入一个mask矩阵，对于特定位置的标签不做考量，即保留了所有可能序列</span><br></pre></td></tr></table></figure>
+
+<p>tagTransScoresMiddle = tagTransScoresMiddle * mask</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">## 参考文献  </span><br><span class="line">Learning Named Entity Tagger using Domain-Specific Dictionary EMNLP 2018  </span><br><span class="line"></span><br><span class="line">## 其他方法  </span><br><span class="line">除了模型上保留所有的可能序列，也可以沿用半监督的思路，先mask掉低质量的标注，用高质量标注的模型标注低质量数据，结合实际情况更新低质量标注的结果，迭代地加入高质量数据中一起训练。类似工作有 Better Modeling of Incomplete Annotations for Named Entity Recognition以及Named Entity Recognition with Partially Annotated Training Data  </span><br><span class="line"></span><br><span class="line"># Span-based CRF  </span><br><span class="line">## 背景  </span><br><span class="line">CRF的基本定义是有马尔科夫性的，即a-&gt;b-&gt;c这样的线性链依赖，HSCRF可以捕捉segment一块一块之间的联系，CRF的小优化思路。  </span><br><span class="line"></span><br><span class="line">## 主要思路  </span><br><span class="line">如何构造segment？用的方法是列举每个(min, length)的span范围。这里是若干个词范围的词语表示、位置编码等构建segment的表示。可学习的标签转移关系是共享的，因此可以看成有两个CRF  </span><br><span class="line">解码时取最好的一个或加权。  </span><br><span class="line"></span><br><span class="line">## 主要实现及评价  </span><br><span class="line">由于构造segment时列举了所有可能的span范围，因此scores矩阵扩展为[batch_size, length, length, tagset_size, tagset_size]。这也是我不太喜欢的地方，显存需求量就是多乘了个O(n)。  </span><br><span class="line">比较意外的是两个CRF除了可学习的标签转移关系是共享外，其他都是独立的，没有设计级联等联系。  </span><br><span class="line"></span><br><span class="line">## 参考文献  </span><br><span class="line">Hybrid semi-Markov CRF for Neural Sequence Labeling 2018 ACL  </span><br><span class="line"></span><br><span class="line"># Noisy-based CRF  </span><br><span class="line"># 背景  </span><br><span class="line">噪声样本一般指标注错误  </span><br><span class="line"># 主要思路  </span><br><span class="line">1. 通过CRF双向的边缘概率，和原先神经网络输出映射后的logit值（softmax）来做置信度筛选。  </span><br><span class="line">2. Fine-grained calibrate: 标签预测错，不太可能类别和边界信息(BIO)都错了。根据置信度二选一去除无关的CRF序列分数计算。  </span><br><span class="line"># 主要实现  </span><br><span class="line">```  </span><br><span class="line"># 双向边缘概率</span><br><span class="line">log_marginals = alpha + beta - log_Z.unsqueeze(1).unsqueeze(1)</span><br></pre></td></tr></table></figure>
+
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>Noisy-Labeled NER with Confidence Estimation 2021 NAACL  </p>
+
     </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/10/18/基于RNN-我们还能加些什么-（文本分类）/" >
-            
-                <span>基于RNN 我们还能加些什么?（文本分类）</span>
-        </a>
-        <div class="abstract-content">
-            文本分类相关工作整理
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/10/18</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "专题整理">专题整理</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/10/05/why-blog/" >
-            
-                <span>why blog?</span>
-        </a>
-        <div class="abstract-content">
-            自言自语
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/10/05</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "随想">随想</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/10/04/2019-10-04论文分享/" >
-            
-                <span>2019-10-04论文分享</span>
-        </a>
-        <div class="abstract-content">
-            在高铁上看完的~
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/10/04</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "论文分享">论文分享</a>
-    
-</div>
-            
-        </div>
-    </article>
+    <!-- license  -->
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2099/01/01/站内导引/" title= "站内导引">
+                    <div class="nextTitle">站内导引</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2021/07/09/NLP中的embedding有什么特点(慢速更新)/" title= "NLP中的embedding有什么特点(慢速更新)">
+                    <div class="prevTitle">NLP中的embedding有什么特点(慢速更新)</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+    <div id="lv-container" data-id="city" data-uid= MTAyMC80Njk1Ni8yMzQ1Nw>
+        <script type="text/javascript">
+            (function (d, s) {
+                var j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') { return; }
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -543,6 +550,24 @@
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CRF原理"><span class="toc-number">1.</span> <span class="toc-text">CRF原理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CRF实现"><span class="toc-number">2.</span> <span class="toc-text">CRF实现</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Total-Score"><span class="toc-number">2.1.</span> <span class="toc-text">Total Score</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Forward-Unlabeled-Score"><span class="toc-number">2.2.</span> <span class="toc-text">Forward Unlabeled Score</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考文献"><span class="toc-number">2.3.</span> <span class="toc-text">参考文献</span></a></li></ol></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1287,6 +1312,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>

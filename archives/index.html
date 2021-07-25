@@ -358,7 +358,7 @@ fastText源码中有意思的地方和新版特性
 命名实体识别中常见的挑战  
 基于RNN做文本分类-我们还能加些什么  
 指代消解-词pair-问题范式简介-以roberta为例  
-中文错别字纠正调研   
+  
 非常落后的调研-命名实体识别调研(2018年10月前)    
 BiLSTM与CRF++①  
 BiLSTM与CRF++②  
@@ -367,7 +367,7 @@ BiLSTM与CRF++②
 tensorflow模型部署指南  
 AllenNLP_Guide中文版  
 Standford-Corenlp工具包功能文档  
-如何快...
+如何快速部署tensorf...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -385,9 +385,40 @@ Standford-Corenlp工具包功能文档
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/07/24/不同场景下CRF的变形与实现/" >
+            
+                <span>不同场景下CRF的变形与实现</span>
+        </a>
+        <div class="abstract-content">
+            CRF原理CRF本身由转移特征函数和状态函数，优点是学习了全局的转移关系。训练时使用正确路径和备选路径的得分值，解码时使用维特比动态规划算法。本文主要基于NN+CRF，即以神经网络的特征为输入，baseline版CRF学习一个标签间的转移矩阵，不考虑传统CRF++中的多位置、跨位置模板等问题。  
+CRF实现下面简单过一下流程，神经网络的输出作为发射概率emission score。使用该发射概率分别计算正确路径的分数和所有备选路径的分数，两者的比值即作为最终损失。以下介绍忽略常见维度变换和一些矩阵操作，主要展示代码上的过程。
+Total Score该函数将转移分数和发射分数加起来，即计...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/07/24</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "NLP related">NLP related</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/07/09/NLP中的embedding有什么特点(慢速更新)/" >
             
-                <span>NLP中的embedding有什么特点(按更新</span>
+                <span>NLP中的embedding有什么特点(慢速更新)</span>
         </a>
         <div class="abstract-content">
             和CV的特征空间的联系相似: 自监督/预训练获得的特征分布之间是高度相关的，而标准化往往对聚类检索有帮助，分类任务还要待验证不同: 图像输入是天然连续符合某种天然分布的，而nlp的词向量本身是抽象的，受一词多义 上下文等影响，最后获得的向量不一定是初始化时理想的均匀高斯分布球。embedding在计算学习理论下可以看成在高维希尔伯特空间下找一个低维的有欧几里得性质的流形空间  
@@ -611,38 +642,6 @@ Abstractio...
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "NLP related">NLP related</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/03/06/fastText源码中有意思的地方和新版特性/" >
-            
-                <span>fastText源码中有意思的地方</span>
-        </a>
-        <div class="abstract-content">
-            本文不讨论fastText的技术原理，主要讨论工程实现v0.1.0中有意思的点和一些新版特性。主要结构如下：源码结构、源码走读与关键函数分析、效率优化分析。  
-源码结构123456789101112args.h, args.cc: 模型参数定义  autotune.h, autotune.cc: 参数更新控制  densematrix.h, densematrix.cc: 矩阵封装  dictionary.h, dictionary.cc: 字典封装fasttext.h, fasttext.cc: 主类，控制训练、加载等  loss.h, loss.cc: 封装hierarchy和NC...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/06</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "NLP related">NLP related</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "代码二三事">代码二三事</a>
     
 </div>
             
@@ -1164,9 +1163,24 @@ Abstractio...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 33
+        Total : 34
         </div>
         <!-- search  -->
         
@@ -1196,7 +1210,12 @@ Abstractio...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/09</span><a class="archive-post-title" href= "/2021/07/09/NLP中的embedding有什么特点(慢速更新)/" >NLP中的embedding有什么特点(按更新</a>
+            <span class="archive-post-date">07/24</span><a class="archive-post-title" href= "/2021/07/24/不同场景下CRF的变形与实现/" >不同场景下CRF的变形与实现</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/09</span><a class="archive-post-title" href= "/2021/07/09/NLP中的embedding有什么特点(慢速更新)/" >NLP中的embedding有什么特点(慢速更新)</a>
         </li>
     
     
@@ -1389,9 +1408,9 @@ Abstractio...
     
         <span class="sidebar-tag-name" data-tags="项目"><span class="iconfont-archer">&#xe606;</span>项目</span>
     
-        <span class="sidebar-tag-name" data-tags="随想"><span class="iconfont-archer">&#xe606;</span>随想</span>
-    
         <span class="sidebar-tag-name" data-tags="年终总结"><span class="iconfont-archer">&#xe606;</span>年终总结</span>
+    
+        <span class="sidebar-tag-name" data-tags="随想"><span class="iconfont-archer">&#xe606;</span>随想</span>
     
         <span class="sidebar-tag-name" data-tags="算法题"><span class="iconfont-archer">&#xe606;</span>算法题</span>
     

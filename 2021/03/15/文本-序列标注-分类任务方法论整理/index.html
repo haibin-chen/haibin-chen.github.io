@@ -272,7 +272,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">2.3k</span>Reading time: <span class="post-count reading-time">8 min</span></span>
+                        <span>Word count: <span class="post-count word-count">2.4k</span>Reading time: <span class="post-count reading-time">8 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -409,9 +409,12 @@ height:50vh;
 </ol>
 <p>[1] A Rigorous Study on Named Entity Recognition: Can Fine-tuning Pretrained Model Lead to the Promised Land? (2020 AAAI)  </p>
 <h3 id="怎么做数据增强？"><a href="#怎么做数据增强？" class="headerlink" title="怎么做数据增强？"></a>怎么做数据增强？</h3><ol>
-<li>远程监督。如对于极少量数据的目标域，如只有200个句子标注的实体数据集。收集实体维基百科、相关主题语料远程监督等，在这个目标域上进行预训练模型的微调，还是非常有效的方案。[1] </li>
-<li>回译、对偶学习。  </li>
-<li>替换、翻转等方法。如同义词替换(词典/语言模型)、随机插入、随机交换和随机删除等等。代表工作有UDA[2]等。<br>其他相关问题：带噪声的学习<br>[1] CrossNER: Evaluating Cross-Domain Named Entity Recognition (2021 AAAI)<br>[2] Unsupervised Data Augmentation for Consistency Training (2020 NIPS)<br>TODO：怎么收集相关语料？收集后怎么用？bootstrapping、远程监督  </li>
+<li>远程监督。如对于极少量数据的目标域，如只有200个句子标注的实体数据集。收集实体维基百科、相关主题语料远程监督等，在这个目标域上进行预训练模型的微调，还是非常有效的方案。[1]   </li>
+<li>半监督。利用已有模型在未标注数据上标伪标签，迭代训练。也可以利用弱监督相关信息。[2]  </li>
+<li>替换、翻转等方法。如同义词替换(词典/语言模型)、随机插入、随机交换和随机删除等等。文本分类任务简单、成熟一点。代表工作有UDA[3]、实体识别相关[6]等。  </li>
+<li>回译。    </li>
+<li>基于Mixup的方法，利用插值等思路生成新样本。[4]  </li>
+<li>生成式数据增强。常见思路是先微调预训练模型做原句子copy任务，模型生成句子保留大致含义但有多样性。[5]<br>个人经验，靠上的方法相对来说更通用有效一些。<br>其他相关问题：带噪声的学习<br>[1] CrossNER: Evaluating Cross-Domain Named Entity Recognition (2021 AAAI)<br>[2] Fine-Tuning Pre-trained Language Model with Weak Supervision: A Contrastive-Regularized Self-Training Approach (2021 NAACL)<br>[3] Unsupervised Data Augmentation for Consistency Training (2020 NIPS)<br>[4] Local Additivity Based Data Augmentation for Semi-supervised NER (2020 EMNLP)<br>[5] Data Augmentation using Pre-trained Transformer Models<br>[6] An analysis ofsimple data augmentation for named entity recognition (2020 COLING)  </li>
 </ol>
 <h3 id="拿到数据后可以做哪些初步分析？要怎么清洗？"><a href="#拿到数据后可以做哪些初步分析？要怎么清洗？" class="headerlink" title="拿到数据后可以做哪些初步分析？要怎么清洗？"></a>拿到数据后可以做哪些初步分析？要怎么清洗？</h3><ol>
 <li>在标注过程和清洗过程中，需要确定一个比较统一的标准，避免混淆。如标注人名“张老师”，“老师”两个字要不要认定为实体？这个是需要具体分析确定的。  </li>
@@ -1046,9 +1049,24 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 33
+        Total : 34
         </div>
         <!-- search  -->
         
@@ -1078,7 +1096,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/09</span><a class="archive-post-title" href= "/2021/07/09/NLP中的embedding有什么特点(慢速更新)/" >NLP中的embedding有什么特点(按更新</a>
+            <span class="archive-post-date">07/24</span><a class="archive-post-title" href= "/2021/07/24/不同场景下CRF的变形与实现/" >不同场景下CRF的变形与实现</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/09</span><a class="archive-post-title" href= "/2021/07/09/NLP中的embedding有什么特点(慢速更新)/" >NLP中的embedding有什么特点(慢速更新)</a>
         </li>
     
     
@@ -1271,9 +1294,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="项目"><span class="iconfont-archer">&#xe606;</span>项目</span>
     
-        <span class="sidebar-tag-name" data-tags="随想"><span class="iconfont-archer">&#xe606;</span>随想</span>
-    
         <span class="sidebar-tag-name" data-tags="年终总结"><span class="iconfont-archer">&#xe606;</span>年终总结</span>
+    
+        <span class="sidebar-tag-name" data-tags="随想"><span class="iconfont-archer">&#xe606;</span>随想</span>
     
         <span class="sidebar-tag-name" data-tags="算法题"><span class="iconfont-archer">&#xe606;</span>算法题</span>
     
