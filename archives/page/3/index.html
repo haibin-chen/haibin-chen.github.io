@@ -346,6 +346,40 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/06/26/项目总结/" >
+            
+                <span>项目总结</span>
+        </a>
+        <div class="abstract-content">
+            一个表格问题的探索问题定义无线表格预切分后存在一些误切的空格、文本，对这一类情况进行合并，方便后续表格理解任务。  
+模型说明
+模型输入输出定义：输入为表格序列化表示，输出为每个格子是否合并。
+双BERT模型。BERT的输入除了原来的embedding还有行/列embedding。（参考ACL 2020 google表格理解的模型）
+第一个BERT编码字符embedding，每个格子的表示为字符embedding的平均。将每个格子的表示输入第二个BERT里，做0/1的序列标注问题。（基于BERT的LSTM/CNN/GNN并没有明显的提升）
+针对多行多列合并切分/问题，使用句子对NLI问题...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/06/26</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "项目">项目</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/03/30/cv-related/" >
             
                 <span>cv-related</span>
@@ -618,38 +652,6 @@ NFA相对于DFA的变化：状态转移映射、初始状态为集合，且因�
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "CS课程笔记">CS课程笔记</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/11/04/如何快速部署tensorflow到docker中-以bert-as-service为例/" >
-            
-                <span>如何快速部署tensorflow到docker中(以bert-as-service为例)</span>
-        </a>
-        <div class="abstract-content">
-            部署流程注：若使用tensorflow serving则可使用官方提供的方法部署
-本地测试部署以bert-as-service为例，先把模型相关的.pb等文件放在bert-as-service文件夹中。  
-docker安装可参照使用 Docker 部署 TensorFlow 环境，gpu版本记得安装GPUtil和nvidia-docker。  
-模型部署快速创建容器：docker run -it –gpus all -v /bert-as-service:/notebooks -p 5555:5555 -p 5556:5556 -p 5557:5557 tensorflow/tenso...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/04</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "代码二三事">代码二三事</a>
     
 </div>
             
@@ -1186,9 +1188,20 @@ docker安装可参照使用 Docker 部署 TensorFlow 环境，gpu版本记得安
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 34
+        Total : 35
         </div>
         <!-- search  -->
         
@@ -1215,6 +1228,11 @@ docker安装可参照使用 Docker 部署 TensorFlow 环境，gpu版本记得安
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/26</span><a class="archive-post-title" href= "/2021/07/26/机器学习工程-数据收集与准备/" >[机器学习工程]数据收集与准备</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1404,15 +1422,15 @@ docker安装可参照使用 Docker 部署 TensorFlow 环境，gpu版本记得安
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="论文分享"><span class="iconfont-archer">&#xe606;</span>论文分享</span>
-    
         <span class="sidebar-tag-name" data-tags="NLP related"><span class="iconfont-archer">&#xe606;</span>NLP related</span>
+    
+        <span class="sidebar-tag-name" data-tags="论文分享"><span class="iconfont-archer">&#xe606;</span>论文分享</span>
     
         <span class="sidebar-tag-name" data-tags="cv-related"><span class="iconfont-archer">&#xe606;</span>cv-related</span>
     
-        <span class="sidebar-tag-name" data-tags="代码二三事"><span class="iconfont-archer">&#xe606;</span>代码二三事</span>
-    
         <span class="sidebar-tag-name" data-tags="CS课程笔记"><span class="iconfont-archer">&#xe606;</span>CS课程笔记</span>
+    
+        <span class="sidebar-tag-name" data-tags="代码二三事"><span class="iconfont-archer">&#xe606;</span>代码二三事</span>
     
         <span class="sidebar-tag-name" data-tags="项目"><span class="iconfont-archer">&#xe606;</span>项目</span>
     

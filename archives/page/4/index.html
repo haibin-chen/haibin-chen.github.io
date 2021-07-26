@@ -346,6 +346,38 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/11/04/如何快速部署tensorflow到docker中-以bert-as-service为例/" >
+            
+                <span>如何快速部署tensorflow到docker中(以bert-as-service为例)</span>
+        </a>
+        <div class="abstract-content">
+            部署流程注：若使用tensorflow serving则可使用官方提供的方法部署
+本地测试部署以bert-as-service为例，先把模型相关的.pb等文件放在bert-as-service文件夹中。  
+docker安装可参照使用 Docker 部署 TensorFlow 环境，gpu版本记得安装GPUtil和nvidia-docker。  
+模型部署快速创建容器：docker run -it –gpus all -v /bert-as-service:/notebooks -p 5555:5555 -p 5556:5556 -p 5557:5557 tensorflow/tenso...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/04</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "代码二三事">代码二三事</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/10/22/tensorflow模型部署指南/" >
             
                 <span>tensorflow模型部署指南</span>
@@ -986,9 +1018,20 @@
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 34
+        Total : 35
         </div>
         <!-- search  -->
         
@@ -1015,6 +1058,11 @@
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/26</span><a class="archive-post-title" href= "/2021/07/26/机器学习工程-数据收集与准备/" >[机器学习工程]数据收集与准备</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1204,15 +1252,15 @@
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="论文分享"><span class="iconfont-archer">&#xe606;</span>论文分享</span>
-    
         <span class="sidebar-tag-name" data-tags="NLP related"><span class="iconfont-archer">&#xe606;</span>NLP related</span>
+    
+        <span class="sidebar-tag-name" data-tags="论文分享"><span class="iconfont-archer">&#xe606;</span>论文分享</span>
     
         <span class="sidebar-tag-name" data-tags="cv-related"><span class="iconfont-archer">&#xe606;</span>cv-related</span>
     
-        <span class="sidebar-tag-name" data-tags="代码二三事"><span class="iconfont-archer">&#xe606;</span>代码二三事</span>
-    
         <span class="sidebar-tag-name" data-tags="CS课程笔记"><span class="iconfont-archer">&#xe606;</span>CS课程笔记</span>
+    
+        <span class="sidebar-tag-name" data-tags="代码二三事"><span class="iconfont-archer">&#xe606;</span>代码二三事</span>
     
         <span class="sidebar-tag-name" data-tags="项目"><span class="iconfont-archer">&#xe606;</span>项目</span>
     
