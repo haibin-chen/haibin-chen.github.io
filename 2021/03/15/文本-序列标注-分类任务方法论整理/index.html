@@ -463,7 +463,7 @@ height:50vh;
 <li>记得提高阈值保证精读而牺牲召回。  </li>
 <li>结合统计指标和规则要求筛选新实体，如最低频率、互信息等。<br>Reference:<br><a href="https://tech.meituan.com/2020/07/23/ner-in-meituan-nlp.html" target="_blank" rel="noopener">https://tech.meituan.com/2020/07/23/ner-in-meituan-nlp.html</a>  </li>
 </ol>
-<h4 id="极限提升性能"><a href="#极限提升性能" class="headerlink" title="极限提升性能"></a>极限提升性能</h4><p>以下这些trick，基本是数据竞赛用的，基本都是1个点以内的提升。</p>
+<h4 id="极限提升性能"><a href="#极限提升性能" class="headerlink" title="极限提升性能"></a>极限提升性能</h4><p>以下这些trick，基本是数据竞赛用的，大多是1个点以内的提升。</p>
 <h5 id="继续预训练"><a href="#继续预训练" class="headerlink" title="继续预训练"></a>继续预训练</h5><p>这个提升还是挺大的，特别是专业领域的语料。但是相关语料一定要多，小数据集做这个就比较扯。  </p>
 <h5 id="标签：Focal-Loss、标签平滑"><a href="#标签：Focal-Loss、标签平滑" class="headerlink" title="标签：Focal Loss、标签平滑"></a>标签：Focal Loss、标签平滑</h5><h5 id="对抗训练如Adversarial-Training-Methods-for-Semi-Supervised-Text-Classification"><a href="#对抗训练如Adversarial-Training-Methods-for-Semi-Supervised-Text-Classification" class="headerlink" title="对抗训练如Adversarial Training Methods for Semi-Supervised Text Classification"></a>对抗训练如Adversarial Training Methods for Semi-Supervised Text Classification</h5><h5 id="SWA随机权重衰减、EDA滑动平均"><a href="#SWA随机权重衰减、EDA滑动平均" class="headerlink" title="SWA随机权重衰减、EDA滑动平均"></a>SWA随机权重衰减、EDA滑动平均</h5><h5 id="基于Mixup的样本增强"><a href="#基于Mixup的样本增强" class="headerlink" title="基于Mixup的样本增强"></a>基于Mixup的样本增强</h5><h5 id="BERT输入编码"><a href="#BERT输入编码" class="headerlink" title="BERT输入编码"></a>BERT输入编码</h5><p>中心词前后插入<e>和</e>占位符。<br>中心词看成独立句子。[CLS] word [SEP] sentence [SEP]<br>上面这个方法的sentence再MASK掉中心词<br>甚至可以将原始句子和MASK掉中心词的句子拼接<br>多标签里把标签含义拼在最后<br>以上方法均可组合用</p>
 <h3 id="模型诊断"><a href="#模型诊断" class="headerlink" title="模型诊断"></a>模型诊断</h3><ol>
@@ -1075,9 +1075,26 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 35
+        Total : 36
         </div>
         <!-- search  -->
         
@@ -1104,6 +1121,11 @@ top:50vh;
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/29</span><a class="archive-post-title" href= "/2021/07/29/机器学习工程-模型服务、监控与维护/" >机器学习工程-模型服务、监控与维护</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1298,9 +1320,9 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="NLP related"><span class="iconfont-archer">&#xe606;</span>NLP related</span>
-    
         <span class="sidebar-tag-name" data-tags="论文分享"><span class="iconfont-archer">&#xe606;</span>论文分享</span>
+    
+        <span class="sidebar-tag-name" data-tags="NLP related"><span class="iconfont-archer">&#xe606;</span>NLP related</span>
     
         <span class="sidebar-tag-name" data-tags="cv-related"><span class="iconfont-archer">&#xe606;</span>cv-related</span>
     

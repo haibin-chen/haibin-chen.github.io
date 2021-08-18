@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Haibin&#39;s Studio</title>
+    <title>机器学习工程-模型服务、监控与维护 · Haibin&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -77,6 +77,8 @@
 
     <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
@@ -201,14 +203,23 @@
 </head>
 
     
-        <body class="home-body">
+        <body class="post-body">
     
     
-<header class="header index-header">
+<header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >Haibin&#39;s Studio</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">机器学习工程-模型服务、监控与维护</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>Haibin's Studio</a>
 </header>
@@ -227,17 +238,17 @@ height:50vh;
     <!-- 主页  -->
     
     
-    <!-- 文章页  -->
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/index-bg1.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(//source.unsplash.com/random/800x600)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            Haibin's Studio
-            <!-- 文章页  -->
+            机器学习工程-模型服务、监控与维护
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
@@ -245,12 +256,43 @@ height:50vh;
             <!-- 主页副标题  -->
             
             
-                you are bound for great things
-            
-            <!-- 文章页  -->
+            <!-- 404 -->
             
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count word-count">627</span>Reading time: <span class="post-count reading-time">2 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2021/07/29</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -351,407 +393,79 @@ height:50vh;
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/06/27/如何理清并写好一篇论文-持续更新/" >
-            
-                <span>如何理清一篇论文(持续更新)</span>
-        </a>
-        <div class="abstract-content">
-            如何理清并写好一篇论文(持续更新)这篇文章是什么主题Abstract + 图表 + Conclusion即可大概了解  
-创新点是什么对于审稿而言，创新点是最重要、最开始就要指出来的。其后才是实验、细节的问题。如何抓住创新点？从精要的Introduction入手，回答如下的问题：  
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="机器学习工程书-模型服务、监控与维护"><a href="#机器学习工程书-模型服务、监控与维护" class="headerlink" title="[机器学习工程书]模型服务、监控与维护"></a>[机器学习工程书]模型服务、监控与维护</h1><p>原文来自<a href="http://www.mlebook.com/wiki/doku.php?id=start" target="_blank" rel="noopener">http://www.mlebook.com/wiki/doku.php?id=start</a><br>笔者阅读了该书的草稿版并记录下若干要点与个人总结，详细内容请查阅原版。  </p>
+<h2 id="模型提供服务时的特性"><a href="#模型提供服务时的特性" class="headerlink" title="模型提供服务时的特性"></a>模型提供服务时的特性</h2><p>安全、正确、与数据流独立、易于恢复、训练和服务尽量用同一套code base、避免隐藏的模型输入循环（Avoidance of Hidden Feedback Loops）<br>避免隐藏的模型输入循环：以邮件过滤为例，用户额外标注是否为垃圾邮件是建立在已经被过滤部分邮件的基础上，即模型学习目标是已有过滤模型的“残差”，需要额外划出无模型干扰的数据验证。  </p>
+<h2 id="现实环境中的模型服务"><a href="#现实环境中的模型服务" class="headerlink" title="现实环境中的模型服务"></a>现实环境中的模型服务</h2><h3 id="以请求形式发送给机器"><a href="#以请求形式发送给机器" class="headerlink" title="以请求形式发送给机器"></a>以请求形式发送给机器</h3><p>如使用REST API发送请求，可借助消息队列RabbitMQ、Kafka等组成batch<br>相关项目：<a href="https://github.com/ShannonAI/service-streamer" target="_blank" rel="noopener">https://github.com/ShannonAI/service-streamer</a>  </p>
+<h3 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h3><h4 id="面对错误的基本认识"><a href="#面对错误的基本认识" class="headerlink" title="面对错误的基本认识"></a>面对错误的基本认识</h4><p>模型的错误有些不可解释性、模型出错时间不可控、某个类型错误不是必然能解决的  </p>
+<h4 id="处理错误的方法"><a href="#处理错误的方法" class="headerlink" title="处理错误的方法"></a>处理错误的方法</h4><ol>
+<li>高于某个错误成本时输出”I don’t know”，但是对于错误警告、不确定性警告应该在用户交互上设置一定阈值，以免影响使用体验  </li>
+<li>根据任务特点考量精确度、召回度哪些要求更高  </li>
+<li>保留用户提交错误的渠道  </li>
+</ol>
+<h4 id="处理数据集偏移（Concept-Shift）"><a href="#处理数据集偏移（Concept-Shift）" class="headerlink" title="处理数据集偏移（Concept Shift）"></a>处理数据集偏移（Concept Shift）</h4><ol>
+<li>可能场景：有些类别的问题逐步得到解决，新的训练数据变得更加不平衡，虽然总体指标有提升，但某些长尾类别可能反而下降了；用户以习惯于某些输出行为，虽然优化了但对用户有适应成本  </li>
+<li>常见方法：新旧模型都保留，通过加权等方式给出一定过渡的时间  </li>
+</ol>
+<h2 id="模型监控"><a href="#模型监控" class="headerlink" title="模型监控"></a>模型监控</h2><h3 id="哪些情景是模型变差了的体现？"><a href="#哪些情景是模型变差了的体现？" class="headerlink" title="哪些情景是模型变差了的体现？"></a>哪些情景是模型变差了的体现？</h3><p>新的训练数据没用；生产场景变化；输入特征改变了而模型未改变；受对抗攻击影响…  </p>
+<h3 id="如何监控"><a href="#如何监控" class="headerlink" title="如何监控"></a>如何监控</h3><p>设置一个随时间变化的、额外的测试集监控，查看输出类别、输出分布的bias  </p>
+<h3 id="打日志的方法"><a href="#打日志的方法" class="headerlink" title="打日志的方法"></a>打日志的方法</h3><p>log包含时间、具体输出、用户行为等；可针对性分层采样打log  </p>
+<h2 id="模型维护"><a href="#模型维护" class="headerlink" title="模型维护"></a>模型维护</h2><p>考虑模型“新鲜度”需求  </p>
 
-文章针对的核心问题是什么？相关论文是怎么做的，与别人本质的不同是什么？是不是从哪些假设出发？逻辑链是否合理？
-这个核心问题影响到了这个任务的什么地方？是不是值得挖掘的工作方向？  
-从核心问题出发，模型的设计是不是针对问题的，相对比较自然、通用地解决问题？他的好处与劣处？  
-
-阅读正文时需要关注的细节
-...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/06/27</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "NLP related">NLP related</a>
-    
-</div>
-            
-        </div>
     </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/06/26/项目总结/" >
-            
-                <span>项目总结</span>
-        </a>
-        <div class="abstract-content">
-            一个表格问题的探索问题定义无线表格预切分后存在一些误切的空格、文本，对这一类情况进行合并，方便后续表格理解任务。  
-模型说明
-模型输入输出定义：输入为表格序列化表示，输出为每个格子是否合并。
-双BERT模型。BERT的输入除了原来的embedding还有行/列embedding。（参考ACL 2020 google表格理解的模型）
-第一个BERT编码字符embedding，每个格子的表示为字符embedding的平均。将每个格子的表示输入第二个BERT里，做0/1的序列标注问题。（基于BERT的LSTM/CNN/GNN并没有明显的提升）
-针对多行多列合并切分/问题，使用句子对NLI问题...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/06/26</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "项目">项目</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/03/30/cv-related/" >
-            
-                <span>cv-related</span>
-        </a>
-        <div class="abstract-content">
-            CV MaterialsCAGANhard_vector
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/30</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "cv-related">cv-related</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/14/Standford-Corenlp工具包功能文档/" >
-            
-                <span>Standford Corenlp工具包功能文档</span>
-        </a>
-        <div class="abstract-content">
-            Standford Corenlp工具包功能文档一、安装（1）java包解压，项目构建可参考https://github.com/stanfordnlp/CoreNLP使用ant或maven构建，电脑需要安装java 1.8以上版本。（2）官方有封装好的python包stanfordcorenlp，使用pip install stanfordcorenlp安装注：若需要其他语言如中文需要另外下载语言包放到文件夹中。  
-二、快速使用1. 可视化网页调用，在命令行执行1java -Xmx4g -cp &quot;*&quot; edu.stanford.nlp.pipeline.Stanf...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/14</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/08/位运算算法题总结/" >
-            
-                <span>位运算算法题总结</span>
-        </a>
-        <div class="abstract-content">
-            位运算算法题总结位运算是对整数(char类型)在内存中的二进制位直接进行操作，题目类型相对比较灵活，下面就整理出leetcode中位运算题的一些常见思路。  
-位运算基础知识与:&amp;或:|取反:~异或:^左移右移:&lt;&lt; &gt;&gt;非:!从这些基础操作出发，引申出一些性质，算法题往往从这些特性出发：(1) 判断奇偶: 最后一位与1的结果 a &amp; 1(2) 一个数和自己异或的结果为0: 判断数字出现的字数; 位操作来实现整数交换(3) 正负号变换: 取反加一(4) 整数加法: ^实现不带进位的加法, 再实现记录每一位的carry进位值(5) 赋值操作: A |...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/08</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法题">算法题</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/01/31/今日的小想法/" >
-            
-                <span>今日的小想法</span>
-        </a>
-        <div class="abstract-content">
-            
-两学一做时间 居安思危、底线思维的忧患意识。先天下之忧而忧，后天下之乐而乐。忧患意识是中华民族一个重要的精神特质，也是中国共产党战略思维的一个特质。进入新时代，总书记反复强调，前进路上不可能一帆风顺，越是前景光明，越是要增强忧患意识，全面认识和有力应对一些重大风险挑战。要善于运用底线思维的方法，居安思危，未雨绸缪，凡事从最坏处着眼，向最好处努力。  
-红会这种非政府组织吧，目前的特质和时代生产力形态有点脱节了。紧急输送资源让马爸爸来调配，京东小哥来送，蚂蚁金服以后说不定还能搞个去中心化(逃 。其实现在是一个信心战、经济战、去污战，如何统筹好规模宏大的援助、调配好救援物资、甚至武汉超市内...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/31</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "随想">随想</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/01/23/辞旧迎新，爱之所爱！我的2019/" >
-            
-                <span>辞旧迎新，爱之所爱！我的2019</span>
-        </a>
-        <div class="abstract-content">
-            ——这不都23号了，拖延症也该消磨完了吧。  
-随想早上奶奶说我马上虚岁23岁了，恍然中感觉2019似乎过了很久。岁月徐徐过人心，正如风之余火，吹灭心力孱弱者而助长心气犹存者。希望自己能努力成为抱薪者，点燃自己和身边的每一个人。  
-2019事记· 2019年有1个最大的遗憾。我对自己能力的定位虽然还是在中大华工的研究生水平，但很遗憾的是没有尝试过其他学校的夏令营与保研面试，相比之下菊厂实习可就太水了。错过了离开舒适区、体验新生活的一种可能，这可太令我失望了。· 2019年有3段出境之旅。第1段，对我而言香港果然是很有故事的一座城市呢 : )  第2段中我平生第一次跨越了一个半球生活了3...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/23</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "年终总结">年终总结</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/01/23/NLP-in-2019/" >
-            
-                <span>NLP in 2019</span>
-        </a>
-        <div class="abstract-content">
-            BERTology、图网络、Attention in 2019主要列出这几个NLP子领域的部分论文题目，内容并不全面，仅供索引和参考。相关资料链接在文末。  
-Some BERTology in 2019
-ALBERT：参数共享与embedding因式分解，减少参数量。  
-XLNet：通过对句子中单词排列组合结合自回归与自编码语言模型的优点。  
-ERNIE：实体词MASK，加入知识图谱。  
-UNILM：基于MASK矩阵统一BERT和生成式模型。  
-ELECTRA：MASK预训练任务改成了判别式的判断当前token是否被语言模型替换过的任务，基于此延伸生成器和判别器。
-Distil...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/23</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "NLP related">NLP related</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/01/06/haskell-notes/" >
-            
-                <span>haskell notes</span>
-        </a>
-        <div class="abstract-content">
-            Haskell 笔记记录看haskell入门资料的一些笔记。   
-语言特性纯函数式编程，静态类型，惰性常用运算符
-基本语法
-基础函数格式：doubleMe x = x + x  12345ghci&gt; :l baby   [1 of 1] Compiling Main             ( baby.hs, interpreted )   Ok, modules loaded: Main.   ghci&gt; doubleMe 9   18
-
-
-
-函数名::参数1类型=&gt;参数2类型=&gt;结果类型函数名 参数1 参数2 =&gt; 函数体2. 常用语法表达：注意一定...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/06</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/12/22/高性能与云计算相关知识/" >
-            
-                <span>高性能与云计算相关知识</span>
-        </a>
-        <div class="abstract-content">
-            高性能与云计算PPT核心内容并行计算机体系结构
-时延：软件、通道、选路、竞争；对剖宽度:将网络分成两个相等部分所必须移去的最少边数；对剖带宽:每秒钟内， 在最小的对剖平面上通过所有连线的最大信息位(或字节)数。等于对剖宽度与链路带宽之积  
-静态互连网络：点到点的链接不变 如线性阵列 与动态互连网：交换开关构成 如总线对剖带宽表、直径表  
-对剖带宽愈大，表示网络的带宽就愈大;网络直径愈大，表示通信的时间延迟就愈大。网络的造价随节点度和链路数增大而上升。固定网络规模，对剖宽度越大，或网络直径越小，则互联网 络质量越高  
-MIMD结构：共享存储MIMD / Multiprocessor；...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/22</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "CS课程笔记">CS课程笔记</a>
-    
-</div>
-            
-        </div>
-    </article>
+    <!-- license  -->
     
     <!-- paginator  -->
-    
-    <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/page/2/">&#60; PREV</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">NEXT &#62;</a>
-    </nav>
-    
-</main>
-            <!-- profile -->
+    <ul class="post-paginator">
+        <li class="next">
             
-            <div class="profile">
-    <img class="profile-avatar" alt="avatar" src= /avatar/IMG_8130.jpg >
-    <div class="profile-name">haibin-chen</div>
-    
-    <div class="profile-signature">
-        Welcome :)
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2099/01/01/站内导引/" title= "站内导引">
+                    <div class="nextTitle">站内导引</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2021/07/26/机器学习工程-数据收集与准备/" title= "[机器学习工程]数据收集与准备">
+                    <div class="prevTitle">[机器学习工程]数据收集与准备</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+    <div id="lv-container" data-id="city" data-uid= MTAyMC80Njk1Ni8yMzQ1Nw>
+        <script type="text/javascript">
+            (function (d, s) {
+                var j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') { return; }
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
     </div>
+
+<!-- City版安装代码已完成 -->
     
     
-    <div class="profile-social">
-        
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
     
-        
-            
-                <a href="mailto:haibin_chen@foxmail.com" class="iconfont-archer email" title=email ></a>
-            
-        
-    
-        
-            
-                <a href="//github.com/haibin-chen" class="iconfont-archer github" target="_blank" title=github></a>
-            
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-            
-                <a href="//www.zhihu.com/people/chen-hai-bin-27-72/posts" class="iconfont-archer zhihu" target="_blank" title=zhihu></a>
-            
-        
-    
-        
-            
-                <a href="//www.douban.com/people/H937332325/" class="iconfont-archer douban" target="_blank" title=douban></a>
-            
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
 
-    </div>
-    
-    
-    
-</div>
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
             
         </div>
         <footer class="footer footer-unloaded">
@@ -835,6 +549,24 @@ MIMD结构：共享存储MIMD / Multiprocessor；...
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#机器学习工程书-模型服务、监控与维护"><span class="toc-number">1.</span> <span class="toc-text">[机器学习工程书]模型服务、监控与维护</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#模型提供服务时的特性"><span class="toc-number">1.1.</span> <span class="toc-text">模型提供服务时的特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#现实环境中的模型服务"><span class="toc-number">1.2.</span> <span class="toc-text">现实环境中的模型服务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#以请求形式发送给机器"><span class="toc-number">1.2.1.</span> <span class="toc-text">以请求形式发送给机器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#错误处理"><span class="toc-number">1.2.2.</span> <span class="toc-text">错误处理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#面对错误的基本认识"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">面对错误的基本认识</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#处理错误的方法"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">处理错误的方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#处理数据集偏移（Concept-Shift）"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">处理数据集偏移（Concept Shift）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模型监控"><span class="toc-number">1.3.</span> <span class="toc-text">模型监控</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#哪些情景是模型变差了的体现？"><span class="toc-number">1.3.1.</span> <span class="toc-text">哪些情景是模型变差了的体现？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何监控"><span class="toc-number">1.3.2.</span> <span class="toc-text">如何监控</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#打日志的方法"><span class="toc-number">1.3.3.</span> <span class="toc-text">打日志的方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模型维护"><span class="toc-number">1.4.</span> <span class="toc-text">模型维护</span></a></li></ol></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1617,6 +1349,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
