@@ -413,7 +413,7 @@ height:50vh;
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">alpha = torch.zeros(batch_size, seq_len, self.label_size).to(self.device)</span><br><span class="line"></span><br><span class="line"># 开始位置</span><br><span class="line">alpha[:, 0, :] = all_scores[:, 0,  self.start_idx, :]</span><br><span class="line"></span><br><span class="line">for word_idx in range(1, length):</span><br><span class="line">    before_log_sum_exp = alpha + all_scores[:, word_idx, :, :]</span><br><span class="line">    alpha[:, word_idx, :] = log_sum_exp_pytorch(before_log_sum_exp)</span><br><span class="line"></span><br><span class="line"># 结束位置</span><br><span class="line">last_alpha = torch.gather(alpha, 1, length)</span><br><span class="line">last_alpha += self.transition[:, self.end_idx]</span><br><span class="line"># 对数后取log变成加减运算，数值技巧</span><br><span class="line">last_alpha = log_sum_exp_pytorch(last_alpha.view(batch_size, self.label_size, 1))</span><br><span class="line"></span><br><span class="line">return sum(last_alpha)</span><br></pre></td></tr></table></figure>
 
 <h2 id="Viterbi-Decode"><a href="#Viterbi-Decode" class="headerlink" title="Viterbi Decode"></a>Viterbi Decode</h2><p>和前向过程类似，O(n)，取argmax就可以  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># scoresIdx 累积分数 idxRecord 类别记录</span><br><span class="line">for wordIdx in range(1, sentLength):</span><br><span class="line">    scoresIdx = scoresRecord[:, wordIdx, :, :] + scores[:, wordIdx, :, :]</span><br><span class="line">    idxRecord[:, wordIdx, :] = argmax(scoresIdx, 1)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">scoresIdx 累积分数 idxRecord 类别记录</span><br><span class="line">for wordIdx in range(1, sentLength):</span><br><span class="line">    scoresIdx = scoresRecord[:, wordIdx, :, :] + scores[:, wordIdx, :, :]</span><br><span class="line">    idxRecord[:, wordIdx, :] = argmax(scoresIdx, 1)</span><br></pre></td></tr></table></figure>
 
 <h1 id="Paritial-Fuzzy-CRF"><a href="#Paritial-Fuzzy-CRF" class="headerlink" title="Paritial/Fuzzy CRF"></a>Paritial/Fuzzy CRF</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>部分标注的问题。<br>即一个实体可能有多种可能的类别，无法标注到具体的类别。常见的情景是在不同的类别规则库（远程监督）都匹配到了，或者不同人的标注结果不一样。  </p>
 <h2 id="主要思路"><a href="#主要思路" class="headerlink" title="主要思路"></a>主要思路</h2><p>以下图prostaglandin synthesis为例，保留所有可能的序列为正确序列。<br><img src="/2021/07/24/不同场景下CRF的变形与实现/1.jpg" alt>  </p>
@@ -429,7 +429,7 @@ height:50vh;
 <h1 id="Noisy-based-CRF"><a href="#Noisy-based-CRF" class="headerlink" title="Noisy-based CRF"></a>Noisy-based CRF</h1><h1 id="背景-2"><a href="#背景-2" class="headerlink" title="背景"></a>背景</h1><p>噪声样本一般指标注错误  </p>
 <h1 id="主要思路-2"><a href="#主要思路-2" class="headerlink" title="主要思路"></a>主要思路</h1><ol>
 <li>通过CRF双向的边缘概率，和原先神经网络输出映射后的logit值（softmax）来做置信度筛选。  </li>
-<li>Fine-grained calibrate: 标签预测错，不太可能类别和边界信息(BIO)都错了。根据置信度二选一去除无关的CRF序列分数计算。  <h1 id="主要实现-1"><a href="#主要实现-1" class="headerlink" title="主要实现"></a>主要实现</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 双向边缘概率</span><br><span class="line">log_marginals = alpha + beta - log_Z.unsqueeze(1).unsqueeze(1)</span><br></pre></td></tr></table></figure>
+<li>Fine-grained calibrate: 标签预测错，不太可能类别和边界信息(BIO)都错了。根据置信度二选一去除无关的CRF序列分数计算。  <h1 id="主要实现-1"><a href="#主要实现-1" class="headerlink" title="主要实现"></a>主要实现</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">双向边缘概率</span><br><span class="line">log_marginals = alpha + beta - log_Z.unsqueeze(1).unsqueeze(1)</span><br></pre></td></tr></table></figure>
 
 </li>
 </ol>
@@ -1284,9 +1284,9 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="论文分享"><span class="iconfont-archer">&#xe606;</span>论文分享</span>
-    
         <span class="sidebar-tag-name" data-tags="NLP related"><span class="iconfont-archer">&#xe606;</span>NLP related</span>
+    
+        <span class="sidebar-tag-name" data-tags="论文分享"><span class="iconfont-archer">&#xe606;</span>论文分享</span>
     
         <span class="sidebar-tag-name" data-tags="CS课程笔记"><span class="iconfont-archer">&#xe606;</span>CS课程笔记</span>
     
