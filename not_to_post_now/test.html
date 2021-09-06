@@ -352,7 +352,7 @@
 <li>relu收敛速度快, 求导计算也快  </li>
 </ol>
 <h3 id="最小二乘推导，和极大似然的关系"><a href="#最小二乘推导，和极大似然的关系" class="headerlink" title="最小二乘推导，和极大似然的关系"></a>最小二乘推导，和极大似然的关系</h3><p><a href="https://www.zhihu.com/question/20447622" target="_blank" rel="noopener">https://www.zhihu.com/question/20447622</a><br>各损失函数与极大似然.pdf  </p>
-<h3 id="交叉熵与极大似然？"><a href="#交叉熵与极大似然？" class="headerlink" title="交叉熵与极大似然？"></a>交叉熵与极大似然？</h3><p>区别：交叉熵函数用来描述模型预测值和真实值的差距大小，越大代表越不相近；似然函数通过调整模型参数来最大化观测数据出现的似然，即衡量在特定参数下，整体的估计和真实的情况一样的概率，越大代表越相近。<br>联系：使用极大似然估计时损失函数的形式随着建模数据的分布变化而变化。交叉熵函数可以由最大似然函数在伯努利分布的条件下推导出来，或者说最小化交叉熵函数的本质就是对数似然函数的最大化。  </p>
+<h3 id="指数族分布、最大私似然-gt-最大熵模型-gt-LR"><a href="#指数族分布、最大私似然-gt-最大熵模型-gt-LR" class="headerlink" title="指数族分布、最大私似然-&gt;最大熵模型-&gt;LR"></a>指数族分布、最大私似然-&gt;最大熵模型-&gt;LR</h3><h3 id="交叉熵与极大似然？"><a href="#交叉熵与极大似然？" class="headerlink" title="交叉熵与极大似然？"></a>交叉熵与极大似然？</h3><p>区别：交叉熵函数用来描述模型预测值和真实值的差距大小，越大代表越不相近；似然函数通过调整模型参数来最大化观测数据出现的似然，即衡量在特定参数下，整体的估计和真实的情况一样的概率，越大代表越相近。<br>联系：使用极大似然估计时损失函数的形式随着建模数据的分布变化而变化。交叉熵函数可以由最大似然函数在伯努利分布的条件下推导出来，或者说最小化交叉熵函数的本质就是对数似然函数的最大化。  </p>
 <h3 id="如何处理OOV"><a href="#如何处理OOV" class="headerlink" title="如何处理OOV"></a>如何处理OOV</h3><ol>
 <li>有规律的词语模板化  </li>
 <li>char表示  </li>
@@ -360,7 +360,9 @@
 </ol>
 <h3 id="为什么随机初始化，如果都是0-1会怎样"><a href="#为什么随机初始化，如果都是0-1会怎样" class="headerlink" title="为什么随机初始化，如果都是0/1会怎样"></a>为什么随机初始化，如果都是0/1会怎样</h3><p>失去不对称性，无法收敛<br><a href="https://zhuanlan.zhihu.com/p/27190255" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/27190255</a>  </p>
 <h3 id="L1、L2正则化，权重衰减＝L2正则化？"><a href="#L1、L2正则化，权重衰减＝L2正则化？" class="headerlink" title="L1、L2正则化，权重衰减＝L2正则化？"></a>L1、L2正则化，权重衰减＝L2正则化？</h3><p><a href="https://www.zhihu.com/question/37096933" target="_blank" rel="noopener">https://www.zhihu.com/question/37096933</a><br><a href="https://zhuanlan.zhihu.com/p/143608316" target="_blank" rel="noopener">L2正则化可被证明为SGD情况下的权值衰减</a>  </p>
-<h3 id="Softmax、CrossEntropy梯度求导"><a href="#Softmax、CrossEntropy梯度求导" class="headerlink" title="Softmax、CrossEntropy梯度求导"></a>Softmax、CrossEntropy梯度求导</h3><h4 id="分类损失不能用mse"><a href="#分类损失不能用mse" class="headerlink" title="分类损失不能用mse?"></a>分类损失不能用mse?</h4><h3 id="GBDT-XGBoost"><a href="#GBDT-XGBoost" class="headerlink" title="GBDT/XGBoost"></a>GBDT/XGBoost</h3><h3 id="手推SVM"><a href="#手推SVM" class="headerlink" title="手推SVM"></a>手推SVM</h3><h2 id="词向量"><a href="#词向量" class="headerlink" title="词向量"></a>词向量</h2><h3 id="word2vec-vs-glove"><a href="#word2vec-vs-glove" class="headerlink" title="word2vec vs glove"></a>word2vec vs glove</h3><ol>
+<h3 id="评测指标"><a href="#评测指标" class="headerlink" title="评测指标"></a>评测指标</h3><p>ROC AUC <a href="https://zhuanlan.zhihu.com/p/352271971" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/352271971</a><br>TP FP</p>
+<h3 id="Softmax、CrossEntropy梯度求导"><a href="#Softmax、CrossEntropy梯度求导" class="headerlink" title="Softmax、CrossEntropy梯度求导"></a>Softmax、CrossEntropy梯度求导</h3><h4 id="分类损失不能用mse"><a href="#分类损失不能用mse" class="headerlink" title="分类损失不能用mse?"></a>分类损失不能用mse?</h4><h3 id="GBDT-XGBoost"><a href="#GBDT-XGBoost" class="headerlink" title="GBDT/XGBoost"></a>GBDT/XGBoost</h3><h3 id="图卷积"><a href="#图卷积" class="headerlink" title="图卷积"></a>图卷积</h3><p><a href="https://www.jiqizhixin.com/articles/2019-02-20-12" target="_blank" rel="noopener">https://www.jiqizhixin.com/articles/2019-02-20-12</a><br><a href="https://zhuanlan.zhihu.com/p/89503068" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/89503068</a>  </p>
+<h3 id="手推SVM"><a href="#手推SVM" class="headerlink" title="手推SVM"></a>手推SVM</h3><h2 id="词向量"><a href="#词向量" class="headerlink" title="词向量"></a>词向量</h2><h3 id="word2vec-vs-glove"><a href="#word2vec-vs-glove" class="headerlink" title="word2vec vs glove"></a>word2vec vs glove</h3><ol>
 <li>输入: glove的滑窗是构建co-occurance matrix，是基于全局语料提前统计的，而word2vec是局部划窗，因此fasttext也支持了continual learning。  </li>
 <li>损失: word2vec损失函数实质上是加权交叉熵；glove的损失函数是加权最小二乘回归(平方损失)，在context的维度上降维，学习word的低维表示。  </li>
 </ol>
@@ -386,7 +388,7 @@
 <li>两层FFN，一层是768<em>(3072+1)(with relu)，一层是3072</em>(768+1)<br>加起来就是110M左右  <h3 id="Layer-Normalization和BN"><a href="#Layer-Normalization和BN" class="headerlink" title="Layer Normalization和BN"></a>Layer Normalization和BN</h3>输入表示可以看成均值0方差1的球形均匀空间，控制输入embedding-&gt;多层表示学习结合语义叠加后的偏移。  <h3 id="BERT衍生模型（roberta、albert、electra、xlnet）的改进点"><a href="#BERT衍生模型（roberta、albert、electra、xlnet）的改进点" class="headerlink" title="BERT衍生模型（roberta、albert、electra、xlnet）的改进点"></a>BERT衍生模型（roberta、albert、electra、xlnet）的改进点</h3></li>
 </ol>
 <h2 id="其他深度学习模型-领域"><a href="#其他深度学习模型-领域" class="headerlink" title="其他深度学习模型/领域"></a>其他深度学习模型/领域</h2><h3 id="新词发现"><a href="#新词发现" class="headerlink" title="新词发现"></a>新词发现</h3><p>不同的ngram组合概率+阈值筛选、预训练语言模型词与词相关性构建方法  </p>
-<h3 id="RNN-LSTM"><a href="#RNN-LSTM" class="headerlink" title="RNN/LSTM"></a>RNN/LSTM</h3><p>numpy实现github.com/chaoming0625/NumpyDL    </p>
+<h3 id="RNN-LSTM"><a href="#RNN-LSTM" class="headerlink" title="RNN/LSTM"></a>RNN/LSTM</h3><p>numpy实现github.com/chaoming0625/NumpyDL<br>手写LSTM公式</p>
 <h3 id="CNN"><a href="#CNN" class="headerlink" title="CNN"></a>CNN</h3><p>1x1卷积的作用: 实现跨通道的交互和非线性信息融合, 进行卷积核通道数的降维和升维<br>参数量、内存计算：<a href="https://www.jianshu.com/p/b8d48c99a47c" target="_blank" rel="noopener">https://www.jianshu.com/p/b8d48c99a47c</a><br>max pooling梯度计算要记录下最大值的index<br>CNN RNN的梯度计算  </p>
 <h3 id="GCN"><a href="#GCN" class="headerlink" title="GCN"></a>GCN</h3><p>图卷积filter函数-&gt;定义成laplacian矩阵形式，传播了邻居结点信息-&gt;Chebyshev多项式近似filter计算-&gt;H=\sigma(D^(-1/2)<em>A</em>D^(-1/2)<em>X</em>W)  </p>
 <h4 id="CNN与GCN的区别"><a href="#CNN与GCN的区别" class="headerlink" title="CNN与GCN的区别"></a>CNN与GCN的区别</h4><h3 id="每个领域state-of-art工作梳理"><a href="#每个领域state-of-art工作梳理" class="headerlink" title="每个领域state-of-art工作梳理"></a>每个领域state-of-art工作梳理</h3><h2 id="情景题"><a href="#情景题" class="headerlink" title="情景题"></a>情景题</h2><p>System Design<br>异常点检测  </p>
@@ -989,9 +991,22 @@
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 36
+        Total : 37
         </div>
         <!-- search  -->
         
@@ -1018,6 +1033,11 @@
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/06</span><a class="archive-post-title" href= "/2021/09/06/5分钟了解prompt/" >5分钟了解prompt</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1221,13 +1241,13 @@
     
         <span class="sidebar-tag-name" data-tags="NLP related"><span class="iconfont-archer">&#xe606;</span>NLP related</span>
     
-        <span class="sidebar-tag-name" data-tags="cv-related"><span class="iconfont-archer">&#xe606;</span>cv-related</span>
-    
         <span class="sidebar-tag-name" data-tags="CS课程笔记"><span class="iconfont-archer">&#xe606;</span>CS课程笔记</span>
     
-        <span class="sidebar-tag-name" data-tags="项目"><span class="iconfont-archer">&#xe606;</span>项目</span>
+        <span class="sidebar-tag-name" data-tags="cv-related"><span class="iconfont-archer">&#xe606;</span>cv-related</span>
     
         <span class="sidebar-tag-name" data-tags="代码二三事"><span class="iconfont-archer">&#xe606;</span>代码二三事</span>
+    
+        <span class="sidebar-tag-name" data-tags="项目"><span class="iconfont-archer">&#xe606;</span>项目</span>
     
         <span class="sidebar-tag-name" data-tags="年终总结"><span class="iconfont-archer">&#xe606;</span>年终总结</span>
     

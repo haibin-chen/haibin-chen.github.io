@@ -359,6 +359,36 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/03/21/指代消解-词pair-问题范式简介-以roberta为例/" >
+            
+                <span>指代消解(词pair)问题范式简介(以roberta为例)</span>
+        </a>
+        <div class="abstract-content">
+            词对匹配问题范式简介(以roberta为例)最近接触了一个任务为SuperGLUE中的Winograd Schema Challenge (WSC)，给定句子、代词pronoun(比如him)和主语词，判断这两个词是否对应。我乍一看还延续了以前文本匹配的思路，把两个词的表示拿出来concat/sum做分类。看了一下roberta的实现方式，是基于MLM预测对应位置词语。构造负样本然后用margin ranking loss去做的，用交叉熵也可以。  
+例子{“text”: “Bernard , who had not told the government official that h...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/21</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "NLP related">NLP related</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/03/15/文本-序列标注-分类任务方法论整理/" >
             
                 <span>文本(序列标注)分类任务方法论整理</span>
@@ -628,37 +658,6 @@ Joint Embedding of Words and Labels for Text Classificati...
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/11</span>
             </div>
             <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/09/09/image-caption项目/" >
-            
-                <span>image caption项目</span>
-        </a>
-        <div class="abstract-content">
-            短暂的image caption任务项目总结给定题目图片，使用相关OCR技术进行识别。中文则识别为中文，公式需要识别为latex格式。  
-要点总结技术路线1：在很少预标注OCR任务上（如不到1000张图片），针对混合识别的image caption很难拟合。主要原因在于中文字库和latex关键字字库大于3000个，在少量数据的情况下很难学习到有效分辨性特征。  
-优化思路1：模型使用在大规模中文OCR训练后的模型作为初始化，在下游小数据上进行微调，中文结果有所上升。优化思路2：使用xelatex生成中文公式混合的增强数据，再使用pdfconverter工具生成图片，生成了万量级e的增强...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/09</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "项目">项目</a>
-    
-</div>
             
         </div>
     </article>
@@ -1296,9 +1295,22 @@ Joint Embedding of Words and Labels for Text Classificati...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 36
+        Total : 37
         </div>
         <!-- search  -->
         
@@ -1325,6 +1337,11 @@ Joint Embedding of Words and Labels for Text Classificati...
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/06</span><a class="archive-post-title" href= "/2021/09/06/5分钟了解prompt/" >5分钟了解prompt</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1528,13 +1545,13 @@ Joint Embedding of Words and Labels for Text Classificati...
     
         <span class="sidebar-tag-name" data-tags="NLP related"><span class="iconfont-archer">&#xe606;</span>NLP related</span>
     
-        <span class="sidebar-tag-name" data-tags="cv-related"><span class="iconfont-archer">&#xe606;</span>cv-related</span>
-    
         <span class="sidebar-tag-name" data-tags="CS课程笔记"><span class="iconfont-archer">&#xe606;</span>CS课程笔记</span>
     
-        <span class="sidebar-tag-name" data-tags="项目"><span class="iconfont-archer">&#xe606;</span>项目</span>
+        <span class="sidebar-tag-name" data-tags="cv-related"><span class="iconfont-archer">&#xe606;</span>cv-related</span>
     
         <span class="sidebar-tag-name" data-tags="代码二三事"><span class="iconfont-archer">&#xe606;</span>代码二三事</span>
+    
+        <span class="sidebar-tag-name" data-tags="项目"><span class="iconfont-archer">&#xe606;</span>项目</span>
     
         <span class="sidebar-tag-name" data-tags="年终总结"><span class="iconfont-archer">&#xe606;</span>年终总结</span>
     
