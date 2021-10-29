@@ -266,7 +266,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">165</span>Reading time: <span class="post-count reading-time">1 min</span></span>
+                        <span>Word count: <span class="post-count word-count">346</span>Reading time: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -396,6 +396,7 @@ height:50vh;
             <main class="main post-page">
     <article class="article-entry">
         <h1 id="和CV的特征空间的联系"><a href="#和CV的特征空间的联系" class="headerlink" title="和CV的特征空间的联系"></a>和CV的特征空间的联系</h1><p>相似: 自监督/预训练获得的特征分布之间是高度相关的，而标准化往往对聚类检索有帮助，分类任务还要待验证<br>不同: 图像输入是天然连续符合某种天然分布的，而nlp的词向量本身是抽象的，受一词多义 上下文等影响，最后获得的向量不一定是初始化时理想的均匀高斯分布球。embedding在计算学习理论下可以看成在高维希尔伯特空间下找一个低维的有欧几里得性质的流形空间  </p>
+<h1 id="现有的预训练embedding是普适的吗"><a href="#现有的预训练embedding是普适的吗" class="headerlink" title="现有的预训练embedding是普适的吗"></a>现有的预训练embedding是普适的吗</h1><p>不是，虽然现在NLP社区找到了比较合理的prefix(MLM为代表的)的自监督范式，但这个embedding并不必然在任何场景都有效。<br>许多研究表明，预训练embedding是有偏的，若不进行微调或后处理，在相似度（检索）、聚类等场景下表现并不优越。也就是说，在某些场景下，任务相关的embedding同样非常重要，如向量的cos、欧式加减等性质要更加优良。预训练模型从大规模语料中学习到的表示不一定能轻易迁移、或学习到以上特定任务所需要的向量特点。  </p>
 
     </article>
     <!-- license  -->
@@ -549,7 +550,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#和CV的特征空间的联系"><span class="toc-number">1.</span> <span class="toc-text">和CV的特征空间的联系</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#和CV的特征空间的联系"><span class="toc-number">1.</span> <span class="toc-text">和CV的特征空间的联系</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#现有的预训练embedding是普适的吗"><span class="toc-number">2.</span> <span class="toc-text">现有的预训练embedding是普适的吗</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -1031,9 +1032,24 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 37
+        Total : 38
         </div>
         <!-- search  -->
         
@@ -1060,6 +1076,11 @@ top:50vh;
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/29</span><a class="archive-post-title" href= "/2021/10/29/如何找到易混淆的分类类别/" >如何找到易混淆的分类类别</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1268,9 +1289,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="NLP related"><span class="iconfont-archer">&#xe606;</span>NLP related</span>
     
-        <span class="sidebar-tag-name" data-tags="CS课程笔记"><span class="iconfont-archer">&#xe606;</span>CS课程笔记</span>
-    
         <span class="sidebar-tag-name" data-tags="cv-related"><span class="iconfont-archer">&#xe606;</span>cv-related</span>
+    
+        <span class="sidebar-tag-name" data-tags="CS课程笔记"><span class="iconfont-archer">&#xe606;</span>CS课程笔记</span>
     
         <span class="sidebar-tag-name" data-tags="代码二三事"><span class="iconfont-archer">&#xe606;</span>代码二三事</span>
     

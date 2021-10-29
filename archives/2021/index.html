@@ -346,6 +346,36 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/10/29/如何找到易混淆的分类类别/" >
+            
+                <span>如何找到易混淆的分类类别</span>
+        </a>
+        <div class="abstract-content">
+            如何找到易混淆的分类类别在实际场景的分类任务中，如何合理划分类别标签集，是影响分类性能和用户体验的重要因素。划分类别标签过程是有可能存在一定混淆的，体现在模型层面，如果人为的类别划分的不好，模型会很难找到合理的分类界面，混淆的类别容易预测错误为另一者。从产品设计而言，对于特定混淆的类别，可以将决定权下放到用户，也可以定义一个“其他”、“混淆”类别统一归类。在以下的篇幅中，笔者将根据自身经验总结一些找到易混淆的分类类别方法。  
+分析分类结果直接从实验结果出发，是最简单粗暴的，直接统计是不是特定类别容易和其他某些类别互相混淆。这时候要根据特定情况分析实体间的关系，以下举具体例子分析：例子一...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/10/29</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "NLP related">NLP related</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/09/06/5分钟了解prompt/" >
             
                 <span>5分钟了解prompt</span>
@@ -473,7 +503,7 @@ Total Score该函数将转移分数和发射分数加起来，即计...
         </a>
         <div class="abstract-content">
             和CV的特征空间的联系相似: 自监督/预训练获得的特征分布之间是高度相关的，而标准化往往对聚类检索有帮助，分类任务还要待验证不同: 图像输入是天然连续符合某种天然分布的，而nlp的词向量本身是抽象的，受一词多义 上下文等影响，最后获得的向量不一定是初始化时理想的均匀高斯分布球。embedding在计算学习理论下可以看成在高维希尔伯特空间下找一个低维的有欧几里得性质的流形空间  
-
+现有的预训练embedding是普适的吗不是，虽然现在NLP社区找到了比较合理的prefix(MLM为代表的)的自监督范式，但这个embedding并不必然在任何场景都有效。许多研究表明，预训练embedding...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -588,36 +618,6 @@ Total Score该函数将转移分数和发射分数加起来，即计...
             <!-- date  -->
             <div class="abstract-date">
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/09</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "NLP related">NLP related</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/03/21/指代消解-词pair-问题范式简介-以roberta为例/" >
-            
-                <span>指代消解(词pair)问题范式简介(以roberta为例)</span>
-        </a>
-        <div class="abstract-content">
-            词对匹配问题范式简介(以roberta为例)最近接触了一个任务为SuperGLUE中的Winograd Schema Challenge (WSC)，给定句子、代词pronoun(比如him)和主语词，判断这两个词是否对应。我乍一看还延续了以前文本匹配的思路，把两个词的表示拿出来concat/sum做分类。看了一下roberta的实现方式，是基于MLM预测对应位置词语。构造负样本然后用margin ranking loss去做的，用交叉熵也可以。  
-例子{“text”: “Bernard , who had not told the government official that h...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/21</span>
             </div>
             <!-- tags  -->
             
@@ -1201,9 +1201,24 @@ Total Score该函数将转移分数和发射分数加起来，即计...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 37
+        Total : 38
         </div>
         <!-- search  -->
         
@@ -1230,6 +1245,11 @@ Total Score该函数将转移分数和发射分数加起来，即计...
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/29</span><a class="archive-post-title" href= "/2021/10/29/如何找到易混淆的分类类别/" >如何找到易混淆的分类类别</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1438,9 +1458,9 @@ Total Score该函数将转移分数和发射分数加起来，即计...
     
         <span class="sidebar-tag-name" data-tags="NLP related"><span class="iconfont-archer">&#xe606;</span>NLP related</span>
     
-        <span class="sidebar-tag-name" data-tags="CS课程笔记"><span class="iconfont-archer">&#xe606;</span>CS课程笔记</span>
-    
         <span class="sidebar-tag-name" data-tags="cv-related"><span class="iconfont-archer">&#xe606;</span>cv-related</span>
+    
+        <span class="sidebar-tag-name" data-tags="CS课程笔记"><span class="iconfont-archer">&#xe606;</span>CS课程笔记</span>
     
         <span class="sidebar-tag-name" data-tags="代码二三事"><span class="iconfont-archer">&#xe606;</span>代码二三事</span>
     

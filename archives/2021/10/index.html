@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>项目总结 · Haibin&#39;s Studio</title>
+    <title>Haibin&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,23 +203,12 @@
 </head>
 
     
-        <body class="post-body">
-    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
-    
-    <div class="banner">
-            <div class="blog-title">
-                <a href="/" >Haibin&#39;s Studio</a>
-            </div>
-            <div class="post-title">
-                <a href="#" class="post-name">项目总结</a>
-            </div>
-    </div>
     
     <a class="home-link" href=/>Haibin's Studio</a>
 </header>
@@ -231,74 +220,24 @@
 
 
 
-
-height:50vh;
 ">
     
     <!-- 主页  -->
-    
-    
-    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(//source.unsplash.com/random/800x600)"></div>
+    <div class="site-intro-img" style="background-image: url(/)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
-            
-            项目总结
-            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
-            
-            <!-- 404 -->
-            
         </p>
         <!-- 文章页meta -->
-        
-            <div class="post-intros">
-                <!-- 文章页标签  -->
-                
-                    <div class= post-intro-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "项目">项目</a>
-    
-</div>
-                
-                
-                    <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">1k</span>Reading time: <span class="post-count reading-time">3 min</span></span>
-                    </div>
-                
-                <div class="post-intro-meta">
-                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2020/06/26</span>
-                    
-                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
-                        <span class="iconfont-archer">&#xe602;</span>
-                        <span id="busuanzi_value_page_pv"></span>
-                    </span>
-                    
-                    <span class="shareWrapper">
-                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
-                        <span class="shareText">Share</span>
-                        <ul class="shareList">
-                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
-                                <div class="share-qrcode"></div>
-                            </li>
-                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
-                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
-                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
-                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
-                        </ul>
-                    </span>
-                </div>
-            </div>
         
     </div>
 </div>
@@ -399,88 +338,40 @@ height:50vh;
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main post-page">
-    <article class="article-entry">
-        <h1 id="一个表格问题的探索"><a href="#一个表格问题的探索" class="headerlink" title="一个表格问题的探索"></a>一个表格问题的探索</h1><h2 id="问题定义"><a href="#问题定义" class="headerlink" title="问题定义"></a>问题定义</h2><p>无线表格预切分后存在一些误切的空格、文本，对这一类情况进行合并，方便后续表格理解任务。  </p>
-<h2 id="模型说明"><a href="#模型说明" class="headerlink" title="模型说明"></a>模型说明</h2><ol>
-<li>模型输入输出定义：输入为表格序列化表示，输出为每个格子是否合并。</li>
-<li>双BERT模型。BERT的输入除了原来的embedding还有行/列embedding。（参考ACL 2020 google表格理解的模型）</li>
-<li>第一个BERT编码字符embedding，每个格子的表示为字符embedding的平均。将每个格子的表示输入第二个BERT里，做0/1的序列标注问题。（基于BERT的LSTM/CNN/GNN并没有明显的提升）</li>
-<li>针对多行多列合并切分/问题，使用句子对NLI问题进行辅助判断，现在比较初步的方法是，针对多行/多列问题，贪心算法计算切分点。针对N行N列问题，迭代的两行两列进行合并方向的判断。     </li>
-</ol>
-<h2 id="Case-study"><a href="#Case-study" class="headerlink" title="Case study"></a>Case study</h2><p>PPTX[form.pptx]</p>
-<h2 id="规则放在哪里"><a href="#规则放在哪里" class="headerlink" title="规则放在哪里"></a>规则放在哪里</h2><p>我觉得机器学习任务，在支持以下流程的情况下，似乎可以有这样的大致套路：  </p>
-<ol>
-<li>hard规则过滤。比如表格缺失、用户自定义业务特征等，针对字符串是不是有一些固定的正则过滤方法。（学好正则！）  </li>
-<li>机器学习模型层+soft规则过滤。在该问题中，可能有一些也许有效的soft业务特征，如是不是空格切分后存在空行？是不是文本内容占满并且写过行了？但是这些特征也不是必然和标签关系对应的。像现在基于预训练模型的特征非常强，如果只是单纯拼接到特征或FFN映射之类的，很难体现在最终效果上。组内一位算法工程师的建议是，胶囊网络对特征的引导作用很强，其他推荐系统的embedding方法好像还没找到在文档理解问题的应用方法。组内另一位同学是把深度学习预测标签+特征构造为一个机器学习问题，再用一个GBDT/XGBOOST拟合，效果也体现的比较明显。  </li>
-</ol>
-<h3 id="update"><a href="#update" class="headerlink" title="update"></a>update</h3><p>最近看到了”串行化”和”并行化”的方法，上面阐述的是串行化，好处是可以快速迭代过滤大部分case，明显的可以用规则过滤，过完模型的规则也可以兜底一些长尾分布等。今天看到了”并行化”的方法，也就是有点类似于投票融合，多种规则和模型的置信度进行加权合并。  </p>
-<h2 id="评测方式"><a href="#评测方式" class="headerlink" title="评测方式"></a>评测方式</h2><p>change F1。合并前后文本内容发生合并的格子的F1。  </p>
-<h2 id="后续提升点"><a href="#后续提升点" class="headerlink" title="后续提升点"></a>后续提升点</h2><ol>
-<li>其实这个问题是CV+NLP的问题，可以考虑显示地加入视觉信息。  </li>
-<li>发现finetune的BERT预训练模型，常用文本finetune后的预训练特征和表格问题并不通用，并没有带来提升。  </li>
-</ol>
-<h2 id="其他点"><a href="#其他点" class="headerlink" title="其他点"></a>其他点</h2><ol>
-<li>code review要做好，有时候模型的问题经常是代码的问题、然后是脏数据的问题。    </li>
-<li>经常会有这个疑问：数据究竟够了吗？现在的做法是，在确认任务设置基本合理的情况下（训练集过拟合），评估自己的模型对不同比例数据的敏感度。  </li>
-<li>构造好的数据是everything。  </li>
-<li>压测并不是做的很完整，后续要填坑。  </li>
-<li>对于tensorflow高级estimator API，可以加入Hook来获得训练过程中验证集的loss和准确率变化。  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class EvaluationHook(tf.train.SessionRunHook):  </span><br><span class="line">    def __init__(self, **wrapper):  </span><br><span class="line">        self.estimator = wrapper[&apos;estimator&apos;]  </span><br><span class="line">        self.eval_steps, self.train_eval_steps = wrapper[&apos;eval_steps&apos;]  </span><br><span class="line">        self.eval_input_fn, self.train_eval_input_fn = wrapper[&apos;eval_input_fn&apos;]  </span><br><span class="line">        self.train_steps = int(wrapper[&apos;train_steps&apos;] / FLAGS.num_train_epochs)  </span><br><span class="line">        self.step = 0  </span><br><span class="line">    def after_run(self, run_context, run_values):</span><br><span class="line">        self.step += 1  </span><br><span class="line">        if (self.step % int(self.train_steps * FLAGS.eval_epoch_frequency) == 0):</span><br><span class="line">            epoch = self.step // self.train_steps</span><br><span class="line">            result = self.estimator.predict(input_fn=self.eval_input_fn, yield_single_examples=True)  </span><br><span class="line">eval_hook = EvaluationHook(eval_steps=(eval_steps, train_eval_steps), train_steps=num_train_steps, estimator=estimator, eval_input_fn=(eval_input_fn, train_eval_input_fn))  </span><br><span class="line">estimator.train(input_fn=train_input_fn, max_steps=num_train_steps, hooks=[eval_hook])</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-
+            <main class="main index-page">
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2021/10/29/如何找到易混淆的分类类别/" >
+            
+                <span>如何找到易混淆的分类类别</span>
+        </a>
+        <div class="abstract-content">
+            如何找到易混淆的分类类别在实际场景的分类任务中，如何合理划分类别标签集，是影响分类性能和用户体验的重要因素。划分类别标签过程是有可能存在一定混淆的，体现在模型层面，如果人为的类别划分的不好，模型会很难找到合理的分类界面，混淆的类别容易预测错误为另一者。从产品设计而言，对于特定混淆的类别，可以将决定权下放到用户，也可以定义一个“其他”、“混淆”类别统一归类。在以下的篇幅中，笔者将根据自身经验总结一些找到易混淆的分类类别方法。  
+分析分类结果直接从实验结果出发，是最简单粗暴的，直接统计是不是特定类别容易和其他某些类别互相混淆。这时候要根据特定情况分析实体间的关系，以下举具体例子分析：例子一...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/10/29</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "NLP related">NLP related</a>
+    
+</div>
+            
+        </div>
     </article>
-    <!-- license  -->
     
     <!-- paginator  -->
-    <ul class="post-paginator">
-        <li class="next">
-            
-                <div class="nextSlogan">Next Post</div>
-                <a href= "/2020/06/27/如何理清并写好一篇论文-持续更新/" title= "如何理清一篇论文(持续更新)">
-                    <div class="nextTitle">如何理清一篇论文(持续更新)</div>
-                </a>
-            
-        </li>
-        <li class="previous">
-            
-                <div class="prevSlogan">Previous Post</div>
-                <a href= "/2020/03/30/cv-related/" title= "cv-related">
-                    <div class="prevTitle">cv-related</div>
-                </a>
-            
-        </li>
-    </ul>
-    <!-- 评论插件 -->
-    <!-- 来必力City版安装代码 -->
-
-    <div id="lv-container" data-id="city" data-uid= MTAyMC80Njk1Ni8yMzQ1Nw>
-        <script type="text/javascript">
-            (function (d, s) {
-                var j, e = d.getElementsByTagName(s)[0];
-                if (typeof LivereTower === 'function') { return; }
-                j = d.createElement(s);
-                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-                j.async = true;
-
-                e.parentNode.insertBefore(j, e);
-            })(document, 'script');
-        </script>
-        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-    </div>
-
-<!-- City版安装代码已完成 -->
     
-    
-    <!-- partial('_partial/comment/changyan') -->
-    <!--PC版-->
-
-
-    
-    
-
-    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -566,24 +457,6 @@ height:50vh;
 </footer>
     </div>
     <!-- toc -->
-    
-    <div class="toc-wrapper" style=
-    
-
-
-
-
-
-
-
-top:50vh;
-
-    >
-        <div class="toc-catalog">
-            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
-        </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一个表格问题的探索"><span class="toc-number">1.</span> <span class="toc-text">一个表格问题的探索</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题定义"><span class="toc-number">1.1.</span> <span class="toc-text">问题定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模型说明"><span class="toc-number">1.2.</span> <span class="toc-text">模型说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Case-study"><span class="toc-number">1.3.</span> <span class="toc-text">Case study</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#规则放在哪里"><span class="toc-number">1.4.</span> <span class="toc-text">规则放在哪里</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#update"><span class="toc-number">1.4.1.</span> <span class="toc-text">update</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#评测方式"><span class="toc-number">1.5.</span> <span class="toc-text">评测方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后续提升点"><span class="toc-number">1.6.</span> <span class="toc-text">后续提升点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他点"><span class="toc-number">1.7.</span> <span class="toc-text">其他点</span></a></li></ol></li></ol>
-    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1404,8 +1277,6 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
-    
-        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>

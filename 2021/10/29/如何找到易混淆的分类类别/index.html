@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>项目总结 · Haibin&#39;s Studio</title>
+    <title>如何找到易混淆的分类类别 · Haibin&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/" >Haibin&#39;s Studio</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">项目总结</a>
+                <a href="#" class="post-name">如何找到易混淆的分类类别</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            项目总结
+            如何找到易混淆的分类类别
             <!-- 404 -->
             
         </h1>
@@ -266,18 +266,18 @@ height:50vh;
                 
                     <div class= post-intro-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "项目">项目</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "NLP related">NLP related</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">1k</span>Reading time: <span class="post-count reading-time">3 min</span></span>
+                        <span>Word count: <span class="post-count word-count">1.1k</span>Reading time: <span class="post-count reading-time">3 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2020/06/26</span>
+                    <span class="post-intro-time">2021/10/29</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -401,33 +401,15 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="一个表格问题的探索"><a href="#一个表格问题的探索" class="headerlink" title="一个表格问题的探索"></a>一个表格问题的探索</h1><h2 id="问题定义"><a href="#问题定义" class="headerlink" title="问题定义"></a>问题定义</h2><p>无线表格预切分后存在一些误切的空格、文本，对这一类情况进行合并，方便后续表格理解任务。  </p>
-<h2 id="模型说明"><a href="#模型说明" class="headerlink" title="模型说明"></a>模型说明</h2><ol>
-<li>模型输入输出定义：输入为表格序列化表示，输出为每个格子是否合并。</li>
-<li>双BERT模型。BERT的输入除了原来的embedding还有行/列embedding。（参考ACL 2020 google表格理解的模型）</li>
-<li>第一个BERT编码字符embedding，每个格子的表示为字符embedding的平均。将每个格子的表示输入第二个BERT里，做0/1的序列标注问题。（基于BERT的LSTM/CNN/GNN并没有明显的提升）</li>
-<li>针对多行多列合并切分/问题，使用句子对NLI问题进行辅助判断，现在比较初步的方法是，针对多行/多列问题，贪心算法计算切分点。针对N行N列问题，迭代的两行两列进行合并方向的判断。     </li>
-</ol>
-<h2 id="Case-study"><a href="#Case-study" class="headerlink" title="Case study"></a>Case study</h2><p>PPTX[form.pptx]</p>
-<h2 id="规则放在哪里"><a href="#规则放在哪里" class="headerlink" title="规则放在哪里"></a>规则放在哪里</h2><p>我觉得机器学习任务，在支持以下流程的情况下，似乎可以有这样的大致套路：  </p>
+        <h1 id="如何找到易混淆的分类类别"><a href="#如何找到易混淆的分类类别" class="headerlink" title="如何找到易混淆的分类类别"></a>如何找到易混淆的分类类别</h1><p>在实际场景的分类任务中，如何合理划分类别标签集，是影响分类性能和用户体验的重要因素。划分类别标签过程是有可能存在一定混淆的，体现在模型层面，如果人为的类别划分的不好，模型会很难找到合理的分类界面，混淆的类别容易预测错误为另一者。从产品设计而言，对于特定混淆的类别，可以将决定权下放到用户，也可以定义一个“其他”、“混淆”类别统一归类。在以下的篇幅中，笔者将根据自身经验总结一些找到易混淆的分类类别方法。  </p>
+<h2 id="分析分类结果"><a href="#分析分类结果" class="headerlink" title="分析分类结果"></a>分析分类结果</h2><p>直接从实验结果出发，是最简单粗暴的，直接统计是不是特定类别容易和其他某些类别互相混淆。这时候要根据特定情况分析实体间的关系，以下举具体例子分析：<br>例子一：实体识别中的地点名和组织名混淆<br>这是实体识别任务中的经典混淆，混淆的原因是组织名往往包括地点名（北京大学和北京），造成模型分类困难。这两类是最基本的分类标签，往往不会直接某一个或直接合并两者。这里给出idea上的解决方法：定义混淆类别的关系，即引入类别间公共父亲概念、兄弟姐妹相似概念等标签结构关系来帮助解析混淆，对于写规则或神经网络都可以考虑。第二种方法做的更细，将地点名、组织名这种相对粗粒度的概念去做分解和细化，通过区分更具体的类别（更多的分类标签信息）来解析混淆，对于原有的粗粒度标签，既可以保留，也可以通过对细粒度概念的组合进行判断、比较。<br>例子二：大标签集的多标签文本分类任务<br>在此类场景中，笔者曾遇到过“三角函数”“三角函数的应用”这样的极度混淆样例，对于标注而言非常困难，这种例子直接使用“三角函数及其应用”来统一合并。  </p>
+<h2 id="分析输出分布和模型梯度"><a href="#分析输出分布和模型梯度" class="headerlink" title="分析输出分布和模型梯度"></a>分析输出分布和模型梯度</h2><p>这种做法比较fancy一点，也是很有意思的研究方向。对于输出分布而言，可以根据不同类别的输出分布来比较分布的熵值的相似程度。在训练过程中，也可以对不同类别训练过程中的梯度（拟合）相关性做一定分析，具体可参考下面两篇文献。以下笔者举一个具体例子：<br>假如一个batch都是类别A的样本，衡量这些样本的更新梯度 对其他类别的影响，如某个类别的梯度方向和另一个类别的梯度方向cos相似度像不像。<br><img src="/2021/10/29/如何找到易混淆的分类类别/1.png" alt><br>红色说明训练集上某类样本的更新对另一类是正相关（促进），蓝色的体现的就是负相关，比如说上面提到的地点名和组织名混淆。<br>针对这种现象，笔者试过特征解耦（即学负相关的和学正相关的模型流向分开）、以及进行梯度加权操作（如参考文献），在特定场景有小提升，有兴趣的需要针对性地做一些深入研究。  </p>
+<p>Reference<br>Rethinking Generalization of Neural Models: A Named Entity Recognition Case Study 2020 AAAI<br>Gradient Surgery for Multi-Task Learning 2020 NIPS  </p>
+<h2 id="基于语言模型-Prompt的判别"><a href="#基于语言模型-Prompt的判别" class="headerlink" title="基于语言模型/Prompt的判别"></a>基于语言模型/Prompt的判别</h2><p>对于词级别的分类指标，可以借助语言模型和prompt去消歧<br>以这篇实体扩展文章为例Empower Entity Set Expansion via Language Model Probing:  </p>
 <ol>
-<li>hard规则过滤。比如表格缺失、用户自定义业务特征等，针对字符串是不是有一些固定的正则过滤方法。（学好正则！）  </li>
-<li>机器学习模型层+soft规则过滤。在该问题中，可能有一些也许有效的soft业务特征，如是不是空格切分后存在空行？是不是文本内容占满并且写过行了？但是这些特征也不是必然和标签关系对应的。像现在基于预训练模型的特征非常强，如果只是单纯拼接到特征或FFN映射之类的，很难体现在最终效果上。组内一位算法工程师的建议是，胶囊网络对特征的引导作用很强，其他推荐系统的embedding方法好像还没找到在文档理解问题的应用方法。组内另一位同学是把深度学习预测标签+特征构造为一个机器学习问题，再用一个GBDT/XGBOOST拟合，效果也体现的比较明显。  </li>
-</ol>
-<h3 id="update"><a href="#update" class="headerlink" title="update"></a>update</h3><p>最近看到了”串行化”和”并行化”的方法，上面阐述的是串行化，好处是可以快速迭代过滤大部分case，明显的可以用规则过滤，过完模型的规则也可以兜底一些长尾分布等。今天看到了”并行化”的方法，也就是有点类似于投票融合，多种规则和模型的置信度进行加权合并。  </p>
-<h2 id="评测方式"><a href="#评测方式" class="headerlink" title="评测方式"></a>评测方式</h2><p>change F1。合并前后文本内容发生合并的格子的F1。  </p>
-<h2 id="后续提升点"><a href="#后续提升点" class="headerlink" title="后续提升点"></a>后续提升点</h2><ol>
-<li>其实这个问题是CV+NLP的问题，可以考虑显示地加入视觉信息。  </li>
-<li>发现finetune的BERT预训练模型，常用文本finetune后的预训练特征和表格问题并不通用，并没有带来提升。  </li>
-</ol>
-<h2 id="其他点"><a href="#其他点" class="headerlink" title="其他点"></a>其他点</h2><ol>
-<li>code review要做好，有时候模型的问题经常是代码的问题、然后是脏数据的问题。    </li>
-<li>经常会有这个疑问：数据究竟够了吗？现在的做法是，在确认任务设置基本合理的情况下（训练集过拟合），评估自己的模型对不同比例数据的敏感度。  </li>
-<li>构造好的数据是everything。  </li>
-<li>压测并不是做的很完整，后续要填坑。  </li>
-<li>对于tensorflow高级estimator API，可以加入Hook来获得训练过程中验证集的loss和准确率变化。  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class EvaluationHook(tf.train.SessionRunHook):  </span><br><span class="line">    def __init__(self, **wrapper):  </span><br><span class="line">        self.estimator = wrapper[&apos;estimator&apos;]  </span><br><span class="line">        self.eval_steps, self.train_eval_steps = wrapper[&apos;eval_steps&apos;]  </span><br><span class="line">        self.eval_input_fn, self.train_eval_input_fn = wrapper[&apos;eval_input_fn&apos;]  </span><br><span class="line">        self.train_steps = int(wrapper[&apos;train_steps&apos;] / FLAGS.num_train_epochs)  </span><br><span class="line">        self.step = 0  </span><br><span class="line">    def after_run(self, run_context, run_values):</span><br><span class="line">        self.step += 1  </span><br><span class="line">        if (self.step % int(self.train_steps * FLAGS.eval_epoch_frequency) == 0):</span><br><span class="line">            epoch = self.step // self.train_steps</span><br><span class="line">            result = self.estimator.predict(input_fn=self.eval_input_fn, yield_single_examples=True)  </span><br><span class="line">eval_hook = EvaluationHook(eval_steps=(eval_steps, train_eval_steps), train_steps=num_train_steps, estimator=estimator, eval_input_fn=(eval_input_fn, train_eval_input_fn))  </span><br><span class="line">estimator.train(input_fn=train_input_fn, max_steps=num_train_steps, hooks=[eval_hook])</span><br></pre></td></tr></table></figure>
-
-</li>
+<li>从同一类型种子词出发，挖掘多个类别名<br>[mask] such as China, Canada, and USA .  </li>
+<li>类别名筛选和排序，获得合适的类别名和不合适的类别名<br>[class name] such as China, Canada, and USA.  </li>
+<li>基于不同类别名扩展实体<br>Country name such as China, Canada, USA, and [mask].<br>用这种语言模型和prompt，就可以发现有些类别他们共享一个大的类别名，也有些独立性比较强。可以借助一些实体链接的方法，尝试找一些类别和关系套进prompt和语言模型里，也能发现从模型的角度类别的关系是什么。  </li>
 </ol>
 
     </article>
@@ -438,16 +420,16 @@ height:50vh;
         <li class="next">
             
                 <div class="nextSlogan">Next Post</div>
-                <a href= "/2020/06/27/如何理清并写好一篇论文-持续更新/" title= "如何理清一篇论文(持续更新)">
-                    <div class="nextTitle">如何理清一篇论文(持续更新)</div>
+                <a href= "/2099/01/01/站内导引/" title= "站内导引">
+                    <div class="nextTitle">站内导引</div>
                 </a>
             
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2020/03/30/cv-related/" title= "cv-related">
-                    <div class="prevTitle">cv-related</div>
+                <a href= "/2021/09/06/5分钟了解prompt/" title= "5分钟了解prompt">
+                    <div class="prevTitle">5分钟了解prompt</div>
                 </a>
             
         </li>
@@ -582,7 +564,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一个表格问题的探索"><span class="toc-number">1.</span> <span class="toc-text">一个表格问题的探索</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题定义"><span class="toc-number">1.1.</span> <span class="toc-text">问题定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模型说明"><span class="toc-number">1.2.</span> <span class="toc-text">模型说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Case-study"><span class="toc-number">1.3.</span> <span class="toc-text">Case study</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#规则放在哪里"><span class="toc-number">1.4.</span> <span class="toc-text">规则放在哪里</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#update"><span class="toc-number">1.4.1.</span> <span class="toc-text">update</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#评测方式"><span class="toc-number">1.5.</span> <span class="toc-text">评测方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后续提升点"><span class="toc-number">1.6.</span> <span class="toc-text">后续提升点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他点"><span class="toc-number">1.7.</span> <span class="toc-text">其他点</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#如何找到易混淆的分类类别"><span class="toc-number">1.</span> <span class="toc-text">如何找到易混淆的分类类别</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#分析分类结果"><span class="toc-number">1.1.</span> <span class="toc-text">分析分类结果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分析输出分布和模型梯度"><span class="toc-number">1.2.</span> <span class="toc-text">分析输出分布和模型梯度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基于语言模型-Prompt的判别"><span class="toc-number">1.3.</span> <span class="toc-text">基于语言模型/Prompt的判别</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>

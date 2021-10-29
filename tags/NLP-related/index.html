@@ -346,6 +346,36 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/10/29/如何找到易混淆的分类类别/" >
+            
+                <span>如何找到易混淆的分类类别</span>
+        </a>
+        <div class="abstract-content">
+            如何找到易混淆的分类类别在实际场景的分类任务中，如何合理划分类别标签集，是影响分类性能和用户体验的重要因素。划分类别标签过程是有可能存在一定混淆的，体现在模型层面，如果人为的类别划分的不好，模型会很难找到合理的分类界面，混淆的类别容易预测错误为另一者。从产品设计而言，对于特定混淆的类别，可以将决定权下放到用户，也可以定义一个“其他”、“混淆”类别统一归类。在以下的篇幅中，笔者将根据自身经验总结一些找到易混淆的分类类别方法。  
+分析分类结果直接从实验结果出发，是最简单粗暴的，直接统计是不是特定类别容易和其他某些类别互相混淆。这时候要根据特定情况分析实体间的关系，以下举具体例子分析：例子一...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/10/29</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "NLP related">NLP related</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/09/06/5分钟了解prompt/" >
             
                 <span>5分钟了解prompt</span>
@@ -484,11 +514,11 @@ Total Score该函数将转移分数和发射分数加起来，即计...
                 <span>文本(序列标注)分类任务方法论整理</span>
         </a>
         <div class="abstract-content">
-            这个博客主要整理一些文本分类、序列标注任务具体实践中的整体方法论，慢慢更新&amp;重构。目标是希望能逐步建立自己在机器学习任务中的pipeline思维。  
+            总论这个博客主要整理一些文本分类、序列标注任务具体实践中的整体方法论，慢慢更新&amp;重构。积累从数据、模型、应用场景的思路与工具。  
 数据篇训练数据要多少？众所周知，数据越多越好。那么，如何衡量数据量增加的边际效应递减呢？如何考量增加什么数据呢？  
 
 做增量学习实验。总体而言，深度学习模型的边际效应往往类似于对数回归模型，f(x)=alogb+c。当然也可以使用专门描述边际效应的一些模型如渐进回归模型。选取若干个数据点进行实验，在感官上和量化上控制数据要求。  
-任务特定的场景下，根据效果提升的瓶颈来决定是否增加训练数据、还是增加词典/pattern匹配。对于...
+任务特定的场景下，根据效果提升的瓶颈来决定是否增加训练数据、还是增加词典/pattern匹配。对于实体识别来说，特定实...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -646,43 +676,11 @@ Abstractio...
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/01/23/NLP-in-2019/" >
-            
-                <span>NLP in 2019</span>
-        </a>
-        <div class="abstract-content">
-            BERTology、图网络、Attention in 2019主要列出这几个NLP子领域的部分论文题目，内容并不全面，仅供索引和参考。相关资料链接在文末。  
-Some BERTology in 2019
-ALBERT：参数共享与embedding因式分解，减少参数量。  
-XLNet：通过对句子中单词排列组合结合自回归与自编码语言模型的优点。  
-ERNIE：实体词MASK，加入知识图谱。  
-UNILM：基于MASK矩阵统一BERT和生成式模型。  
-ELECTRA：MASK预训练任务改成了判别式的判断当前token是否被语言模型替换过的任务，基于此延伸生成器和判别器。
-Distil...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/23</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "NLP related">NLP related</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
+    
+    <nav class="page-nav">
+        <span class="page-number current">1</span><a class="page-number" href="/tags/NLP-related/page/2/">2</a><a class="extend next" rel="next" href="/tags/NLP-related/page/2/">NEXT &#62;</a>
+    </nav>
     
 </main>
             <!-- profile -->
@@ -1249,9 +1247,24 @@ Distil...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 37
+        Total : 38
         </div>
         <!-- search  -->
         
@@ -1278,6 +1291,11 @@ Distil...
     
     <div class="archive-year"> 2021 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/29</span><a class="archive-post-title" href= "/2021/10/29/如何找到易混淆的分类类别/" >如何找到易混淆的分类类别</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1486,9 +1504,9 @@ Distil...
     
         <span class="sidebar-tag-name" data-tags="NLP related"><span class="iconfont-archer">&#xe606;</span>NLP related</span>
     
-        <span class="sidebar-tag-name" data-tags="CS课程笔记"><span class="iconfont-archer">&#xe606;</span>CS课程笔记</span>
-    
         <span class="sidebar-tag-name" data-tags="cv-related"><span class="iconfont-archer">&#xe606;</span>cv-related</span>
+    
+        <span class="sidebar-tag-name" data-tags="CS课程笔记"><span class="iconfont-archer">&#xe606;</span>CS课程笔记</span>
     
         <span class="sidebar-tag-name" data-tags="代码二三事"><span class="iconfont-archer">&#xe606;</span>代码二三事</span>
     
