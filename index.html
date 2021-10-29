@@ -367,7 +367,7 @@ height:50vh;
             NLP相关
 如何找到易混淆的分类类别  
 5分钟了解prompt  
-如何受控生成出特定关键词  
+针对特定词受控生成及在数据增强的应用  
 不同场景下CRF的变形与实现  
 文本-序列标注-分类任务方法论整理  
 命名实体识别中常见的挑战  
@@ -380,13 +380,36 @@ fastText源码中有意思的地方和新版特性
 BiLSTM与CRF++①  
 BiLSTM与CRF++②  
 
-通用机器学习
-机...
+通用...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2099/01/01</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2021/10/30/NLP中弱监督学习的常见过程/" >
+            
+                <span>NLP中弱监督学习的常见过程</span>
+        </a>
+        <div class="abstract-content">
+            NLP中弱监督学习的常见过程 笔者最近接触了一些弱监督的场景，以下介绍一些NLP中弱监督学习的常见过程 弱监督信息扩展以实体识别为例其他思路如GAN构造伪标签的弱监督数据集噪声数据是普遍存在的，因此往往引入噪声学习的方法。  
+
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/10/30</span>
             </div>
             <!-- tags  -->
             
@@ -429,13 +452,13 @@ BiLSTM与CRF++②
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2021/09/29/如何受控生成出特定关键词/" >
+        <a class="abstract-title" href = "/2021/09/29/针对特定词受控生成及在数据增强的应用/" >
             
-                <span>如何受控生成出特定关键词</span>
+                <span>针对特定词受控生成及在数据增强的应用</span>
         </a>
         <div class="abstract-content">
-            如何受控生成出特定关键词笔者不是专门做自然语言生成的，在某些场景需要简单的处理下这个问题，班门弄斧的做一些总结。可以考虑从两个角度设计生成方式，一种是在解码端使用constrained decoding受限编码方法，另一种是更改模型的范式，如变成插入式的。  
-受限编码受限编码代表性的是使用constrained beam search方法，简单来说就是原来的每个beam除了原来的top-k个词，还要强制性的解码完一个constrained关键词列表。这一类方法推荐参考以下资料：FairSeq的实现: https://github.com/pytorch/fairseq/tree/mai...
+            针对特定词受控生成及在数据增强的应用笔者不是专门做自然语言生成的，在某些场景需要简单的处理下这个问题，班门弄斧的做一些总结。可以考虑从两个角度设计生成方式，一种是在解码端使用constrained decoding受限编码方法，另一种是更改模型的范式，如变成插入式的。  
+受限编码受限编码代表性的是使用constrained beam search方法，简单来说就是原来的每个beam除了原来的top-k个词，还要强制性的解码完一个constrained关键词列表。这一类方法推荐参考以下资料：FairSeq的实现: https://github.com/pytorch/fairseq/tr...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -443,6 +466,12 @@ BiLSTM与CRF++②
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/09/29</span>
             </div>
             <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "NLP related">NLP related</a>
+    
+</div>
             
         </div>
     </article>
@@ -613,31 +642,6 @@ Total Score该函数将转移分数和发射分数加起来，即计...
             <!-- date  -->
             <div class="abstract-date">
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/07/05</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/05/11/个人学术工作的Insight/" >
-            
-                <span>个人学术工作的一些Insight</span>
-        </a>
-        <div class="abstract-content">
-            会议HiMatch: Hierarchy-aware Label Semantics Matching Network for Hierarchical Text Classification (2021 ACL)已有的工作没有考虑到文本和不同层次的标签语义的关系，主要思路是把标签语义和文本语义根据层次化结构做细粒度的匹配。  
-
-在某些场景下，也许把标签看成已有的query库(规则库)去做匹配。从标签的特点来看，相对来说是比较特定、细粒度的概念，最好与其他标签重合度小，这样用检索(相似度)的思路去做才比较有效。从标签的query库(数据集)来看，备选query的代表性也要足够强，缺少的...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/05/11</span>
             </div>
             <!-- tags  -->
             
@@ -1316,9 +1320,26 @@ Total Score该函数将转移分数和发射分数加起来，即计...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 39
+        Total : 40
         </div>
         <!-- search  -->
         
@@ -1348,12 +1369,17 @@ Total Score该函数将转移分数和发射分数加起来，即计...
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">10/30</span><a class="archive-post-title" href= "/2021/10/30/NLP中弱监督学习的常见过程/" >NLP中弱监督学习的常见过程</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">10/29</span><a class="archive-post-title" href= "/2021/10/29/如何找到易混淆的分类类别/" >如何找到易混淆的分类类别</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2021/09/29/如何受控生成出特定关键词/" >如何受控生成出特定关键词</a>
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2021/09/29/针对特定词受控生成及在数据增强的应用/" >针对特定词受控生成及在数据增强的应用</a>
         </li>
     
     
@@ -1565,9 +1591,9 @@ Total Score该函数将转移分数和发射分数加起来，即计...
     
         <span class="sidebar-tag-name" data-tags="cv-related"><span class="iconfont-archer">&#xe606;</span>cv-related</span>
     
-        <span class="sidebar-tag-name" data-tags="CS课程笔记"><span class="iconfont-archer">&#xe606;</span>CS课程笔记</span>
-    
         <span class="sidebar-tag-name" data-tags="代码二三事"><span class="iconfont-archer">&#xe606;</span>代码二三事</span>
+    
+        <span class="sidebar-tag-name" data-tags="CS课程笔记"><span class="iconfont-archer">&#xe606;</span>CS课程笔记</span>
     
         <span class="sidebar-tag-name" data-tags="项目"><span class="iconfont-archer">&#xe606;</span>项目</span>
     

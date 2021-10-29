@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>如何受控生成出特定关键词 · Haibin&#39;s Studio</title>
+    <title>NLP中弱监督学习的常见过程 · Haibin&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/" >Haibin&#39;s Studio</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">如何受控生成出特定关键词</a>
+                <a href="#" class="post-name">NLP中弱监督学习的常见过程</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            如何受控生成出特定关键词
+            NLP中弱监督学习的常见过程
             <!-- 404 -->
             
         </h1>
@@ -266,12 +266,12 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">293</span>Reading time: <span class="post-count reading-time">1 min</span></span>
+                        <span>Word count: <span class="post-count word-count">100</span>Reading time: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2021/09/29</span>
+                    <span class="post-intro-time">2021/10/30</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -395,9 +395,7 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="如何受控生成出特定关键词"><a href="#如何受控生成出特定关键词" class="headerlink" title="如何受控生成出特定关键词"></a>如何受控生成出特定关键词</h1><p>笔者不是专门做自然语言生成的，在某些场景需要简单的处理下这个问题，班门弄斧的做一些总结。可以考虑从两个角度设计生成方式，一种是在解码端使用constrained decoding受限编码方法，另一种是更改模型的范式，如变成插入式的。  </p>
-<h2 id="受限编码"><a href="#受限编码" class="headerlink" title="受限编码"></a>受限编码</h2><p>受限编码代表性的是使用constrained beam search方法，简单来说就是原来的每个beam除了原来的top-k个词，还要强制性的解码完一个constrained关键词列表。<br><img src="/2021/09/29/如何受控生成出特定关键词/1.jpg" alt><br>这一类方法推荐参考以下资料：<br>FairSeq的实现: <a href="https://github.com/pytorch/fairseq/tree/main/examples/constrained_decoding" target="_blank" rel="noopener">https://github.com/pytorch/fairseq/tree/main/examples/constrained_decoding</a><br>论文及其实现：<a href="https://github.com/morningmoni/EDE" target="_blank" rel="noopener">Extract, Denoise and Enforce: Evaluating and Improving Concept Preservation for Text-to-Text Generation</a>  </p>
-<h2 id="插入式Transformer"><a href="#插入式Transformer" class="headerlink" title="插入式Transformer"></a>插入式Transformer</h2><p>原来的Transformer是按序列预测单向，可以使用插入式的Transformer，以下图为例，预测时是迭代插入；训练时是反过来构造<br><img src="/2021/09/29/如何受控生成出特定关键词/2.png" alt><br>参考论文及其实现：<br>POINTER: Constrained Progressive Text Generation via Insertion-basedGenerative Pre-training 2020 EMNLP<br>ENCONTER: Entity Constrained Progressive Sequence Generation viaInsertion-based Transformer 2021 EACL<br>Reflective Decoding: Beyond Unidirectional Generation withOff-the-Shelf Language Models 2021 ACL  </p>
+        <h1 id="NLP中弱监督学习的常见过程"><a href="#NLP中弱监督学习的常见过程" class="headerlink" title="NLP中弱监督学习的常见过程"></a>NLP中弱监督学习的常见过程</h1><p> 笔者最近接触了一些弱监督的场景，以下介绍一些NLP中弱监督学习的常见过程<br> 弱监督信息扩展<br><img src="/2021/10/30/NLP中弱监督学习的常见过程/1.jpg" alt><br><img src="/2021/10/30/NLP中弱监督学习的常见过程/2.jpg" alt><br>以实体识别为例<br><img src="/2021/10/30/NLP中弱监督学习的常见过程/3.jpg" alt><br>其他思路如GAN<br><img src="/2021/10/30/NLP中弱监督学习的常见过程/4.jpg" alt><br>构造伪标签的弱监督数据集<br><img src="/2021/10/30/NLP中弱监督学习的常见过程/5.jpg" alt><br><img src="/2021/10/30/NLP中弱监督学习的常见过程/6.jpg" alt><br><img src="/2021/10/30/NLP中弱监督学习的常见过程/7.jpg" alt><br>噪声数据是普遍存在的，因此往往引入噪声学习的方法。  </p>
 
     </article>
     <!-- license  -->
@@ -407,16 +405,16 @@ height:50vh;
         <li class="next">
             
                 <div class="nextSlogan">Next Post</div>
-                <a href= "/2021/10/29/如何找到易混淆的分类类别/" title= "如何找到易混淆的分类类别">
-                    <div class="nextTitle">如何找到易混淆的分类类别</div>
+                <a href= "/2099/01/01/站内导引/" title= "站内导引">
+                    <div class="nextTitle">站内导引</div>
                 </a>
             
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2021/09/06/5分钟了解prompt/" title= "5分钟了解prompt">
-                    <div class="prevTitle">5分钟了解prompt</div>
+                <a href= "/2021/10/29/如何找到易混淆的分类类别/" title= "如何找到易混淆的分类类别">
+                    <div class="prevTitle">如何找到易混淆的分类类别</div>
                 </a>
             
         </li>
@@ -551,7 +549,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#如何受控生成出特定关键词"><span class="toc-number">1.</span> <span class="toc-text">如何受控生成出特定关键词</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#受限编码"><span class="toc-number">1.1.</span> <span class="toc-text">受限编码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#插入式Transformer"><span class="toc-number">1.2.</span> <span class="toc-text">插入式Transformer</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#NLP中弱监督学习的常见过程"><span class="toc-number">1.</span> <span class="toc-text">NLP中弱监督学习的常见过程</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -1059,9 +1057,26 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 39
+        Total : 40
         </div>
         <!-- search  -->
         
@@ -1091,12 +1106,17 @@ top:50vh;
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">10/30</span><a class="archive-post-title" href= "/2021/10/30/NLP中弱监督学习的常见过程/" >NLP中弱监督学习的常见过程</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">10/29</span><a class="archive-post-title" href= "/2021/10/29/如何找到易混淆的分类类别/" >如何找到易混淆的分类类别</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2021/09/29/如何受控生成出特定关键词/" >如何受控生成出特定关键词</a>
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2021/09/29/针对特定词受控生成及在数据增强的应用/" >针对特定词受控生成及在数据增强的应用</a>
         </li>
     
     
@@ -1308,9 +1328,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="cv-related"><span class="iconfont-archer">&#xe606;</span>cv-related</span>
     
-        <span class="sidebar-tag-name" data-tags="CS课程笔记"><span class="iconfont-archer">&#xe606;</span>CS课程笔记</span>
-    
         <span class="sidebar-tag-name" data-tags="代码二三事"><span class="iconfont-archer">&#xe606;</span>代码二三事</span>
+    
+        <span class="sidebar-tag-name" data-tags="CS课程笔记"><span class="iconfont-archer">&#xe606;</span>CS课程笔记</span>
     
         <span class="sidebar-tag-name" data-tags="项目"><span class="iconfont-archer">&#xe606;</span>项目</span>
     
