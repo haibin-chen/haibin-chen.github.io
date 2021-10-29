@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Haibin&#39;s Studio</title>
+    <title>如何受控生成出特定关键词 · Haibin&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >Haibin&#39;s Studio</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">如何受控生成出特定关键词</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>Haibin's Studio</a>
 </header>
@@ -220,24 +231,68 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(//source.unsplash.com/random/800x600)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            如何受控生成出特定关键词
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count word-count">293</span>Reading time: <span class="post-count reading-time">1 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2021/09/29</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,40 +393,63 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/02/08/位运算算法题总结/" >
-            
-                <span>位运算算法题总结</span>
-        </a>
-        <div class="abstract-content">
-            位运算算法题总结位运算是对整数(char类型)在内存中的二进制位直接进行操作，题目类型相对比较灵活，下面就整理出leetcode中位运算题的一些常见思路。  
-位运算基础知识与:&amp;或:|取反:~异或:^左移右移:&lt;&lt; &gt;&gt;非:!从这些基础操作出发，引申出一些性质，算法题往往从这些特性出发：(1) 判断奇偶: 最后一位与1的结果 a &amp; 1(2) 一个数和自己异或的结果为0: 判断数字出现的字数; 位操作来实现整数交换(3) 正负号变换: 取反加一(4) 整数加法: ^实现不带进位的加法, 再实现记录每一位的carry进位值(5) 赋值操作: A |...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/08</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "算法题">算法题</a>
-    
-</div>
-            
-        </div>
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="如何受控生成出特定关键词"><a href="#如何受控生成出特定关键词" class="headerlink" title="如何受控生成出特定关键词"></a>如何受控生成出特定关键词</h1><p>笔者不是专门做自然语言生成的，在某些场景需要简单的处理下这个问题，班门弄斧的做一些总结。可以考虑从两个角度设计生成方式，一种是在解码端使用constrained decoding受限编码方法，另一种是更改模型的范式，如变成插入式的。  </p>
+<h2 id="受限编码"><a href="#受限编码" class="headerlink" title="受限编码"></a>受限编码</h2><p>受限编码代表性的是使用constrained beam search方法，简单来说就是原来的每个beam除了原来的top-k个词，还要强制性的解码完一个constrained关键词列表。<br><img src="/2021/09/29/如何受控生成出特定关键词/1.jpg" alt><br>这一类方法推荐参考以下资料：<br>FairSeq的实现: <a href="https://github.com/pytorch/fairseq/tree/main/examples/constrained_decoding" target="_blank" rel="noopener">https://github.com/pytorch/fairseq/tree/main/examples/constrained_decoding</a><br>论文及其实现：<a href="https://github.com/morningmoni/EDE" target="_blank" rel="noopener">Extract, Denoise and Enforce: Evaluating and Improving Concept Preservation for Text-to-Text Generation</a>  </p>
+<h2 id="插入式Transformer"><a href="#插入式Transformer" class="headerlink" title="插入式Transformer"></a>插入式Transformer</h2><p>原来的Transformer是按序列预测单向，可以使用插入式的Transformer，以下图为例，预测时是迭代插入；训练时是反过来构造<br><img src="/2021/09/29/如何受控生成出特定关键词/2.png" alt><br>参考论文及其实现：<br>POINTER: Constrained Progressive Text Generation via Insertion-basedGenerative Pre-training 2020 EMNLP<br>ENCONTER: Entity Constrained Progressive Sequence Generation viaInsertion-based Transformer 2021 EACL<br>Reflective Decoding: Beyond Unidirectional Generation withOff-the-Shelf Language Models 2021 ACL  </p>
+
     </article>
+    <!-- license  -->
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2021/10/29/如何找到易混淆的分类类别/" title= "如何找到易混淆的分类类别">
+                    <div class="nextTitle">如何找到易混淆的分类类别</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2021/09/06/5分钟了解prompt/" title= "5分钟了解prompt">
+                    <div class="prevTitle">5分钟了解prompt</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+    <div id="lv-container" data-id="city" data-uid= MTAyMC80Njk1Ni8yMzQ1Nw>
+        <script type="text/javascript">
+            (function (d, s) {
+                var j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') { return; }
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -457,6 +535,24 @@
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#如何受控生成出特定关键词"><span class="toc-number">1.</span> <span class="toc-text">如何受控生成出特定关键词</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#受限编码"><span class="toc-number">1.1.</span> <span class="toc-text">受限编码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#插入式Transformer"><span class="toc-number">1.2.</span> <span class="toc-text">插入式Transformer</span></a></li></ol></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1293,6 +1389,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>

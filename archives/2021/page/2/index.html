@@ -346,6 +346,40 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2021/04/09/数学题目层次化分类特点整理/" >
+            
+                <span>数学题目层次化分类特点整理</span>
+        </a>
+        <div class="abstract-content">
+            数学题目层次化分类特点整理大致流程：标签集合构建-&gt;清洗-&gt;BERT+层次化图网络-&gt;TurboTransformer  
+公式特点首先要拆成char级别的分词。  
+存在可替换常量。例子：公式2x=5替换为@x+@y=@。公式y=4x^2替换为#=4#^2。在以上的例子中，把常量替换为@，把字母替换为#。存在一定LaTeX子结构如上标、下标。例子：LaTeX专有数学符号\sin，上标结构^，下标结构_
+1line = re.sub(&apos;\d+(\.\d*)?&apos;,&apos;@&apos;,line)
+
+噪声清洗体现在拆成char级别的分词中。需要匹配...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/09</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "NLP related">NLP related</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2021/03/21/指代消解-词pair-问题范式简介-以roberta为例/" >
             
                 <span>指代消解(词pair)问题范式简介(以roberta为例)</span>
@@ -1151,9 +1185,20 @@ Romeo And Juliet——Emerson, Lake &amp; Palmer我比较喜欢含这首歌专�
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 38
+        Total : 39
         </div>
         <!-- search  -->
         
@@ -1184,6 +1229,11 @@ Romeo And Juliet——Emerson, Lake &amp; Palmer我比较喜欢含这首歌专�
     
         <li class="archive-post-item">
             <span class="archive-post-date">10/29</span><a class="archive-post-title" href= "/2021/10/29/如何找到易混淆的分类类别/" >如何找到易混淆的分类类别</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2021/09/29/如何受控生成出特定关键词/" >如何受控生成出特定关键词</a>
         </li>
     
     

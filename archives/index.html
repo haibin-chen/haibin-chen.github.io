@@ -352,7 +352,9 @@
         </a>
         <div class="abstract-content">
             NLP相关
+如何找到易混淆的分类类别  
 5分钟了解prompt  
+如何受控生成出特定关键词  
 不同场景下CRF的变形与实现  
 文本-序列标注-分类任务方法论整理  
 命名实体识别中常见的挑战  
@@ -366,8 +368,7 @@ BiLSTM与CRF++①
 BiLSTM与CRF++②  
 
 通用机器学习
-机器学习工程-数据收集与准备  
-机器学习工程-模型服务、监控...
+机...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -405,6 +406,30 @@ BiLSTM与CRF++②
         <a class="post-tag" href="javascript:void(0);" data-tags = "NLP related">NLP related</a>
     
 </div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2021/09/29/如何受控生成出特定关键词/" >
+            
+                <span>如何受控生成出特定关键词</span>
+        </a>
+        <div class="abstract-content">
+            如何受控生成出特定关键词笔者不是专门做自然语言生成的，在某些场景需要简单的处理下这个问题，班门弄斧的做一些总结。可以考虑从两个角度设计生成方式，一种是在解码端使用constrained decoding受限编码方法，另一种是更改模型的范式，如变成插入式的。  
+受限编码受限编码代表性的是使用constrained beam search方法，简单来说就是原来的每个beam除了原来的top-k个词，还要强制性的解码完一个constrained关键词列表。这一类方法推荐参考以下资料：FairSeq的实现: https://github.com/pytorch/fairseq/tree/mai...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/09/29</span>
+            </div>
+            <!-- tags  -->
             
         </div>
     </article>
@@ -602,35 +627,6 @@ Total Score该函数将转移分数和发射分数加起来，即计...
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/05/11</span>
             </div>
             <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/04/28/历史相似的韵脚/" >
-            
-                <span>历史相似的韵脚</span>
-        </a>
-        <div class="abstract-content">
-            大致10年前，苹果进入了中国市场后，成为众多旧王爷的公敌，也让人们看到了智能机遥不可及的差距。时至今日，还有许多“水军”盯着苹果的一举一动。每次发布会也总会有人感慨苹果的创新大不如前，但不可否认的是，苹果在中国留下了成熟的产业链，壮大的富士康，一线的产业经验。在一批批“中国仿制”后，大浪还是掏出了华为、小米等等的金子。十年前如是，十年后的特斯拉亦如是。历史相似的韵脚在于，特斯拉在上海建了世界工厂，也同时掀起了一波“新能源造车热”。对了，历史在另外的国情下也有不同的韵脚，Tiktok在部分保守化浪潮下似乎仍囿于瓶颈期。特斯拉的未来，究竟是三星、是苹果，是马斯克的火星梦，还是彻底被国产后浪淹...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "杂谈">杂谈</a>
-    
-</div>
             
         </div>
     </article>
@@ -1221,9 +1217,20 @@ Total Score该函数将转移分数和发射分数加起来，即计...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 38
+        Total : 39
         </div>
         <!-- search  -->
         
@@ -1254,6 +1261,11 @@ Total Score该函数将转移分数和发射分数加起来，即计...
     
         <li class="archive-post-item">
             <span class="archive-post-date">10/29</span><a class="archive-post-title" href= "/2021/10/29/如何找到易混淆的分类类别/" >如何找到易混淆的分类类别</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2021/09/29/如何受控生成出特定关键词/" >如何受控生成出特定关键词</a>
         </li>
     
     
