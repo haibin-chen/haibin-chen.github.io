@@ -33,7 +33,7 @@ class MLP:
         loss = (self.target - self.output_final) ** 2
         self.losses.append(np.mean(loss))
 
-        error_term = (self.target - self,output_final) #delta
+        error_term = (self.target - self.output_final) #delta
         grad01 = np.dot(self.train_data.T, (error_term*self._dersigmoid(self.output_final)*self.weights_12.T)*self._dersigmoid(self.hidden_out))
         grad12 = np.dot(self.hidden_out.T, error_term*self._dersigmoid(self.output_final))
 

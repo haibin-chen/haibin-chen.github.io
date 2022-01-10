@@ -272,7 +272,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">691</span>Reading time: <span class="post-count reading-time">2 min</span></span>
+                        <span>Word count: <span class="post-count word-count">792</span>Reading time: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -404,6 +404,7 @@ height:50vh;
         <h1 id="针对特定词受控生成及在数据增强的应用"><a href="#针对特定词受控生成及在数据增强的应用" class="headerlink" title="针对特定词受控生成及在数据增强的应用"></a>针对特定词受控生成及在数据增强的应用</h1><p>笔者不是专门做自然语言生成的，在某些场景需要简单的处理下这个问题，班门弄斧的做一些总结。可以考虑从两个角度设计生成方式，一种是在解码端使用constrained decoding受限编码方法，另一种是更改模型的范式，如变成插入式的。  </p>
 <h2 id="受限编码"><a href="#受限编码" class="headerlink" title="受限编码"></a>受限编码</h2><p>受限编码代表性的是使用constrained beam search方法，简单来说就是原来的每个beam除了原来的top-k个词，还要强制性的解码完一个constrained关键词列表。<br><img src="/2021/09/29/针对特定词受控生成及在数据增强的应用/1.jpg" alt><br>这一类方法推荐参考以下资料：<br>FairSeq的实现: <a href="https://github.com/pytorch/fairseq/tree/main/examples/constrained_decoding" target="_blank" rel="noopener">https://github.com/pytorch/fairseq/tree/main/examples/constrained_decoding</a><br>论文及其实现：<a href="https://github.com/morningmoni/EDE" target="_blank" rel="noopener">Extract, Denoise and Enforce: Evaluating and Improving Concept Preservation for Text-to-Text Generation</a>  </p>
 <h2 id="插入式Transformer"><a href="#插入式Transformer" class="headerlink" title="插入式Transformer"></a>插入式Transformer</h2><p>原来的Transformer是按序列预测单向，可以使用插入式的Transformer，以下图为例，预测时是迭代插入；训练时是反过来构造<br><img src="/2021/09/29/针对特定词受控生成及在数据增强的应用/2.png" alt><br>参考论文及其实现：<br>POINTER: Constrained Progressive Text Generation via Insertion-basedGenerative Pre-training 2020 EMNLP<br>ENCONTER: Entity Constrained Progressive Sequence Generation viaInsertion-based Transformer 2021 EACL<br>Reflective Decoding: Beyond Unidirectional Generation withOff-the-Shelf Language Models 2021 ACL  </p>
+<h2 id="如果你的目标并不复杂"><a href="#如果你的目标并不复杂" class="headerlink" title="如果你的目标并不复杂"></a>如果你的目标并不复杂</h2><p>可以尝试构造一个辅助任务，根据1-n个关键词串成完整句子。在输入要求和输出样例中，每个提示关键词之前用特殊[MASK]标记，让模型学习这种copy关系。对于预训练模型而言，只要有一定的数据，基本能达到受控生成的目标。  </p>
 <h2 id="在数据增强的应用"><a href="#在数据增强的应用" class="headerlink" title="在数据增强的应用"></a>在数据增强的应用</h2><p>简单谈谈笔者一个有趣的探索实验，通过以上方法，我们可以针对特定词做序列生成，那么就可以针对特定目标进行数据增强。常见的基于模型生成的数据增强是基于copy式或替换式的，copy式：给定一个句子，语言模型尝试copy他，会生成意思和用词相近的句子；替换式：针对某些词做预训练模型的语言模型替换。<br>以实体识别/关系抽取等任务为例，使用以上的方法时，不同的地方是我们可以直接从特定的样例（比如难例错例）去生成一个完整句子。而且句子本身是可以可控性、灵活性的。可控性方面比如说可以基于这个词和特定主题、特定共现词一起来生成完整句子。灵活性方面体现在当从这个词出发，使用不同的n-gram、上下文，都会生成不一样的句子。这种方法并不成熟，你需要考虑让预训练模型生成有特定语料特点的语句，既可以通过多个关键词来做更精细的受控生成，也要保证不同的灵活性。<br>在具体应用中，笔者在弱监督场景，针对一些实体生成了一些新的句子，将新的句子加入到原有训练集中，可以获得1个百分点左右的提升。  </p>
 
     </article>
@@ -558,7 +559,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#针对特定词受控生成及在数据增强的应用"><span class="toc-number">1.</span> <span class="toc-text">针对特定词受控生成及在数据增强的应用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#受限编码"><span class="toc-number">1.1.</span> <span class="toc-text">受限编码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#插入式Transformer"><span class="toc-number">1.2.</span> <span class="toc-text">插入式Transformer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在数据增强的应用"><span class="toc-number">1.3.</span> <span class="toc-text">在数据增强的应用</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#针对特定词受控生成及在数据增强的应用"><span class="toc-number">1.</span> <span class="toc-text">针对特定词受控生成及在数据增强的应用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#受限编码"><span class="toc-number">1.1.</span> <span class="toc-text">受限编码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#插入式Transformer"><span class="toc-number">1.2.</span> <span class="toc-text">插入式Transformer</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如果你的目标并不复杂"><span class="toc-number">1.3.</span> <span class="toc-text">如果你的目标并不复杂</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在数据增强的应用"><span class="toc-number">1.4.</span> <span class="toc-text">在数据增强的应用</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -1083,9 +1084,22 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 40
+        Total : 41
         </div>
         <!-- search  -->
         
@@ -1102,6 +1116,20 @@ top:50vh;
     
         <li class="archive-post-item">
             <span class="archive-post-date">01/01</span><a class="archive-post-title" href= "/2099/01/01/站内导引/" >站内导引</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2022 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/10</span><a class="archive-post-title" href= "/2022/01/10/Transformer适配到各领域的一些特点/" >Transformer适配到各领域的一些特点</a>
         </li>
     
     
@@ -1331,27 +1359,27 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="论文分享"><span class="iconfont-archer">&#xe606;</span>论文分享</span>
-    
         <span class="sidebar-tag-name" data-tags="NLP related"><span class="iconfont-archer">&#xe606;</span>NLP related</span>
+    
+        <span class="sidebar-tag-name" data-tags="论文分享"><span class="iconfont-archer">&#xe606;</span>论文分享</span>
     
         <span class="sidebar-tag-name" data-tags="cv-related"><span class="iconfont-archer">&#xe606;</span>cv-related</span>
     
-        <span class="sidebar-tag-name" data-tags="代码二三事"><span class="iconfont-archer">&#xe606;</span>代码二三事</span>
-    
         <span class="sidebar-tag-name" data-tags="CS课程笔记"><span class="iconfont-archer">&#xe606;</span>CS课程笔记</span>
     
-        <span class="sidebar-tag-name" data-tags="项目"><span class="iconfont-archer">&#xe606;</span>项目</span>
+        <span class="sidebar-tag-name" data-tags="代码二三事"><span class="iconfont-archer">&#xe606;</span>代码二三事</span>
     
         <span class="sidebar-tag-name" data-tags="年终总结"><span class="iconfont-archer">&#xe606;</span>年终总结</span>
+    
+        <span class="sidebar-tag-name" data-tags="项目"><span class="iconfont-archer">&#xe606;</span>项目</span>
     
         <span class="sidebar-tag-name" data-tags="随想"><span class="iconfont-archer">&#xe606;</span>随想</span>
     
         <span class="sidebar-tag-name" data-tags="算法题"><span class="iconfont-archer">&#xe606;</span>算法题</span>
     
-        <span class="sidebar-tag-name" data-tags="杂谈"><span class="iconfont-archer">&#xe606;</span>杂谈</span>
-    
         <span class="sidebar-tag-name" data-tags="专题整理"><span class="iconfont-archer">&#xe606;</span>专题整理</span>
+    
+        <span class="sidebar-tag-name" data-tags="杂谈"><span class="iconfont-archer">&#xe606;</span>杂谈</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

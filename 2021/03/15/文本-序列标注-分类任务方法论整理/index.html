@@ -272,7 +272,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count word-count">2.5k</span>Reading time: <span class="post-count reading-time">9 min</span></span>
+                        <span>Word count: <span class="post-count word-count">2.6k</span>Reading time: <span class="post-count reading-time">9 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -477,6 +477,7 @@ height:50vh;
 <li>使用合理的测试数据，首先是数据本身的分布是否合理？是否能验证该迭代版本重点提升的case？是否导致了新的不可接受的bad case？（即一部分需要兜底的测试集）  </li>
 </ol>
 <h4 id="难例挖掘"><a href="#难例挖掘" class="headerlink" title="难例挖掘"></a>难例挖掘</h4><p>baseline：置信度/训练过程中损失很高的正负样本-&gt;加权loss等方法<br>如Imbalanced Deep Learning by Minority ClassIncremental Rectification 2018 TPAMI  </p>
+<h4 id="类别不平衡"><a href="#类别不平衡" class="headerlink" title="类别不平衡"></a>类别不平衡</h4><p>上采样下采样、mixup、对抗、使用不平衡损失、数据增强等<br><a href="https://github.com/Coding-Zuo/DaguanFengxian/tree/main/bert_model/training" target="_blank" rel="noopener">https://github.com/Coding-Zuo/DaguanFengxian/tree/main/bert_model/training</a>  </p>
 <h2 id="部署篇"><a href="#部署篇" class="headerlink" title="部署篇"></a>部署篇</h2><h3 id="快速部署工具"><a href="#快速部署工具" class="headerlink" title="快速部署工具"></a>快速部署工具</h3><h3 id="性能提升篇"><a href="#性能提升篇" class="headerlink" title="性能提升篇"></a>性能提升篇</h3><h3 id="出现错误，如何回标？如何迭代优化？"><a href="#出现错误，如何回标？如何迭代优化？" class="headerlink" title="出现错误，如何回标？如何迭代优化？"></a>出现错误，如何回标？如何迭代优化？</h3><h2 id="可解释性"><a href="#可解释性" class="headerlink" title="可解释性"></a>可解释性</h2><h3 id="可视化的工具"><a href="#可视化的工具" class="headerlink" title="可视化的工具"></a>可视化的工具</h3>
     </article>
     <!-- license  -->
@@ -630,7 +631,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#总论"><span class="toc-number">1.</span> <span class="toc-text">总论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据篇"><span class="toc-number">2.</span> <span class="toc-text">数据篇</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#训练数据要多少？"><span class="toc-number">2.1.</span> <span class="toc-text">训练数据要多少？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#怎么做数据增强？"><span class="toc-number">2.2.</span> <span class="toc-text">怎么做数据增强？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#拿到数据后可以做哪些初步分析？要怎么清洗？"><span class="toc-number">2.3.</span> <span class="toc-text">拿到数据后可以做哪些初步分析？要怎么清洗？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何找到脏数据？怎么做带噪声学习？"><span class="toc-number">2.4.</span> <span class="toc-text">如何找到脏数据？怎么做带噪声学习？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据清洗"><span class="toc-number">2.5.</span> <span class="toc-text">数据清洗</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#标签体系构建"><span class="toc-number">2.6.</span> <span class="toc-text">标签体系构建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么样叫低资源小数据？"><span class="toc-number">2.7.</span> <span class="toc-text">什么样叫低资源小数据？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据挖掘"><span class="toc-number">2.8.</span> <span class="toc-text">数据挖掘</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模型篇"><span class="toc-number">3.</span> <span class="toc-text">模型篇</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#规则模板"><span class="toc-number">3.1.</span> <span class="toc-text">规则模板</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#机器学习模型"><span class="toc-number">3.2.</span> <span class="toc-text">机器学习模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#深度学习模型"><span class="toc-number">3.3.</span> <span class="toc-text">深度学习模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NER少样本快速启动指南"><span class="toc-number">3.4.</span> <span class="toc-text">NER少样本快速启动指南</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文本分类少样本快速启动指南"><span class="toc-number">3.5.</span> <span class="toc-text">文本分类少样本快速启动指南</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#针对中文NER的词典增强"><span class="toc-number">3.6.</span> <span class="toc-text">针对中文NER的词典增强</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#CRF解码速度慢怎么办？"><span class="toc-number">3.6.1.</span> <span class="toc-text">CRF解码速度慢怎么办？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#如何利用超大-预训练-模型"><span class="toc-number">3.6.2.</span> <span class="toc-text">如何利用超大(预训练)模型?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#新词发现"><span class="toc-number">3.6.3.</span> <span class="toc-text">新词发现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#隐私数据场景"><span class="toc-number">3.6.4.</span> <span class="toc-text">隐私数据场景</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#极限提升性能"><span class="toc-number">3.6.5.</span> <span class="toc-text">极限提升性能</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#继续预训练"><span class="toc-number">3.6.5.1.</span> <span class="toc-text">继续预训练</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#标签：Focal-Loss、标签平滑"><span class="toc-number">3.6.5.2.</span> <span class="toc-text">标签：Focal Loss、标签平滑</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#对抗训练如Adversarial-Training-Methods-for-Semi-Supervised-Text-Classification"><span class="toc-number">3.6.5.3.</span> <span class="toc-text">对抗训练如Adversarial Training Methods for Semi-Supervised Text Classification</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#SWA随机权重衰减、EDA滑动平均"><span class="toc-number">3.6.5.4.</span> <span class="toc-text">SWA随机权重衰减、EDA滑动平均</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#基于Mixup的样本增强"><span class="toc-number">3.6.5.5.</span> <span class="toc-text">基于Mixup的样本增强</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#BERT输入编码"><span class="toc-number">3.6.5.6.</span> <span class="toc-text">BERT输入编码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模型诊断"><span class="toc-number">3.7.</span> <span class="toc-text">模型诊断</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#难例挖掘"><span class="toc-number">3.7.1.</span> <span class="toc-text">难例挖掘</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#部署篇"><span class="toc-number">4.</span> <span class="toc-text">部署篇</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#快速部署工具"><span class="toc-number">4.1.</span> <span class="toc-text">快速部署工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#性能提升篇"><span class="toc-number">4.2.</span> <span class="toc-text">性能提升篇</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#出现错误，如何回标？如何迭代优化？"><span class="toc-number">4.3.</span> <span class="toc-text">出现错误，如何回标？如何迭代优化？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#可解释性"><span class="toc-number">5.</span> <span class="toc-text">可解释性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#可视化的工具"><span class="toc-number">5.1.</span> <span class="toc-text">可视化的工具</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#总论"><span class="toc-number">1.</span> <span class="toc-text">总论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据篇"><span class="toc-number">2.</span> <span class="toc-text">数据篇</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#训练数据要多少？"><span class="toc-number">2.1.</span> <span class="toc-text">训练数据要多少？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#怎么做数据增强？"><span class="toc-number">2.2.</span> <span class="toc-text">怎么做数据增强？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#拿到数据后可以做哪些初步分析？要怎么清洗？"><span class="toc-number">2.3.</span> <span class="toc-text">拿到数据后可以做哪些初步分析？要怎么清洗？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何找到脏数据？怎么做带噪声学习？"><span class="toc-number">2.4.</span> <span class="toc-text">如何找到脏数据？怎么做带噪声学习？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据清洗"><span class="toc-number">2.5.</span> <span class="toc-text">数据清洗</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#标签体系构建"><span class="toc-number">2.6.</span> <span class="toc-text">标签体系构建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么样叫低资源小数据？"><span class="toc-number">2.7.</span> <span class="toc-text">什么样叫低资源小数据？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据挖掘"><span class="toc-number">2.8.</span> <span class="toc-text">数据挖掘</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模型篇"><span class="toc-number">3.</span> <span class="toc-text">模型篇</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#规则模板"><span class="toc-number">3.1.</span> <span class="toc-text">规则模板</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#机器学习模型"><span class="toc-number">3.2.</span> <span class="toc-text">机器学习模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#深度学习模型"><span class="toc-number">3.3.</span> <span class="toc-text">深度学习模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NER少样本快速启动指南"><span class="toc-number">3.4.</span> <span class="toc-text">NER少样本快速启动指南</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文本分类少样本快速启动指南"><span class="toc-number">3.5.</span> <span class="toc-text">文本分类少样本快速启动指南</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#针对中文NER的词典增强"><span class="toc-number">3.6.</span> <span class="toc-text">针对中文NER的词典增强</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#CRF解码速度慢怎么办？"><span class="toc-number">3.6.1.</span> <span class="toc-text">CRF解码速度慢怎么办？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#如何利用超大-预训练-模型"><span class="toc-number">3.6.2.</span> <span class="toc-text">如何利用超大(预训练)模型?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#新词发现"><span class="toc-number">3.6.3.</span> <span class="toc-text">新词发现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#隐私数据场景"><span class="toc-number">3.6.4.</span> <span class="toc-text">隐私数据场景</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#极限提升性能"><span class="toc-number">3.6.5.</span> <span class="toc-text">极限提升性能</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#继续预训练"><span class="toc-number">3.6.5.1.</span> <span class="toc-text">继续预训练</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#标签：Focal-Loss、标签平滑"><span class="toc-number">3.6.5.2.</span> <span class="toc-text">标签：Focal Loss、标签平滑</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#对抗训练如Adversarial-Training-Methods-for-Semi-Supervised-Text-Classification"><span class="toc-number">3.6.5.3.</span> <span class="toc-text">对抗训练如Adversarial Training Methods for Semi-Supervised Text Classification</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#SWA随机权重衰减、EDA滑动平均"><span class="toc-number">3.6.5.4.</span> <span class="toc-text">SWA随机权重衰减、EDA滑动平均</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#基于Mixup的样本增强"><span class="toc-number">3.6.5.5.</span> <span class="toc-text">基于Mixup的样本增强</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#BERT输入编码"><span class="toc-number">3.6.5.6.</span> <span class="toc-text">BERT输入编码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模型诊断"><span class="toc-number">3.7.</span> <span class="toc-text">模型诊断</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#难例挖掘"><span class="toc-number">3.7.1.</span> <span class="toc-text">难例挖掘</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#类别不平衡"><span class="toc-number">3.7.2.</span> <span class="toc-text">类别不平衡</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#部署篇"><span class="toc-number">4.</span> <span class="toc-text">部署篇</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#快速部署工具"><span class="toc-number">4.1.</span> <span class="toc-text">快速部署工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#性能提升篇"><span class="toc-number">4.2.</span> <span class="toc-text">性能提升篇</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#出现错误，如何回标？如何迭代优化？"><span class="toc-number">4.3.</span> <span class="toc-text">出现错误，如何回标？如何迭代优化？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#可解释性"><span class="toc-number">5.</span> <span class="toc-text">可解释性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#可视化的工具"><span class="toc-number">5.1.</span> <span class="toc-text">可视化的工具</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -1155,9 +1156,22 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 40
+        Total : 41
         </div>
         <!-- search  -->
         
@@ -1174,6 +1188,20 @@ top:50vh;
     
         <li class="archive-post-item">
             <span class="archive-post-date">01/01</span><a class="archive-post-title" href= "/2099/01/01/站内导引/" >站内导引</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2022 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/10</span><a class="archive-post-title" href= "/2022/01/10/Transformer适配到各领域的一些特点/" >Transformer适配到各领域的一些特点</a>
         </li>
     
     
@@ -1403,27 +1431,27 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="论文分享"><span class="iconfont-archer">&#xe606;</span>论文分享</span>
-    
         <span class="sidebar-tag-name" data-tags="NLP related"><span class="iconfont-archer">&#xe606;</span>NLP related</span>
+    
+        <span class="sidebar-tag-name" data-tags="论文分享"><span class="iconfont-archer">&#xe606;</span>论文分享</span>
     
         <span class="sidebar-tag-name" data-tags="cv-related"><span class="iconfont-archer">&#xe606;</span>cv-related</span>
     
-        <span class="sidebar-tag-name" data-tags="代码二三事"><span class="iconfont-archer">&#xe606;</span>代码二三事</span>
-    
         <span class="sidebar-tag-name" data-tags="CS课程笔记"><span class="iconfont-archer">&#xe606;</span>CS课程笔记</span>
     
-        <span class="sidebar-tag-name" data-tags="项目"><span class="iconfont-archer">&#xe606;</span>项目</span>
+        <span class="sidebar-tag-name" data-tags="代码二三事"><span class="iconfont-archer">&#xe606;</span>代码二三事</span>
     
         <span class="sidebar-tag-name" data-tags="年终总结"><span class="iconfont-archer">&#xe606;</span>年终总结</span>
+    
+        <span class="sidebar-tag-name" data-tags="项目"><span class="iconfont-archer">&#xe606;</span>项目</span>
     
         <span class="sidebar-tag-name" data-tags="随想"><span class="iconfont-archer">&#xe606;</span>随想</span>
     
         <span class="sidebar-tag-name" data-tags="算法题"><span class="iconfont-archer">&#xe606;</span>算法题</span>
     
-        <span class="sidebar-tag-name" data-tags="杂谈"><span class="iconfont-archer">&#xe606;</span>杂谈</span>
-    
         <span class="sidebar-tag-name" data-tags="专题整理"><span class="iconfont-archer">&#xe606;</span>专题整理</span>
+    
+        <span class="sidebar-tag-name" data-tags="杂谈"><span class="iconfont-archer">&#xe606;</span>杂谈</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
