@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Haibin&#39;s Studio</title>
+    <title>通用视角下NLP数据预处理对数据分布的变化 · Haibin&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >Haibin&#39;s Studio</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">通用视角下NLP数据预处理对数据分布的变化</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>Haibin's Studio</a>
 </header>
@@ -220,24 +231,74 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(//source.unsplash.com/random/800x600)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            通用视角下NLP数据预处理对数据分布的变化
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "NLP related">NLP related</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count word-count">1.4k</span>Reading time: <span class="post-count reading-time">4 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2022/01/23</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,174 +399,73 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/03/21/指代消解-词pair-问题范式简介-以roberta为例/" >
-            
-                <span>指代消解(词pair)问题范式简介(以roberta为例)</span>
-        </a>
-        <div class="abstract-content">
-            词对匹配问题范式简介(以roberta为例)最近接触了一个任务为SuperGLUE中的Winograd Schema Challenge (WSC)，给定句子、代词pronoun(比如him)和主语词，判断这两个词是否对应。我乍一看还延续了以前文本匹配的思路，把两个词的表示拿出来concat/sum做分类。看了一下roberta的实现方式，是基于MLM预测对应位置词语。构造负样本然后用margin ranking loss去做的，用交叉熵也可以。  
-例子{“text”: “Bernard , who had not told the government official that h...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/21</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "NLP related">NLP related</a>
-    
-</div>
-            
-        </div>
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="通用视角下NLP数据预处理对数据分布的变化"><a href="#通用视角下NLP数据预处理对数据分布的变化" class="headerlink" title="通用视角下NLP数据预处理对数据分布的变化"></a>通用视角下NLP数据预处理对数据分布的变化</h1><p>众所周知，数据规范化、数据预处理是机器学习任务中很重要的一环，对于特定的业务场景和具体任务，可以结合业务特点深挖数据指标。  </p>
+<h2 id="通用角度的含义？"><a href="#通用角度的含义？" class="headerlink" title="通用角度的含义？"></a>通用角度的含义？</h2><p>笔者最近接触了一些通用、更加上游的数据处理角度，为了更好地评估数据预处理带来的变化，因此需要寻找一些辅助指标。<br>与具体业务数据集不同的地方是，无法非常直观地目标定义，比如对于一个具体的文本分类任务，我们可以根据分类标签做分层抽样分析，可以用交叉验证寻找更多无法cover的场景，也可以定义一些规则监控经典case类型的结果变化。而在通用角度中，我们希望这些数据操作、数据预处理能够服务好各种各样的下游任务。  </p>
+<h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><p>为了获得清晰的反馈，我们希望能达到数据预处理流程先后的规范化、定义数据量化指标、如何更快更好地做数据闭环迭代。  </p>
+<h2 id="从数据来源寻找bias来源"><a href="#从数据来源寻找bias来源" class="headerlink" title="从数据来源寻找bias来源"></a>从数据来源寻找bias来源</h2><p>在构建一个机器学习任务时，我们会人为指定一些先验来或多或少地指导了数据来源。比如说，定义好了一些标注规则，但这些标注规则存在歧义，亦或是数据质量较低存在冲突；也可能是采集时不符合正态分布，采集到了大量高曝光样本形成长尾分布。如果这些情况能用正则、交叉验证、置信学习等方法进行分组筛选，那应该就比较直接了，完成完美的ablation自然对着这个问题单独解决，在建立反馈指标时也只根据这个组去做就ok了。  </p>
+<h2 id="从数据内部寻找bias来源"><a href="#从数据内部寻找bias来源" class="headerlink" title="从数据内部寻找bias来源"></a>从数据内部寻找bias来源</h2><p>有些噪声类型是公认的需要清除的，如大段重复、黄色反动等，这些噪声与任务目标和模型预期能力明显是不符合的。另外，数据内的领域分布差异也会带来embedding表征能力的退化，笔者从两个场景去进行简单说明。1.和类别不平衡类似，如领域分布不平衡，学习通用表示时，某个领域的常见含义未完全学习，就被某一高曝光分布所”淹没”，后续可能也进入了BERT类模型拟合噪声、过拟合高曝光样本的阶段，失去了一定泛化能力，合理的采样策略、shuffle策略能缓解这一点。2.从通用表征建模手段出发，如自监督学习是非常通用的表示学习方法，自监督学习在寻找领域通用的”代理”任务时，可能落入某种局部最优或存在shortcut的解。了解对比学习的可能就联想到对比学习范式中的退化解、平凡解问题。而从数据端出发，自然可以通过预处理来缓解这个手段。比如说模型过拟合了简单增删改查的数据增强样本对，以为长度差不多的句子就是一个意思，那么在构造数据中要避免正样本都是相同长度这种”投机取巧”的模型过拟合角度。  </p>
+<h2 id="从下游目标反推"><a href="#从下游目标反推" class="headerlink" title="从下游目标反推"></a>从下游目标反推</h2><p>由于我们是考虑通用角度的数据处理，这些数据不一定完全放到下游应用中，也不一定是按相同频率放到下游应用中。因此，我们根据下游的特点，从采样策略、采样选择从通用数据选择合适的利用。  </p>
+<h2 id="从任务形式反推"><a href="#从任务形式反推" class="headerlink" title="从任务形式反推"></a>从任务形式反推</h2><p>上游的短文本/长文本、社交媒体/正式新闻，在生成任务这种相对直观的感受出来。而在理解场景中，可以寻找比较底层的评测任务，如词义消歧、句法理解能力、词法理解能力等。  </p>
+<h2 id="列出一些考量方法和指标定义"><a href="#列出一些考量方法和指标定义" class="headerlink" title="列出一些考量方法和指标定义"></a>列出一些考量方法和指标定义</h2><p>笔者在上面提到了一些思考角度，以下给出一些考量方法和指标定义，可以考虑根据实际情况对应到上面的一些角度：</p>
+<h3 id="N-gram或词表重合度"><a href="#N-gram或词表重合度" class="headerlink" title="N-gram或词表重合度"></a>N-gram或词表重合度</h3><p>联系上下游数据的手段，也是数据分组分析的指标  </p>
+<h3 id="Prompt"><a href="#Prompt" class="headerlink" title="Prompt"></a>Prompt</h3><p>Prompt是作为探针快速探查基线模型的能力，如果是生成场景可以通过QA/续写的场景来钓鱼，色情/反对/复读机/多样性这些就有对应的指标；理解场景笔者见过和底层任务结合，如一词多义的表示是否接近，词语和相应的词典解释距离是否接近等。  </p>
+<h3 id="采样策略带来的Token曝光度不同"><a href="#采样策略带来的Token曝光度不同" class="headerlink" title="采样策略带来的Token曝光度不同"></a>采样策略带来的Token曝光度不同</h3><p>如果数据的采样策略有变，那么可以考察频率变动大的Token和句子等进行分析  </p>
+<h3 id="列出数据特点进行一阶与二阶指标组合的监控"><a href="#列出数据特点进行一阶与二阶指标组合的监控" class="headerlink" title="列出数据特点进行一阶与二阶指标组合的监控"></a>列出数据特点进行一阶与二阶指标组合的监控</h3><p>对数据特点进行不同角度的指标监控，如按标注来源分组，按网页爬取来源分组，去考量某几个侧面的bias变化大小  </p>
+<h3 id="直接分析embedding表征能力"><a href="#直接分析embedding表征能力" class="headerlink" title="直接分析embedding表征能力"></a>直接分析embedding表征能力</h3><p>如欧式空间cos/L2距离的同义词、相似文档检索能力；欧式计算的推理能力，著名的Ａ-B=C-D  </p>
+
     </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/03/15/文本-序列标注-分类任务方法论整理/" >
-            
-                <span>文本(序列标注)分类任务方法论整理</span>
-        </a>
-        <div class="abstract-content">
-            总论这个博客主要整理一些文本分类、序列标注任务具体实践中的整体方法论，慢慢更新&amp;重构。积累从数据、模型、应用场景的思路与工具。  
-数据篇训练数据要多少？众所周知，数据越多越好。那么，如何衡量数据量增加的边际效应递减呢？如何考量增加什么数据呢？  
-
-做增量学习实验。总体而言，深度学习模型的边际效应往往类似于对数回归模型，f(x)=alogb+c。当然也可以使用专门描述边际效应的一些模型如渐进回归模型。选取若干个数据点进行实验，在感官上和量化上控制数据要求。  
-任务特定的场景下，根据效果提升的瓶颈来决定是否增加训练数据、还是增加词典/pattern匹配。对于实体识别来说，特定实...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/15</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "NLP related">NLP related</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/03/09/AllenNLP_Guide中文版/" >
-            
-                <span>AllenNLP Guide中文版</span>
-        </a>
-        <div class="abstract-content">
-            AllenNLP 官方Guide速览Quick Start
-训练样本被抽象为Instance，Instance中包含若干个Fields，如TextFIeld，LabelField  
-提供了数据集读取的封装类DatasetReader，通过重写_read()方法实现。  
-通过封装好的Vocab读取、Embed读取、pytorch层构建Model。  
-除了py文件，也支持json配置文件加载以上配置，命令行调用allennlp train。  
-封装了bert、elmo等预训练模型；allennlp-server是官方提供的基于Flask的简单可视化、部署工具。
-
-Abstractio...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/09</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "NLP related">NLP related</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/03/06/fastText源码中有意思的地方和新版特性/" >
-            
-                <span>fastText源码中有意思的地方</span>
-        </a>
-        <div class="abstract-content">
-            本文不讨论fastText的技术原理，主要讨论工程实现v0.1.0中有意思的点和一些新版特性。主要结构如下：源码结构、源码走读与关键函数分析、效率优化分析。  
-源码结构123456789101112args.h, args.cc: 模型参数定义  autotune.h, autotune.cc: 参数更新控制  densematrix.h, densematrix.cc: 矩阵封装  dictionary.h, dictionary.cc: 字典封装fasttext.h, fasttext.cc: 主类，控制训练、加载等  loss.h, loss.cc: 封装hierarchy和NC...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/06</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "NLP related">NLP related</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "代码二三事">代码二三事</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2021/03/01/记录一些小坑/" >
-            
-                <span>记录一些小坑</span>
-        </a>
-        <div class="abstract-content">
-            杂
-github 443 连接失败vim etc/hosts加上  
-
-232.69.194 global-ssl.fastly.net  
-
-82.113.4 github.com域名查询示例https://fastly.net.ipaddress.com/github.global.ssl.fastly.net#ipinfo  
-
-nm命令nm命令主要是用来列出某些文件中的符号（说白了就是一些函数和全局变量等）https://www.cnblogs.com/274914765qq/p/6139663.html  
-
-LD_PRELOAD  选择性的载入不同动态链接库中的相同函数  
-...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/03/01</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
+    <!-- license  -->
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2099/01/01/站内导引/" title= "站内导引">
+                    <div class="nextTitle">站内导引</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2022/01/10/Transformer适配到各领域的一些特点/" title= "Transformer适配到各领域的一些特点">
+                    <div class="prevTitle">Transformer适配到各领域的一些特点</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+    <div id="lv-container" data-id="city" data-uid= MTAyMC80Njk1Ni8yMzQ1Nw>
+        <script type="text/javascript">
+            (function (d, s) {
+                var j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') { return; }
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -591,6 +551,24 @@ LD_PRELOAD  选择性的载入不同动态链接库中的相同函数
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#通用视角下NLP数据预处理对数据分布的变化"><span class="toc-number">1.</span> <span class="toc-text">通用视角下NLP数据预处理对数据分布的变化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#通用角度的含义？"><span class="toc-number">1.1.</span> <span class="toc-text">通用角度的含义？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#目标"><span class="toc-number">1.2.</span> <span class="toc-text">目标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#从数据来源寻找bias来源"><span class="toc-number">1.3.</span> <span class="toc-text">从数据来源寻找bias来源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#从数据内部寻找bias来源"><span class="toc-number">1.4.</span> <span class="toc-text">从数据内部寻找bias来源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#从下游目标反推"><span class="toc-number">1.5.</span> <span class="toc-text">从下游目标反推</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#从任务形式反推"><span class="toc-number">1.6.</span> <span class="toc-text">从任务形式反推</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#列出一些考量方法和指标定义"><span class="toc-number">1.7.</span> <span class="toc-text">列出一些考量方法和指标定义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#N-gram或词表重合度"><span class="toc-number">1.7.1.</span> <span class="toc-text">N-gram或词表重合度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Prompt"><span class="toc-number">1.7.2.</span> <span class="toc-text">Prompt</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#采样策略带来的Token曝光度不同"><span class="toc-number">1.7.3.</span> <span class="toc-text">采样策略带来的Token曝光度不同</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#列出数据特点进行一阶与二阶指标组合的监控"><span class="toc-number">1.7.4.</span> <span class="toc-text">列出数据特点进行一阶与二阶指标组合的监控</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#直接分析embedding表征能力"><span class="toc-number">1.7.5.</span> <span class="toc-text">直接分析embedding表征能力</span></a></li></ol></li></ol></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1496,6 +1474,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
