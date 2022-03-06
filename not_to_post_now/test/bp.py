@@ -60,7 +60,7 @@ class MLP:
                 correct += 1
         print("test acc:", "%.2f%%"%(correct/len(self.output_final))*100)
 
-if __name__ = '__main__':
+if __name__ == '__main__':
     train_data = np.array([[0,0],[0,1],[1,0],[1,1]])
     target_data = np.array([[0],[1],[1],[0]])
 
